@@ -129,4 +129,6 @@ class Mass {
 
 }
 
-module.exports = Mass;
+if(typeof module == 'object') {
+	module.exports = Mass;
+}

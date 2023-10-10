@@ -182,4 +182,7 @@ class Currency {
 
 
 }
-module.exports = Currency;
+
+if(typeof module == 'object') {
+	module.exports = Currency;
+}

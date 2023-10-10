@@ -85,4 +85,6 @@ class Temperature {
     }
 }
 
-module.exports = Temperature;
+if(typeof module == 'object') {
+	module.exports = Temperature;
+}

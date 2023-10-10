@@ -82,4 +82,6 @@ class Speed {
     }
 }
 
-module.exports = Speed;
+if(typeof module == 'object') {
+	module.exports = Speed;
+}
