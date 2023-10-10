@@ -232,27 +232,27 @@ const UNITS = [{
     {
         unit: "b/s",
         type: "dataTransfer",
-        aliases: ["b/s", " b", "bps"]
+        aliases: ["b/s", "bps"]
     },
     {
         unit: "Kb/s",
         type: "dataTransfer",
-        aliases: ["Kb/s", " Kb", "Kbps"]
+        aliases: ["Kb/s","Kbps"]
     },
     {
         unit: "Mb/s",
         type: "dataTransfer",
-        aliases: ["Mb/s", " Mb", "Mbps"]
+        aliases: ["Mb/s","Mbps"]
     },
     {
         unit: "Gb/s",
         type: "dataTransfer",
-        aliases: ["Gb/s", " Gb", "Gbps"]
+        aliases: ["Gb/s","Gbps"]
     },
     {
         unit: "Tb/s",
         type: "dataTransfer",
-        aliases: ["Tb/s", " Tb", "Tbps"]
+        aliases: ["Tb/s","Tbps"]
     },
     {
         unit: "m/s",

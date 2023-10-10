@@ -95,4 +95,6 @@ class Time {
 	}
 }
 
-module.exports = Time;
+if(typeof module == 'object') {
+	module.exports = Time;
+}

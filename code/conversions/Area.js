@@ -126,4 +126,6 @@ class Area {
     }
 }
 
-module.exports = Area;
+if(typeof module == 'object') {
+	module.exports = Area;
+}

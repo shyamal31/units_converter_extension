@@ -45,11 +45,11 @@ class Currency {
     getData(q) {
         if (typeof fetch !== 'function') {
             let fetch = require('node-fetch');
-            return fetch('https://api.exchangeratesapi.io/latest?base=' + q)
-                .then(response => response.json())
+            return fetch(' https://open.er-api.com/v6/latest/' + q)
+		.then(response => response.json())
                 .then(data => data.rates);
         } else {
-            return fetch('https://api.exchangeratesapi.io/latest?base=' + q)
+            return fetch(' https://open.er-api.com/v6/latest/' + q)
                 .then(response => response.json())
                 .then(data => data.rates);
         }
@@ -182,4 +182,7 @@ class Currency {
 
 
 }
-module.exports = Currency;
+
+if(typeof module == 'object') {
+	module.exports = Currency;
+}
