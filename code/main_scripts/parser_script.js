@@ -25,7 +25,7 @@ async function get_conversions(selection) {
                 // let quantity = eval(matches[1].replaceAll(",", "").replace("−", "-"));
                 matches = matches[1].toLowerCase();
                 // let quantity=matches.replace(aliases[i],'')
-                let quantity = eval(matches.replace(aliases[i], '').replaceAll(",", "").replace("−", "-"));
+                let quantity = matches.replace(aliases[i], '').replaceAll(",", "").replace("−", "-");
                 // console.log(quantity)
                 let precision = getPrecision(Number(quantity));
                 // console.log(unitObject.type,unitObject.unit)
