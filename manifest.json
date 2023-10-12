@@ -1,25 +1,26 @@
 {
+  "manifest_version": 3,
   "name": "Unit Convert Selection",
-  "short_name": "unitconv_sel",
   "version": "1.0.0",
   "description": "Do unit conversion conveniently at the current selected text",
-  "permissions": [
+  "action": {
+    "default_icon": {
+      "16": "assets/logos/units_logo16.png",
+      "32": "assets/logos/units_logo32.png",
+      "48": "assets/logos/units_logo48.png",
+      "128": "assets/logos/units_logo128.png",
+      "256": "assets/logos/units_logo256.png"
+    },
+  "default_title": "Unit Convert Selection"
+  },
+  "host_permissions": [
     "<all_urls>"
   ],
-  "browser_action": {
-    "default_icon": "assets/logos/units_logo32.png",
-    "default_title": "Unit Convert Selection"
-  },
   "minimum_chrome_version": "14",
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
-      ],
-      "all_frames": true,
-      "run_at": "document_end",
-      "css": [
-        "code/styling/content_script.css"
       ],
       "js": [
         "code/main_scripts/content_script.js",
@@ -35,6 +36,11 @@
         "code/conversions/DataTransfer.js",
         "code/conversions/Area.js",
         "code/conversions/Speed.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "css": [
+        "code/styling/content_script.css"
       ]
     }
   ],
@@ -43,6 +49,5 @@
     "48": "assets/logos/units_logo48.png",
     "128": "assets/logos/units_logo128.png",
     "256": "assets/logos/units_logo256.png"
-  },
-  "manifest_version": 2
+  }
 }
