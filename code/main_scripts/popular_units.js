@@ -14,7 +14,8 @@ const POPULAR_UNITS = {
     "time": ["seconds", "minutes", "hours", "days", "weeks"],
     "dataTransfer": ["b/s", "Kb/s", "Mb/s", "Gb/s", "Tb/s"],
     "area": ["m2", "cm2", "km2", "miles2", "ft2", "in2", "ha2", "acre2", "yd2"],
-    "speed": ["m/s", "Km/h", "mph"]
+    "speed": ["m/s", "Km/h", "mph"],
+    "volume": ["litres", "milliliter", "cubic meter", "cubic inch", "cubic foot", "pint", "quart", "gallon"]
 }
 
 const PRE_SYMBOLS = new Set(["$", "₹", "€", "£", "¥", "Can$", "C$", "CA$", "A$", "AU$", "¥"])
