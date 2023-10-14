@@ -36,7 +36,8 @@
         "code/conversions/DataTransfer.js",
         "code/conversions/Area.js",
         "code/conversions/Speed.js",
-        "code/conversions/Volume.js"
+        "code/conversions/Volume.js",
+        "code/conversions/Data.js"
       ],
       "run_at": "document_end",
       "all_frames": true,
