@@ -58,13 +58,13 @@ class Length {
             case "millimeters":
                 return quantity / 1000;
             case "yard":
-                return quantity / 1.094;
+                return quantity * 0.9144;
             case "feet":
-                return quantity / 3.281;
+                return quantity * 0.3048;
             case "inch":
-                return quantity / 39.3701;
+                return quantity * 0.0254;
             case "furlong":
-                return quantity * 201;
+                return quantity * 201.168;
             case "chain":
                 return quantity * 20.1168;
             default:
@@ -89,7 +89,7 @@ class Length {
                     break;
                 }
                 case "miles": {
-                    let conv = quantity / 1609;
+                    let conv = quantity / 1609.34;
                     res += "," + this.getPreciseNumber(conv, precision) + " mi";
                     break;
                 }
@@ -109,22 +109,22 @@ class Length {
                     break;
                 }
                 case "yard": {
-                    let conv = quantity * 1.09361;
+                    let conv = quantity / 0.9144;
                     res += "," + this.getPreciseNumber(conv, precision) + " yd";
                     break;
                 }
                 case "feet": {
-                    let conv = quantity * 3.28084;
+                    let conv = quantity / 0.3048;
                     res += "," + this.getPreciseNumber(conv, precision) + " ft";
                     break;
                 }
                 case "inch": {
-                    let conv = quantity * 39.3701;
+                    let conv = quantity / 0.02541;
                     res += "," + this.getPreciseNumber(conv, precision) + " inch";
                     break;
                 }
                 case "furlong": {
-                    let conv = quantity / 201;
+                    let conv = quantity / 201.168;
                     res += "," + this.getPreciseNumber(conv, precision) + " fur";
                     break;
                 }

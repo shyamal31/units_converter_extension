@@ -44,7 +44,7 @@ class Area {
             case "m2":
                 return quantity;
             case "cm2":
-                return quantity / 100;
+                return quantity / 10000;
             case "km2":
                 return quantity * 1000000;
             case "miles2":
@@ -80,7 +80,7 @@ class Area {
                     break;
                 }
                 case "cm2": {
-                    let conv = quantity * 100;
+                    let conv = quantity * 10000;
                     res += "," + this.getPreciseNumber(conv, precision) + " cm2";
                     break;
                 }
@@ -89,7 +89,7 @@ class Area {
                     res += "," + this.getPreciseNumber(conv, precision) + " km2";
                     break;
                 }
-                case "miles": {
+                case "miles2": {
                     let conv = quantity / 2590000;
                     res += "," + this.getPreciseNumber(conv, precision) + " miles";
                     break;

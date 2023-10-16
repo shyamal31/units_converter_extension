@@ -48,8 +48,8 @@ async function get_conversions(selection) {
             }
         }
     });
-    const result_final = {
-        result,object_type
-    };
-    return result_final;
+    // const result_final = {
+    //     result,object_type
+    // };
+    return result;
 }
