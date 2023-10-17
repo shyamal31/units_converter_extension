@@ -55,4 +55,12 @@ describe("Data", function () {
     assert.notStrictEqual(tb.getAllConversions(1, 5), "");
     assert.notStrictEqual(tb.getAllConversions(1.5, 8), "");
   });
+  it("Conversions should not be empty", function () {
+    let test = new Data("", ["B","KB", "MB", "GB", "TB"]);
+    assert.notStrictEqual(test.getStandardConversion(30), "");
+});
+  it("Conversions should not be empty", function () {
+  let test = new Data("", ["B","KB","MB", "GB", "TB"]);
+  assert.notStrictEqual(test.getStandardConversion(30), "");
+});
 });

@@ -83,4 +83,13 @@ describe('Volume', function () {
         assert.notStrictEqual(gal.getAllConversions(1, 5), "");
         assert.notStrictEqual(gal.getAllConversions(1.5, 8), "");
     });
+    it("Conversions should not be empty", function () {
+        let gal = new Data("", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint"]);
+        assert.notStrictEqual(gal.getStandardConversion(30), "");
+    });
+    it("Standard Conversions should not be empty", function () {
+        let gal = new Data("", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint"]);
+        assert.notStrictEqual(gal.getAllConversions(1, 5), "");
+        assert.notStrictEqual(gal.getAllConversions(1.5, 8), "");
+    });
 });
