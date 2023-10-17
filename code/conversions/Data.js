@@ -24,11 +24,25 @@ class Data {
     return intlen + parts[1].length;
   }
 
-  getPreciseNumber(number, precision) {
-    return number.toPrecision(
-      Math.min(Math.max(this.getPrecision(number), precision), 10)
-    );
+  getPreciseNumber(number) {
+    if (number < 10e-3) {
+      return number;
+    }
+    return Math.round(number * 1000) / 1000;
   }
+
+  // /**
+  //  *
+  //  * @param {Number} number input number value
+  //  * @param {Number} precision input precision digit number
+  //  * @returns number after precision
+  //  */
+  // getPreciseNumber(number, precision) {
+  //   return number.toPrecision(
+  //     Math.min(Math.max(this.getPrecision(number), precision), 10)
+  //   );
+  // }
+
   /**
    * @param {Number} quantity input quantity number
    * @returns number value in conversion
@@ -58,37 +72,40 @@ class Data {
    * @param {Number} precision input precision digits
    * @returns value after conversion with accuracy of 10 decimal points
    */
+
   getAllConversions(quantity, precision) {
     let res = "";
     this.arr.forEach((u) => {
       switch (u.toUpperCase()) {
         case "B": {
-          res += "," + this.getPreciseNumber(quantity, precision) + "B";
+          res += "," + this.getPreciseNumber(quantity) + " B";
           break;
         }
         case "KB": {
           let conv = quantity / 1024;
-          res += "," + this.getPreciseNumber(conv, precision) + "KB";
+          res += "," + this.getPreciseNumber(conv) + " KB";
           break;
         }
         case "MB": {
           let conv = quantity / 1048576;
-          res += "," + this.getPreciseNumber(conv, precision) + "MB";
+          res += "," + this.getPreciseNumber(conv) + " MB";
           break;
         }
         case "GB": {
           let conv = quantity / 1073741824;
-          res += "," + this.getPreciseNumber(conv, precision) + "GB";
+          res += "," + this.getPreciseNumber(conv) + " GB";
           break;
         }
         case "TB": {
           let conv = quantity / 1099511627776;
-          res += "," + this.getPreciseNumber(conv, precision) + "TB";
+          let temp = this.getPreciseNumber(conv);
+
+          res += "," + temp + " TB";
+
           break;
         }
       }
     });
-    console.log(res);
     return res;
   }
 }
