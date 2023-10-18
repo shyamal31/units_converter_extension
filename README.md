@@ -92,7 +92,7 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
 
 ## Automated Analysis Tool
 
-- [DeepScan](https://deepscan.io/dashboard/#view=project&tid=11517&pid=14425&bid=268342&prid=&subview=overview)
+- [DeepScan](https://deepscan.io/dashboard/#view=project&tid=22379&pid=25708&bid=807947&prid=&subview=overview&b=master)
 
 <img width="1427" alt="deepScan" src="https://user-images.githubusercontent.com/54377114/97389563-fe9dd780-18b0-11eb-8203-b1ea489175c1.png">
 
