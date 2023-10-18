@@ -6,8 +6,8 @@ describe("Mass", function () {
   it("Conversions should not be empty", function () {
     let kilograms = new Mass("kilograms", [
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -20,8 +20,8 @@ describe("Mass", function () {
   it("Standard Conversions should not be empty", function () {
     let kilograms = new Mass("kilograms", [
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -33,8 +33,8 @@ describe("Mass", function () {
   it("Conversions should not be empty", function () {
     let grams = new Mass("grams", [
       "kilograms",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -47,8 +47,8 @@ describe("Mass", function () {
   it("Standard Conversions should not be empty", function () {
     let grams = new Mass("grams", [
       "kilograms",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -58,10 +58,10 @@ describe("Mass", function () {
   });
 
   it("Conversions should not be empty", function () {
-    let pound = new Mass("pound", [
+    let pound = new Mass("pounds", [
       "kilograms",
       "grams",
-      "tonne",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -72,10 +72,10 @@ describe("Mass", function () {
   });
 
   it("Standard Conversions should not be empty", function () {
-    let pound = new Mass("pound", [
+    let pound = new Mass("pounds", [
       "kilograms",
       "grams",
-      "tonne",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -85,10 +85,10 @@ describe("Mass", function () {
   });
 
   it("Conversions should not be empty", function () {
-    let tonne = new Mass("tonne", [
+    let tonne = new Mass("tonnes", [
       "kilograms",
       "grams",
-      "pound",
+      "pounds",
       "milligrams",
       "micrograms",
       "ounces",
@@ -99,10 +99,10 @@ describe("Mass", function () {
   });
 
   it("Standard Conversions should not be empty", function () {
-    let tonne = new Mass("tonne", [
+    let tonne = new Mass("tonnes", [
       "kilograms",
       "grams",
-      "pound",
+      "pounds",
       "milligrams",
       "micrograms",
       "ounces",
@@ -115,8 +115,8 @@ describe("Mass", function () {
     let milligrams = new Mass("milligrams", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "micrograms",
       "ounces",
       "tonss",
@@ -129,8 +129,8 @@ describe("Mass", function () {
     let milligrams = new Mass("milligrams", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "micrograms",
       "ounces",
       "tonss",
@@ -142,8 +142,8 @@ describe("Mass", function () {
     let micrograms = new Mass("micrograms", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "ounces",
       "tonss",
@@ -156,8 +156,8 @@ describe("Mass", function () {
     let micrograms = new Mass("micrograms", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "ounces",
       "tonss",
@@ -169,8 +169,8 @@ describe("Mass", function () {
     let ounces = new Mass("ounces", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "tonss",
@@ -183,8 +183,8 @@ describe("Mass", function () {
     let ounces = new Mass("ounces", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "tonss",
@@ -196,8 +196,8 @@ describe("Mass", function () {
     let tonss = new Mass("tonss", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -210,8 +210,8 @@ describe("Mass", function () {
     let tonss = new Mass("tonss", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -223,8 +223,8 @@ describe("Mass", function () {
     let mass = new Mass("", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
@@ -238,8 +238,8 @@ describe("Mass", function () {
     let mass = new Mass("", [
       "kilograms",
       "grams",
-      "pound",
-      "tonne",
+      "pounds",
+      "tonnes",
       "milligrams",
       "micrograms",
       "ounces",
