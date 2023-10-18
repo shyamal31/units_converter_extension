@@ -32,7 +32,7 @@ async function get_conversions(selection) {
                 // console.log(unitObject.type,unitObject.unit)
                 let conversion_class = get_conversion_class(unitObject.type, unitObject.unit);
                 //console.log("Coversion Class :- ",conversion_class);
-                object_type = unitObject.type;
+                //object_type = unitObject.type;
                 if (unitObject.type == "currency") {
                     result = (async () => {
                         let std_converison = await conversion_class.getStandardConversion(quantity, precision)
