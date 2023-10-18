@@ -59,6 +59,8 @@ class Volume {
         return quantity / 1.056688209;
       case "gallon":
         return quantity / 0.26417205235815;
+      case "fl oz":
+        return quantity / 33.814;
       default:
         return null;
     }
@@ -111,6 +113,11 @@ class Volume {
         case "gallon": {
           let conv = quantity * 0.26417205235815;
           res += "," + this.getPreciseNumber(conv) + " gal";
+          break;
+        }
+        case "fl oz": {
+          let conv = quantity * 33.814;
+          res += "," + this.getPreciseNumber(conv) + " fl oz";
           break;
         }
       }
