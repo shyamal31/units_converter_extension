@@ -78,7 +78,7 @@ const UNITS = [
   {
     unit: "GBP",
     type: "currency",
-    aliases: ["pounds", "pound", "GBP", "£"],
+    aliases: ["pound", "GBP", "£"],
   },
   {
     unit: "INR",
