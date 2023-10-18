@@ -12,7 +12,7 @@ class DataTransfer {
     this.arr = arr;
   }
 
-  getPreciseNumber(number) {
+  getPrecise(number) {
     if (number < 10e-3) {
       return number;
     }
