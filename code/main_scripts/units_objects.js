@@ -307,4 +307,49 @@ const UNITS = [
     type: "data",
     aliases: ["TB", "TeraByte"],
   },
+  {
+    unit: "litres",
+    type: "volume",
+    aliases: ["lt", " liter", "liters", "litre", "Litres"],
+  },
+  {
+    unit: "milliliter",
+    type: "volume",
+    aliases: ["ml", "mls", "millilitre", "milliliters", "millilitres"],
+  },
+  {
+    unit: "cubic meter",
+    type: "volume",
+    aliases: ["cubic meters", " cubic metre", "cubic metres", "cm3"],
+  },
+  {
+    unit: "cubic inch",
+    type: "volume",
+    aliases: ["cubic inches", " ci3"],
+  },
+  {
+    unit: "cubic foot",
+    type: "volume",
+    aliases: ["cf3", " cubic feet"],
+  },
+  {
+    unit: "pint",
+    type: "volume",
+    aliases: ["pts", " pt", "pints"],
+  },
+  {
+    unit: "quart",
+    type: "volume",
+    aliases: ["quarts", " qt", "qts"],
+  },
+  {
+    unit: "gallon",
+    type: "volume",
+    aliases: ["gallons", " gal", "gals", "gl", "gls"],
+  },
+  {
+    unit: "yd2",
+    type: "area",
+    aliases: ["yd2", " yd2", "yd²", "sqyd"],
+  },
 ];
