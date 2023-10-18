@@ -44,6 +44,7 @@ const POPULAR_UNITS = {
     "pint",
     "quart",
     "gallon",
+    "fl oz",
   ],
   data: ["B", "KB", "MB", "GB", "TB"],
 };

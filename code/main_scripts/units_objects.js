@@ -348,8 +348,8 @@ const UNITS = [
     aliases: ["gallons", " gal", "gals", "gl", "gls"],
   },
   {
-    unit: "yd2",
-    type: "area",
-    aliases: ["yd2", " yd2", "yd²", "sqyd"],
+    unit: "fl oz",
+    type: "volume",
+    aliases: ["fluid ounce", " fluid ounces", "FlOz", "Oz", "Ounces", "Ounce" , "US fluid ounce", "US fl oz"],
   },
 ];
