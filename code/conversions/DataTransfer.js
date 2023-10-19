@@ -12,7 +12,7 @@ class DataTransfer {
     this.arr = arr;
   }
 
-  getPrecise(number) {
+  getPrecision(number) {
     if (number < 10e-3) {
       return number.toPrecision(
         Math.min(Math.max(this.getPrecision(number), precision), 10)
