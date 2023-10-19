@@ -36,7 +36,7 @@ An extension that converts your selected values into popular units. Saves time, 
 - The extension will now be added to the Chrome
 ![image](https://github.com/bhavesh242/units_converter_extension/blob/master/assets/Images/Uploaded.PNG)
 - Screenshot of working of the extension
-![image](https://user-images.githubusercontent.com/54377114/97421823-55240980-18e3-11eb-9aaa-a3cd0c6e56bc.png)
+![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_unit_conversion.png)
 
 ## Languages
 
