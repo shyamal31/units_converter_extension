@@ -29,6 +29,32 @@ describe("Mass", function () {
     ]);
     assert.notStrictEqual(kilograms.getStandardConversion(1), "");
   });
+    it("Conversions should not be empty", function () {
+      let kilograms = new Mass("kilograms", [
+        "grams",
+        "pounds",
+        "tonnes",
+        "milligrams",
+        "micrograms",
+        "ounces",
+        "tonss",
+      ]);
+      assert.notStrictEqual(kilograms.getAllConversions(490.5, 2), "");
+      assert.notStrictEqual(kilograms.getAllConversions(-490.5, 2), "");
+    });
+  
+    it("Standard Conversions should not be empty", function () {
+      let kilograms = new Mass("kilograms", [
+        "grams",
+        "pounds",
+        "tonnes",
+        "milligrams",
+        "micrograms",
+        "ounces",
+        "tonss",
+      ]);
+      assert.notStrictEqual(kilograms.getStandardConversion(100.5), "");
+    });
 
   it("Conversions should not be empty", function () {
     let grams = new Mass("grams", [
@@ -55,6 +81,33 @@ describe("Mass", function () {
       "tonss",
     ]);
     assert.notStrictEqual(grams.getStandardConversion(1), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let grams = new Mass("grams", [
+      "kilograms",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(grams.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(grams.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let grams = new Mass("grams", [
+      "kilograms",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(grams.getStandardConversion(100), "");
   });
 
   it("Conversions should not be empty", function () {
@@ -85,6 +138,33 @@ describe("Mass", function () {
   });
 
   it("Conversions should not be empty", function () {
+    let pound = new Mass("pounds", [
+      "kilograms",
+      "grams",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(pound.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(pound.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let pound = new Mass("pounds", [
+      "kilograms",
+      "grams",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(pound.getStandardConversion(100.5), "");
+  });
+
+  it("Conversions should not be empty", function () {
     let tonne = new Mass("tonnes", [
       "kilograms",
       "grams",
@@ -109,6 +189,33 @@ describe("Mass", function () {
       "tonss",
     ]);
     assert.notStrictEqual(tonne.getStandardConversion(1), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let tonne = new Mass("tonnes", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "milligrams",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(tonne.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(tonne.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let tonne = new Mass("tonnes", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "milligrams",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(tonne.getStandardConversion(100.5), "");
   });
 
   it("Conversions should not be empty", function () {
@@ -139,6 +246,33 @@ describe("Mass", function () {
   });
 
   it("Conversions should not be empty", function () {
+    let milligrams = new Mass("milligrams", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(milligrams.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(milligrams.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let milligrams = new Mass("milligrams", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "micrograms",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(milligrams.getStandardConversion(100.5), "");
+  });
+
+  it("Conversions should not be empty", function () {
     let micrograms = new Mass("micrograms", [
       "kilograms",
       "grams",
@@ -163,6 +297,33 @@ describe("Mass", function () {
       "tonss",
     ]);
     assert.notStrictEqual(micrograms.getStandardConversion(1), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let micrograms = new Mass("micrograms", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(micrograms.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(micrograms.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let micrograms = new Mass("micrograms", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "ounces",
+      "tonss",
+    ]);
+    assert.notStrictEqual(micrograms.getStandardConversion(100.5), "");
   });
 
   it("Conversions should not be empty", function () {
@@ -193,6 +354,33 @@ describe("Mass", function () {
   });
 
   it("Conversions should not be empty", function () {
+    let ounces = new Mass("ounces", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "tonss",
+    ]);
+    assert.notStrictEqual(ounces.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(ounces.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let ounces = new Mass("ounces", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "tonss",
+    ]);
+    assert.notStrictEqual(ounces.getStandardConversion(100.5), "");
+  });
+
+  it("Conversions should not be empty", function () {
     let tonss = new Mass("tonss", [
       "kilograms",
       "grams",
@@ -217,6 +405,33 @@ describe("Mass", function () {
       "ounces",
     ]);
     assert.notStrictEqual(tonss.getStandardConversion(1), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let tonss = new Mass("tonss", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "ounces",
+    ]);
+    assert.notStrictEqual(tonss.getAllConversions(490.5, 2), "");
+    assert.notStrictEqual(tonss.getAllConversions(-490.5, 2), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let tonss = new Mass("tonss", [
+      "kilograms",
+      "grams",
+      "pounds",
+      "tonnes",
+      "milligrams",
+      "micrograms",
+      "ounces",
+    ]);
+    assert.notStrictEqual(tonss.getStandardConversion(100.5), "");
   });
 
   it("Conversions should not be empty", function () {
