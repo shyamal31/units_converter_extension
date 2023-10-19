@@ -19,7 +19,7 @@ The following is a set of guidelines for contributing to Smart Units Converter, 
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Smart Units Converter](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [durgamummadi71@gmail.com](mailto:durgamummadi71@gmail.com).
+This project and everyone participating in it is governed by the [Smart Units Converter](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [agarg27@ncsu.edu](mailto:agarg27@ncsu.edu).
 
 ## What should I know before I get started
 
