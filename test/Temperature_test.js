@@ -12,12 +12,29 @@ describe("Temperature", function () {
     assert.notStrictEqual(celciuses.getAllConversions(-150, 2), "");
   });
 
+  it("Conversions should not be empty", function () {
+    let celciuses = new Temp("celcius", [
+      "kelvin",
+      "fahrenheit",
+    ]);
+    assert.notStrictEqual(celciuses.getAllConversions(1500, 20), "");
+    assert.notStrictEqual(celciuses.getAllConversions(-1500, 20), "");
+  });
+
   it("Standard Conversions should not be empty", function () {
     let celciuses = new Temp("celcius", [
       "kelvin",
       "fahrenheit",
     ]);
     assert.notStrictEqual(celciuses.getStandardConversion(100), "");
+  });
+
+  it("Standard Conversions should not be empty", function () {
+    let celciuses = new Temp("celcius", [
+      "kelvin",
+      "fahrenheit",
+    ]);
+    assert.notStrictEqual(celciuses.getStandardConversion(1), "");
   });
 
   it("Conversions should not be empty", function () {
@@ -27,6 +44,24 @@ describe("Temperature", function () {
     ]);
     assert.notStrictEqual(kelvin.getAllConversions(150, 2), "");
     assert.notStrictEqual(kelvin.getAllConversions(-150, 2), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let kelvin = new Temp("kelvin", [
+      "celcius",
+      "fahrenheit",
+    ]);
+    assert.notStrictEqual(kelvin.getAllConversions(1.5, 2), "");
+    assert.notStrictEqual(kelvin.getAllConversions(-7.5, 2), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let kelvin = new Temp("kelvin", [
+      "celcius",
+      "fahrenheit",
+    ]);
+    assert.notStrictEqual(kelvin.getAllConversions(15, 2), "");
+    assert.notStrictEqual(kelvin.getAllConversions(-75, 2), "");
   });
 
   it("Standard Conversions should not be empty", function () {
@@ -45,6 +80,16 @@ describe("Temperature", function () {
     assert.notStrictEqual(fahrenheit.getAllConversions(150, 2), "");
     assert.notStrictEqual(fahrenheit.getAllConversions(-150, 2), "");
     assert.notStrictEqual(fahrenheit.getAllConversions(-1.5, 2), "");
+  });
+
+  it("Conversions should not be empty", function () {
+    let fahrenheit = new Temp("fahrenheit", [
+      "celcius",
+      "kelvin",
+    ]);
+    assert.notStrictEqual(fahrenheit.getAllConversions(1500, 21), "");
+    assert.notStrictEqual(fahrenheit.getAllConversions(-1500, 21), "");
+    assert.notStrictEqual(fahrenheit.getAllConversions(-15, 21), "");
   });
 
   it("Standard Conversions should not be empty", function () {
@@ -73,4 +118,14 @@ describe("Temperature", function () {
     ]);
     assert.notStrictEqual(temp.getStandardConversion(100), "");
   });
+
+  it("Standard Conversions should not be empty", function () {
+    let temp = new Temp("", [
+      "celcius",
+      "kelvin",
+      "fahrenheit",
+    ]);
+    assert.notStrictEqual(temp.getStandardConversion(1000), "");
+  });
+
 });
