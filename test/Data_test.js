@@ -13,10 +13,10 @@ describe("Data", function () {
     assert.notStrictEqual(byte.getAllConversions(1.5, 8), "");
   });
   it("Conversions should not be empty", function () {
-    assert.notStrictEqual(byte.getStandardConversion(300), "");
+    assert.notStrictEqual(byte.getStandardConversion(2048), "");
   });
   it("Standard Conversions should not be empty", function () {
-    assert.notStrictEqual(byte.getAllConversions(1000, 5), "");
+    assert.notStrictEqual(byte.getAllConversions(1024, 5), "");
     assert.notStrictEqual(byte.getAllConversions(1786, 8), "");
   });
 
@@ -30,10 +30,10 @@ describe("Data", function () {
     assert.notStrictEqual(kb.getAllConversions(1.5, 8), "");
   });
   it("Conversions should not be empty", function () {
-    assert.notStrictEqual(kb.getStandardConversion(300), "");
+    assert.notStrictEqual(kb.getStandardConversion(2049), "");
   });
   it("Standard Conversions should not be empty", function () {
-    assert.notStrictEqual(kb.getAllConversions(1000, 5), "");
+    assert.notStrictEqual(kb.getAllConversions(1024, 5), "");
     assert.notStrictEqual(kb.getAllConversions(1786, 8), "");
   });
 
@@ -48,11 +48,11 @@ describe("Data", function () {
     assert.notStrictEqual(mb.getAllConversions(1.5, 8), "");
   });
   it("Conversions should not be empty", function () {
-    assert.notStrictEqual(mb.getStandardConversion(300), "");
+    assert.notStrictEqual(mb.getStandardConversion(2048), "");
   });
 
   it("Standard Conversions should not be empty", function () {
-    assert.notStrictEqual(mb.getAllConversions(1000, 5), "");
+    assert.notStrictEqual(mb.getAllConversions(1024, 5), "");
     assert.notStrictEqual(mb.getAllConversions(1786, 8), "");
   });
 
@@ -67,11 +67,11 @@ describe("Data", function () {
     assert.notStrictEqual(gb.getAllConversions(1.5, 8), "");
   });
   it("Conversions should not be empty", function () {
-    assert.notStrictEqual(gb.getStandardConversion(300), "");
+    assert.notStrictEqual(gb.getStandardConversion(2048), "");
   });
 
   it("Standard Conversions should not be empty", function () {
-    assert.notStrictEqual(gb.getAllConversions(1000, 5), "");
+    assert.notStrictEqual(gb.getAllConversions(1024, 5), "");
     assert.notStrictEqual(gb.getAllConversions(1786, 8), "");
   });
 
@@ -86,11 +86,11 @@ describe("Data", function () {
     assert.notStrictEqual(tb.getAllConversions(1.5, 8), "");
   });
   it("Conversions should not be empty", function () {
-    assert.notStrictEqual(tb.getStandardConversion(300), "");
+    assert.notStrictEqual(tb.getStandardConversion(2048), "");
   });
 
   it("Standard Conversions should not be empty", function () {
-    assert.notStrictEqual(tb.getAllConversions(1000, 5), "");
+    assert.notStrictEqual(tb.getAllConversions(1024, 5), "");
     assert.notStrictEqual(tb.getAllConversions(1786, 8), "");
   });
 
@@ -101,6 +101,6 @@ describe("Data", function () {
   });
   it("Conversions should not be empty", function () {
     let test = new Data("", ["B", "KB", "MB", "GB", "TB"]);
-    assert.notStrictEqual(test.getStandardConversion(300), "");
+    assert.notStrictEqual(test.getStandardConversion(2048), "");
   });
 });
