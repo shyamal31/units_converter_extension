@@ -165,7 +165,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="conversions_Temperature.js.html">conversions/Temperature.js</a>, <a href="conversions_Temperature.js.html#line5">line 5</a>
+        <a href="Temperature.js.html">Temperature.js</a>, <a href="Temperature.js.html#line5">line 5</a>
     </li></ul></dd>
     
 
@@ -221,12 +221,16 @@
     
 
     
-    <h4 class="name" id="getPreciseNumber"><span class="type-signature"></span>getPreciseNumber<span class="signature">(number, precision)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getPreciseNumber"><span class="type-signature"></span>getPreciseNumber<span class="signature">(quantity)</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    Our standard conversion is celcius, so we try to convert all selection to celcius
+</div>
 
 
 
@@ -261,7 +265,7 @@
 
         <tr>
             
-                <td class="name"><code>number</code></td>
+                <td class="name"><code>quantity</code></td>
             
 
             <td class="type">
@@ -277,30 +281,7 @@
 
             
 
-            <td class="description last">input number value</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>precision</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">input precision digit number</td>
+            <td class="description last">input number</td>
         </tr>
 
     
@@ -341,7 +322,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="conversions_Temperature.js.html">conversions/Temperature.js</a>, <a href="conversions_Temperature.js.html#line69">line 69</a>
+        <a href="Temperature.js.html">Temperature.js</a>, <a href="Temperature.js.html#line20">line 20</a>
     </li></ul></dd>
     
 
@@ -370,7 +351,7 @@
 
         
 <div class="param-desc">
-    number after precision
+    returns value with accuracy of 10 decimal points
 </div>
 
 
@@ -484,7 +465,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="conversions_Temperature.js.html">conversions/Temperature.js</a>, <a href="conversions_Temperature.js.html#line78">line 78</a>
+        <a href="Temperature.js.html">Temperature.js</a>, <a href="Temperature.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -525,153 +506,6 @@
 
 
         
-            
-
-    
-
-    
-    <h4 class="name" id="getStandardConversion"><span class="type-signature"></span>getStandardConversion<span class="signature">(quantity)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Our standard conversion is celcius, so we try to convert all selection to celcius
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>quantity</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">input number</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="conversions_Temperature.js.html">conversions/Temperature.js</a>, <a href="conversions_Temperature.js.html#line20">line 20</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    returns value with accuracy of 10 decimal points
-</div>
-
-
-
-    
-
-
-
-
-
-        
     
 
     
@@ -687,13 +521,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Area.html">Area</a></li><li><a href="Currency.html">Currency</a></li><li><a href="DataTransfer.html">DataTransfer</a></li><li><a href="Length.html">Length</a></li><li><a href="Mass.html">Mass</a></li><li><a href="Speed.html">Speed</a></li><li><a href="Temperature.html">Temperature</a></li><li><a href="Time.html">Time</a></li></ul><h3>Global</h3><ul><li><a href="global.html#descending_length">descending_length</a></li><li><a href="global.html#get_conversion_class">get_conversion_class</a></li><li><a href="global.html#get_conversions">get_conversions</a></li><li><a href="global.html#get_possible_conversions_list">get_possible_conversions_list</a></li><li><a href="global.html#getPreciseNumber">getPreciseNumber</a></li><li><a href="global.html#getPrecision">getPrecision</a></li><li><a href="global.html#matches_filter">matches_filter</a></li><li><a href="global.html#POPULAR_UNITS">POPULAR_UNITS</a></li><li><a href="global.html#showModal">showModal</a></li><li><a href="global.html#UNITS">UNITS</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Area.html">Area</a></li><li><a href="Currency.html">Currency</a></li><li><a href="Data.html">Data</a></li><li><a href="DataTransfer.html">DataTransfer</a></li><li><a href="Length.html">Length</a></li><li><a href="Mass.html">Mass</a></li><li><a href="Speed.html">Speed</a></li><li><a href="Temperature.html">Temperature</a></li><li><a href="Time.html">Time</a></li><li><a href="Volume.html">Volume</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Oct 28 2020 03:53:20 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Oct 19 2023 13:21:05 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
