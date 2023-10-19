@@ -68,4 +68,30 @@ describe('Speed', function() {
         let mph = new Speed("mph", ["m/s", "km/h"]);
         assert.notStrictEqual(mph.getAllConversions(1000, 200), "");
     });
+
+    it("Conversions should not be empty", function() {
+        let mph = new Speed("", ["m/s", "km/h","mph"]);
+        assert.notStrictEqual(mph.getStandardConversion(20), "");
+    });
+
+    it("Standard Conversions should not be empty", function () {
+        let mph = new Speed("", ["m/s", "km/h","mph"]);
+        assert.notStrictEqual(mph.getAllConversions(10, 2), "");
+    });
+
+    
+    it("Standard Conversions should not be empty", function () {
+        let mph = new Speed("", ["m/s", "km/h","mph"]);
+        assert.notStrictEqual(mph.getAllConversions(100, 20), "");
+    });
+
+    it("Standard Conversions should not be empty", function () {
+        let mph = new Speed("", ["m/s", "km/h","mph"]);
+        assert.notStrictEqual(mph.getAllConversions(100, 20), "");
+    });
+
+    it("Standard Conversions should not be empty", function () {
+        let mph = new Speed("", ["m/s", "km/h","mph"]);
+        assert.notStrictEqual(mph.getAllConversions(1000, 200), "");
+    });
 });
