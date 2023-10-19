@@ -5,7 +5,7 @@ An extension that converts your selected values into popular units. Saves time, 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 ![GitHub issues](https://img.shields.io/github/issues/NCSU-S/units_converter_extension)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/nihitmittal/units_converter_extension)
-![GitHub contributors](https://img.shields.io/github/contributors/NCSU-S/units_converter_extension)
+![GitHub contributors](https://img.shields.io/github/contributors/nihitmittal/units_converter_extension)
 [![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
 ![Coveralls github](https://img.shields.io/coveralls/github/NCSU-S/units_converter_extension)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/NCSU-S/units_converter_extension)
