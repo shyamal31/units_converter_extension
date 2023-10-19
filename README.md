@@ -36,6 +36,10 @@ An extension that converts your selected values into popular units. Saves time, 
 - The extension will now be added to the Chrome
 ![image](https://github.com/bhavesh242/units_converter_extension/blob/master/assets/Images/Uploaded.PNG)
 - Screenshot of working of the extension
+- Displays the most relevant converted unit first
+![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_unit_conversion_1.png)
+
+- Click on view all button to view all of the converted units for that metric
 ![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_unit_conversion.png)
 
 ## Languages
