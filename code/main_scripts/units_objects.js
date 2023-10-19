@@ -310,7 +310,7 @@ const UNITS = [
   {
     unit: "litres",
     type: "volume",
-    aliases: ["lt", " liter", "liters", "litre", "Litres"],
+    aliases: ["lt", " liter", "liters", "litre", "Litres", "L"],
   },
   {
     unit: "milliliter",
