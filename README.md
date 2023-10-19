@@ -3,7 +3,7 @@
 An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub issues](https://img.shields.io/github/issues/NCSU-S/units_converter_extension)
+![GitHub issues](https://img.shields.io/github/issues/nihitmittal/units_converter_extension)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/nihitmittal/units_converter_extension)
 ![GitHub contributors](https://img.shields.io/github/contributors/nihitmittal/units_converter_extension)
 [![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
