@@ -88,7 +88,7 @@ class Area {
           res += "," + this.getPreciseNumber(conv, precision) + " km2";
           break;
         }
-        case "miles": {
+        case "miles2": {
           let conv = quantity / 2590000;
           res += "," + this.getPreciseNumber(conv, precision) + " miles";
           break;
