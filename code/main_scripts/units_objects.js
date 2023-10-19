@@ -350,6 +350,6 @@ const UNITS = [
   {
     unit: "fl oz",
     type: "volume",
-    aliases: ["fluid ounce", " fluid ounces", "FlOz", "Oz", "Ounces", "Ounce" , "US fluid ounce", "US fl oz", "Fl Oz"],
+    aliases: ["fluid ounce", " fluid ounces", "FlOz", "US fluid ounce", "US fl oz", "Fl Oz"],
   },
 ];
