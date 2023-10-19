@@ -129,4 +129,23 @@ describe('Volume', function () {
         let oz = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
         assert.notStrictEqual(oz.getStandardConversion(3000), "");
     });
+
+    it("Standard Conversions should not be empty", function () {
+        let oz = new Data("", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
+        assert.notStrictEqual(oz.getAllConversions(1, 5), "");
+        assert.notStrictEqual(oz.getAllConversions(1.5, 8), "");
+    });
+    it("Conversions should not be empty", function () {
+        let oz = new Data("", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
+        assert.notStrictEqual(oz.getStandardConversion(3), "");
+    });
+    it("Standard Conversions should not be empty", function () {
+        let oz = new Data("", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
+        assert.notStrictEqual(oz.getAllConversions(1000, 5), "");
+        assert.notStrictEqual(oz.getAllConversions(1500, 8), "");
+    });
+    it("Conversions should not be empty", function () {
+        let oz = new Data("", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
+        assert.notStrictEqual(oz.getStandardConversion(3000), "");
+    });
 });
