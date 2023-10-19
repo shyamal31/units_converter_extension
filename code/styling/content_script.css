@@ -7,14 +7,17 @@
   box-shadow: 0 0 35px #a6a6a4;
   padding: 9px;
   display: block;
-  background-color: #ffffff;
+  background-color: #fffcf2;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
 
 .modal_heading {
   font-weight: bold;
   font: arial, sans-serif;
-  color: #89beb3;
+  color: #000;
   margin: 6px;
   font-size: 150%;
   padding: 6px;
@@ -48,9 +51,14 @@
   padding: 0px;
   font-size: 100%;
   margin: 0px;
-  color: #89beb3 !important;
+  color: #403d39 !important;
 }
 
 .uc_mc_h{
   display: none;
+}
+
+#viewAllButton{
+  margin-top: 7px;
+  border-radius: 10px;
 }
