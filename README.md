@@ -139,4 +139,4 @@ Think about the case when you shopping on Amazon. When you want to purchase Dumb
 </feature_model>
 ```
 
-![feature_model](https://user-images.githubusercontent.com/54377114/97375975-8f18ef80-1892-11eb-9f56-aad931853218.png)
+![feature_model](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Feature_model.png)
