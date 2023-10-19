@@ -28,7 +28,7 @@ class Currency {
 
   getPreciseNumber(number, precision) {
     if (number < 10e-3) {
-      return number.toPrecision(
+      return Number(number).toPrecision(
         Math.min(Math.max(this.getPrecision(number), precision), 10)
       );
     }
