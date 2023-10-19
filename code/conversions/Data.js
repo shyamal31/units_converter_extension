@@ -24,9 +24,11 @@ class Data {
     return intlen + parts[1].length;
   }
 
-  getPreciseNumber(number) {
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
-      return number;
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
     }
     return Math.round(number * 1000) / 1000;
   }
@@ -78,27 +80,27 @@ class Data {
     this.arr.forEach((u) => {
       switch (u.toUpperCase()) {
         case "B": {
-          res += "," + this.getPreciseNumber(quantity) + " B";
+          res += "," + this.getPreciseNumber(quantity, precision) + " B";
           break;
         }
         case "KB": {
           let conv = quantity / 1024;
-          res += "," + this.getPreciseNumber(conv) + " KB";
+          res += "," + this.getPreciseNumber(conv, precision) + " KB";
           break;
         }
         case "MB": {
           let conv = quantity / 1048576;
-          res += "," + this.getPreciseNumber(conv) + " MB";
+          res += "," + this.getPreciseNumber(conv, precision) + " MB";
           break;
         }
         case "GB": {
           let conv = quantity / 1073741824;
-          res += "," + this.getPreciseNumber(conv) + " GB";
+          res += "," + this.getPreciseNumber(conv, precision) + " GB";
           break;
         }
         case "TB": {
           let conv = quantity / 1099511627776;
-          let temp = this.getPreciseNumber(conv);
+          let temp = this.getPreciseNumber(conv, precision);
 
           res += "," + temp + " TB";
 

@@ -24,9 +24,11 @@ class Speed {
     return intlen + parts[1].length;
   }
 
-  getPreciseNumber(number) {
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
-      return number;
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
     }
     return Math.round(number * 1000) / 1000;
   }
@@ -60,17 +62,17 @@ class Speed {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "m/s": {
-          res += "," + this.getPreciseNumber(quantity) + " M/s";
+          res += "," + this.getPreciseNumber(quantity, precision) + " M/s";
           break;
         }
         case "km/h": {
           let conv = quantity * 3.6;
-          res += "," + this.getPreciseNumber(conv) + " Km/h";
+          res += "," + this.getPreciseNumber(conv, precision) + " Km/h";
           break;
         }
         case "mph": {
           let conv = quantity * 2.2369362920544025;
-          res += "," + this.getPreciseNumber(conv) + " Mph";
+          res += "," + this.getPreciseNumber(conv, precision) + " Mph";
           break;
         }
       }

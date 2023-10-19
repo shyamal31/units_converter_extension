@@ -43,16 +43,16 @@ class Temperature {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "celcius":
-          res += "," + this.getPreciseNumber(quantity) + " °C";
+          res += "," + this.getPreciseNumber(quantity, precision) + " °C";
           break;
         case "kelvin": {
           let conv = quantity + 273.15;
-          res += "," + this.getPreciseNumber(conv) + " °K";
+          res += "," + this.getPreciseNumber(conv, precision) + " °K";
           break;
         }
         case "fahrenheit": {
           let conv = (quantity / 5) * 9 + 32;
-          res += "," + this.getPreciseNumber(conv) + " °F";
+          res += "," + this.getPreciseNumber(conv, precision) + " °F";
           break;
         }
       }
@@ -61,9 +61,11 @@ class Temperature {
     return res;
   }
 
-  getPreciseNumber(number) {
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
-      return number;
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
     }
     return Math.round(number * 1000) / 1000;
   }
