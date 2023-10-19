@@ -30,7 +30,7 @@ An extension that converts your selected values into popular units. Saves time, 
   
 ## Installation
 
-- Clone the repository using ```git clone https://github.com/NCSU-S/units_converter_extension.git```
+- Clone the repository using ```git clone https://github.com/nihitmittal/units_converter_extension.git```
 - In the chrome browser open ```chrome://extensions/```
 - Enable developer settings if it is not enabled
 - Choose Load Unpacked
