@@ -25,6 +25,9 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert celcius to Fahrenheit when you are calculating temperature
 - Convert Mb/s to b/s when you are calculating internet speed
 - Convert square meter to square feet when you are calculating the measure of area
+- Convert litres to gallons when you are calculating the volume for liquid items online
+- Convert TB to GB when you are buying data storage devices
+  
 ## Installation
 
 - Clone the repository using ```git clone https://github.com/NCSU-S/units_converter_extension.git```
