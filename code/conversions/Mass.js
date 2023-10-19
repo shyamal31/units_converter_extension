@@ -27,7 +27,7 @@ class Mass {
     return intlen + parts[1].length;
   }
 
-  getPreciseNumber(number) {
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
       return number.toPrecision(
         Math.min(Math.max(this.getPrecision(number), precision), 10)
@@ -78,41 +78,44 @@ class Mass {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "kilograms":
-          res += "," + this.getPreciseNumber(quantity) + " Kgs";
+          res +=
+            "," +
+            this.getPreciseNumber(quantity, precision, precision) +
+            " Kgs";
           break;
         case "grams": {
           let conv = quantity * 1000;
-          res += "," + this.getPreciseNumber(conv) + " gms";
+          res += "," + this.getPreciseNumber(conv, precision) + " gms";
           break;
         }
         case "pounds": {
           let conv = quantity / 0.45359237;
-          res += "," + this.getPreciseNumber(conv) + " lbs";
+          res += "," + this.getPreciseNumber(conv, precision) + " lbs";
           break;
         }
         case "tonnes": {
           let conv = quantity / 1000;
-          res += "," + this.getPreciseNumber(conv) + " tonnes";
+          res += "," + this.getPreciseNumber(conv, precision) + " tonnes";
           break;
         }
         case "milligrams": {
           let conv = quantity * 1000000;
-          res += "," + this.getPreciseNumber(conv) + " milligrams";
+          res += "," + this.getPreciseNumber(conv, precision) + " milligrams";
           break;
         }
         case "micrograms": {
           let conv = quantity * 1000000000;
-          res += "," + this.getPreciseNumber(conv) + " micrograms";
+          res += "," + this.getPreciseNumber(conv, precision) + " micrograms";
           break;
         }
         case "ounces": {
           let conv = quantity * 35.273962;
-          res += "," + this.getPreciseNumber(conv) + " ounces";
+          res += "," + this.getPreciseNumber(conv, precision) + " ounces";
           break;
         }
         case "tonss": {
           let conv = quantity / 907.18474;
-          res += "," + this.getPreciseNumber(conv) + " tonss";
+          res += "," + this.getPreciseNumber(conv, precision) + " tonss";
           break;
         }
       }

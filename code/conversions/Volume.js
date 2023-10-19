@@ -27,11 +27,11 @@ class Volume {
     return intlen + parts[1].length;
   }
 
-  getPreciseNumber(number) {
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
-      if (parts.length <= 1) {
-        return number < 0 ? parts[0].length - 1 : parts[0].length;
-      }
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
     }
     return Math.round(number * 1000) / 1000;
   }
@@ -80,46 +80,46 @@ class Volume {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "litres":
-          res += "," + this.getPreciseNumber(quantity) + " lt";
+          res += "," + this.getPreciseNumber(quantity, precision) + " lt";
           break;
         case "milliliter": {
           let conv = quantity * 1000;
-          res += "," + this.getPreciseNumber(conv) + " ml";
+          res += "," + this.getPreciseNumber(conv, precision) + " ml";
           break;
         }
         case "cubic meter": {
           let conv = quantity * 0.001;
-          res += "," + this.getPreciseNumber(conv) + " m3";
+          res += "," + this.getPreciseNumber(conv, precision) + " m3";
           break;
         }
         case "cubic inch": {
           let conv = quantity * 61.023744;
-          res += "," + this.getPreciseNumber(conv) + " in3";
+          res += "," + this.getPreciseNumber(conv, precision) + " in3";
           break;
         }
         case "cubic foot": {
           let conv = quantity * 0.035314666;
-          res += "," + this.getPreciseNumber(conv) + " ft3";
+          res += "," + this.getPreciseNumber(conv, precision) + " ft3";
           break;
         }
         case "pint": {
           let conv = quantity * 2.113376418;
-          res += "," + this.getPreciseNumber(conv) + " pint";
+          res += "," + this.getPreciseNumber(conv, precision) + " pint";
           break;
         }
         case "quart": {
           let conv = quantity * 1.056688209;
-          res += "," + this.getPreciseNumber(conv) + " qt";
+          res += "," + this.getPreciseNumber(conv, precision) + " qt";
           break;
         }
         case "gallon": {
           let conv = quantity * 0.26417205235815;
-          res += "," + this.getPreciseNumber(conv) + " gal";
+          res += "," + this.getPreciseNumber(conv, precision) + " gal";
           break;
         }
         case "fl oz": {
           let conv = quantity * 33.814;
-          res += "," + this.getPreciseNumber(conv) + " fl oz";
+          res += "," + this.getPreciseNumber(conv, precision) + " fl oz";
           break;
         }
       }

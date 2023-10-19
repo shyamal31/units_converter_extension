@@ -82,52 +82,52 @@ class Length {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "meters": {
-          res += "," + this.getPreciseNumber(quantity) + " m";
+          res += "," + this.getPreciseNumber(quantity, precision) + " m";
           break;
         }
         case "miles": {
           let conv = quantity / 1609;
-          res += "," + this.getPreciseNumber(conv) + " mi";
+          res += "," + this.getPreciseNumber(conv, precision) + " mi";
           break;
         }
         case "kilometers": {
           let conv = quantity / 1000;
-          res += "," + this.getPreciseNumber(conv) + " km";
+          res += "," + this.getPreciseNumber(conv, precision) + " km";
           break;
         }
         case "centimeters": {
           let conv = quantity * 100;
-          res += "," + this.getPreciseNumber(conv) + " cm";
+          res += "," + this.getPreciseNumber(conv, precision) + " cm";
           break;
         }
         case "millimeters": {
           let conv = quantity * 1000;
-          res += "," + this.getPreciseNumber(conv) + " mm";
+          res += "," + this.getPreciseNumber(conv, precision) + " mm";
           break;
         }
         case "yard": {
           let conv = quantity * 1.09361;
-          res += "," + this.getPreciseNumber(conv) + " yd";
+          res += "," + this.getPreciseNumber(conv, precision) + " yd";
           break;
         }
         case "feet": {
           let conv = quantity * 3.28084;
-          res += "," + this.getPreciseNumber(conv) + " ft";
+          res += "," + this.getPreciseNumber(conv, precision) + " ft";
           break;
         }
         case "inch": {
           let conv = quantity * 39.3701;
-          res += "," + this.getPreciseNumber(conv) + " inch";
+          res += "," + this.getPreciseNumber(conv, precision) + " inch";
           break;
         }
         case "furlong": {
           let conv = quantity / 201;
-          res += "," + this.getPreciseNumber(conv) + " fur";
+          res += "," + this.getPreciseNumber(conv, precision) + " fur";
           break;
         }
         case "chain": {
           let conv = quantity / 20.117;
-          res += "," + this.getPreciseNumber(conv) + " chain";
+          res += "," + this.getPreciseNumber(conv, precision) + " chain";
           break;
         }
       }

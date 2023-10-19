@@ -24,7 +24,7 @@ class Area {
     return intlen + parts[1].length;
   }
 
-  getPreciseNumber(number) {
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
       return number.toPrecision(
         Math.min(Math.max(this.getPrecision(number), precision), 10)
@@ -75,47 +75,47 @@ class Area {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "m2": {
-          res += "," + this.getPreciseNumber(quantity) + " m2";
+          res += "," + this.getPreciseNumber(quantity, precision) + " m2";
           break;
         }
         case "cm2": {
           let conv = quantity * 100;
-          res += "," + this.getPreciseNumber(conv) + " cm2";
+          res += "," + this.getPreciseNumber(conv, precision) + " cm2";
           break;
         }
         case "km2": {
           let conv = quantity / 1000000;
-          res += "," + this.getPreciseNumber(conv) + " km2";
+          res += "," + this.getPreciseNumber(conv, precision) + " km2";
           break;
         }
         case "miles": {
           let conv = quantity / 2590000;
-          res += "," + this.getPreciseNumber(conv) + " miles";
+          res += "," + this.getPreciseNumber(conv, precision) + " miles";
           break;
         }
         case "ft2": {
           let conv = quantity / 0.092903;
-          res += "," + this.getPreciseNumber(conv) + " ft2";
+          res += "," + this.getPreciseNumber(conv, precision) + " ft2";
           break;
         }
         case "in2": {
           let conv = quantity / 0.00064516;
-          res += "," + this.getPreciseNumber(conv) + " in2";
+          res += "," + this.getPreciseNumber(conv, precision) + " in2";
           break;
         }
         case "ha2": {
           let conv = quantity / 10000;
-          res += "," + this.getPreciseNumber(conv) + " ha2";
+          res += "," + this.getPreciseNumber(conv, precision) + " ha2";
           break;
         }
         case "acre2": {
           let conv = quantity / 4046.86;
-          res += "," + this.getPreciseNumber(conv) + " acre2";
+          res += "," + this.getPreciseNumber(conv, precision) + " acre2";
           break;
         }
         case "yd2": {
           let conv = quantity / 0.836127;
-          res += "," + this.getPreciseNumber(conv) + " yd2";
+          res += "," + this.getPreciseNumber(conv, precision) + " yd2";
           break;
         }
       }

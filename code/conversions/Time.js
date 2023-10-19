@@ -13,19 +13,6 @@ class Time {
     this.arr = arr;
   }
 
-  getPreciseNumber(number) {
-    if (number < 10e-3) {
-      if (parts.length <= 1) {
-        return number < 0 ? parts[0].length - 1 : parts[0].length;
-      }
-      return Math.round(number * 1000) / 1000;
-    }
-  }
-
-  /**
-   * @param {Number} number input number value
-   * @returns returns value with accuracy of input number decimal points
-   */
   getPrecision(number) {
     let parts = number.toString().split(".");
     if (parts.length <= 1) {
@@ -33,6 +20,20 @@ class Time {
     }
     let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
     return intlen + parts[1].length;
+  }
+
+  /**
+   * @param {Number} number input number value
+   * @returns returns value with accuracy of input number decimal points
+   */
+
+  getPreciseNumber(number, precision) {
+    if (number < 10e-3) {
+      if (parts.length <= 1) {
+        return number < 0 ? parts[0].length - 1 : parts[0].length;
+      }
+      return Math.round(number * 1000) / 1000;
+    }
   }
 
   /**
@@ -68,27 +69,27 @@ class Time {
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
         case "seconds": {
-          res += "," + this.getPreciseNumber(quantity) + " sec";
+          res += "," + this.getPreciseNumber(quantity, precision) + " sec";
           break;
         }
         case "minutes": {
           let conv = quantity / 60;
-          res += "," + this.getPreciseNumber(conv) + " mins";
+          res += "," + this.getPreciseNumber(conv, precision) + " mins";
           break;
         }
         case "hours": {
           let conv = quantity / (60 * 60);
-          res += "," + this.getPreciseNumber(conv) + " hours";
+          res += "," + this.getPreciseNumber(conv, precision) + " hours";
           break;
         }
         case "days": {
           let conv = quantity / (24 * 60 * 60);
-          res += "," + this.getPreciseNumber(conv) + " days";
+          res += "," + this.getPreciseNumber(conv, precision) + " days";
           break;
         }
         case "weeks": {
           let conv = quantity / (7 * 24 * 60 * 60);
-          res += "," + this.getPreciseNumber(conv) + " days";
+          res += "," + this.getPreciseNumber(conv, precision) + " days";
           break;
         }
       }
