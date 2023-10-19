@@ -84,15 +84,7 @@ describe('Volume', function () {
         assert.notStrictEqual(gal.getAllConversions(1, 5), "");
         assert.notStrictEqual(gal.getAllConversions(1.5, 8), "");
     });
-    it("Conversions should not be empty", function () {
-        let gal = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "fl oz"]);
-        assert.notStrictEqual(gal.getStandardConversion(30), "");
-    });
-    it("Standard Conversions should not be empty", function () {
-        let gal = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "fl oz"]);
-        assert.notStrictEqual(gal.getAllConversions(1, 5), "");
-        assert.notStrictEqual(gal.getAllConversions(1.5, 8), "");
-    });
+
     it("Conversions should not be empty", function () {
         let gal = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "fl oz"]);
         assert.notStrictEqual(gal.getStandardConversion(300), "");
@@ -108,7 +100,7 @@ describe('Volume', function () {
         assert.notStrictEqual(oz.getAllConversions(150, 8), "");
     });
     it("Conversions should not be empty", function () {
-        let oz = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
+        let oz = new Data("fl oz", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
         assert.notStrictEqual(oz.getStandardConversion(300), "");
     });
     it("Standard Conversions should not be empty", function () {
@@ -117,13 +109,13 @@ describe('Volume', function () {
         assert.notStrictEqual(oz.getAllConversions(1.5, 8), "");
     });
     it("Conversions should not be empty", function () {
-        let oz = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
+        let oz = new Data("fl oz", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
         assert.notStrictEqual(oz.getStandardConversion(3), "");
     });
     it("Standard Conversions should not be empty", function () {
         let oz = new Data("fl oz", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
-        assert.notStrictEqual(oz.getAllConversions(1000, 5), "");
-        assert.notStrictEqual(oz.getAllConversions(1500, 8), "");
+        assert.notStrictEqual(oz.getAllConversions(1000.5, 5), "");
+        assert.notStrictEqual(oz.getAllConversions(1500.5, 8), "");
     });
     it("Conversions should not be empty", function () {
         let oz = new Data("gallon", ["litres", "milliliter", "cubic meter", "cubic inch", "quart", "cubic foot", "pint", "gallon"]);
