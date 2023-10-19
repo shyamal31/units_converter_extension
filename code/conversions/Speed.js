@@ -17,6 +17,9 @@ class Speed {
    */
   getPrecision(number) {
     let parts = number.toString().split(".");
+    if (parts.length <= 1) {
+      return number < 0 ? parts[0].length - 1 : parts[0].length;
+    }
     let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
     return intlen + parts[1].length;
   }
