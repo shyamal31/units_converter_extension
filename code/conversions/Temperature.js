@@ -17,6 +17,28 @@ class Temperature {
    * @param {Number} quantity input number
    * @returns returns value with accuracy of 10 decimal points
    */
+  getPreciseNumber(number, precision) {
+    if (number < 10e-3) {
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
+    }
+    return Math.round(number * 1000) / 1000;
+  }
+
+  /**
+   * @param {Number} number input number value
+   * @returns returns value with accuracy of input number decimal points
+   */
+
+  getPrecision(number) {
+    let parts = number.toString().split(".");
+    if (parts.length <= 1) {
+      return number < 0 ? parts[0].length - 1 : parts[0].length;
+  }
+    let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
+    return intlen + parts[1].length;
+  }
   getStandardConversion(quantity) {
     //We use a switch case to make appropriate conversion
     switch (this.unit.toLowerCase()) {
@@ -61,27 +83,6 @@ class Temperature {
     return res;
   }
 
-  getPreciseNumber(number, precision) {
-    if (number < 10e-3) {
-      return number.toPrecision(
-        Math.min(Math.max(this.getPrecision(number), precision), 10)
-      );
-    }
-    return Math.round(number * 1000) / 1000;
-  }
-
-  /**
-   * @param {Number} number input number value
-   * @returns returns value with accuracy of input number decimal points
-   */
-  getPrecision(number) {
-    let parts = number.toString().split(".");
-    if (parts.length <= 1) {
-      return number < 0 ? parts[0].length - 1 : parts[0].length;
-    }
-    let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
-    return intlen + parts[1].length;
-  }
 }
 
 if (typeof module == "object") {
