@@ -29,9 +29,10 @@ class Time {
 
   getPreciseNumber(number, precision) {
     if (number < 10e-3) {
-      if (parts.length <= 1) {
-        return number < 0 ? parts[0].length - 1 : parts[0].length;
-      }
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
+    } else {
       return Math.round(number * 1000) / 1000;
     }
   }
