@@ -15,9 +15,11 @@ class Time {
 
   getPreciseNumber(number) {
     if (number < 10e-3) {
-      return number;
+      if (parts.length <= 1) {
+        return number < 0 ? parts[0].length - 1 : parts[0].length;
+      }
+      return Math.round(number * 1000) / 1000;
     }
-    return Math.round(number * 1000) / 1000;
   }
 
   /**

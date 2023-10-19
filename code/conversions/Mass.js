@@ -29,7 +29,9 @@ class Mass {
 
   getPreciseNumber(number) {
     if (number < 10e-3) {
-      return number;
+      return number.toPrecision(
+        Math.min(Math.max(this.getPrecision(number), precision), 10)
+      );
     }
     return Math.round(number * 1000) / 1000;
   }
@@ -84,7 +86,7 @@ class Mass {
           break;
         }
         case "pounds": {
-          let conv = quantity /  0.45359237 ;
+          let conv = quantity / 0.45359237;
           res += "," + this.getPreciseNumber(conv) + " lbs";
           break;
         }
