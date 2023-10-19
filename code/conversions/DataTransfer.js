@@ -13,18 +13,21 @@ class DataTransfer {
   }
 
   getPrecision(number) {
+    let parts = number.toString().split(".");
+    if (parts.length <= 1) {
+      return number < 0 ? parts[0].length - 1 : parts[0].length;
+    }
+    let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
+    return intlen + parts[1].length;
+  }
+
+  getPreciseNumber(number, precision) {
     if (number < 10e-3) {
       return number.toPrecision(
         Math.min(Math.max(this.getPrecision(number), precision), 10)
       );
     }
     return Math.round(number * 1000) / 1000;
-  }
-
-  getPreciseNumber(number, precision) {
-    return number.toPrecision(
-      Math.min(Math.max(this.getPrecision(number), precision), 10)
-    );
   }
   /**
    * @param {Number} quantity input quantity number
@@ -85,7 +88,7 @@ class DataTransfer {
         }
       }
     });
-    console.log(res);
+    //console.log(res);
     return res;
   }
 }
