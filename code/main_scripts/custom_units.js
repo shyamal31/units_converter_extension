@@ -34,10 +34,14 @@ const addCustomUnit = async (unitObject) => {
 }
 
 const getStoredUnits = async () => {
-  return await chrome.storage.sync.get(["customUnits"]);
+  return await chrome.storage.sync.get(["customUnits"]).customUnits;
 }
 
 const getAllUnits = async () => {
   const storedUnits = await getStoredUnits();
+  console.log(storedUnits);
+  if (!storedUnits || storedUnits.length === 0){
+    return UNITS;
+  }
   return UNITS.concat(storedUnits);
 }
