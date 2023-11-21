@@ -14,6 +14,7 @@ const UNITS = [
     unit: "kilograms",
     type: "mass",
     aliases: ["kilograms", "kilogram", "kgs", "kg"],
+    ratio: 1 // multiply with this quantity to convert from base to this unit
   },
   {
     unit: "celcius",
@@ -34,31 +35,37 @@ const UNITS = [
     unit: "grams",
     type: "mass",
     aliases: ["grams", "gram", "gms", "gm", "g"],
+    ratio: 1000
   },
   {
     unit: "pounds",
     type: "mass",
     aliases: ["pounds", "pound", "lbs", "lb"],
+    ratio: 2.20462
   },
   {
     unit: "tonne",
     type: "mass",
     aliases: ["metric tons", "metric ton", "tonnes", "tonne"],
+    ratio: 0.001
   },
   {
     unit: "milligrams",
     type: "mass",
     aliases: ["milligrams", "milligram", "mgs", "mg"],
+    ratio: 1000000
   },
   {
     unit: "micrograms",
     type: "mass",
     aliases: ["micrograms", "microgram"],
+    ratio: 1000000000
   },
   {
     unit: "ounces",
     type: "mass",
     aliases: ["ounces", "ounce", "ozs", "oz"],
+    ratio: 35.273962
   },
   {
     unit: "ton",

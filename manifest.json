@@ -26,6 +26,7 @@
 				"code/main_scripts/utility.js",
 				"code/main_scripts/popular_units.js",
         "code/main_scripts/custom_units.js",
+        "code/conversions/conversion.js",
 				"code/conversions/Temperature.js",
 				"code/conversions/Mass.js",
 				"code/conversions/Currency.js",
