@@ -25,7 +25,6 @@ const POPULAR_UNITS = {
     "ounces",
     "grams",
     "tonnes",
-    "ton",
     "milligrams",
     "micrograms",
   ],

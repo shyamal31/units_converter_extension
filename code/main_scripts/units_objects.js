@@ -68,11 +68,6 @@ const UNITS = [
 		ratio: 35.273962,
 	},
 	{
-		unit: "ton",
-		type: "mass",
-		aliases: ["tons", "ton"],
-	},
-	{
 		unit: "USD",
 		type: "currency",
 		aliases: ["dollars", "dollar", "USD", "$"],
