@@ -355,41 +355,49 @@ const UNITS = [
 		unit: "litres",
 		type: "volume",
 		aliases: ["lt", " liter", "liters", "litre", "Litres", "L"],
+		ratio: 1000,
 	},
 	{
 		unit: "milliliter",
 		type: "volume",
 		aliases: ["ml", "mls", "millilitre", "milliliters", "millilitres"],
+		ratio: 1000000,
 	},
 	{
 		unit: "cubic meter",
 		type: "volume",
-		aliases: ["cubic meters", " cubic metre", "cubic metres", "cm3"],
+		aliases: ["cubic meters", " cubic metre", "cubic metres", "m3"],
+		ratio: 1,
 	},
 	{
 		unit: "cubic inch",
 		type: "volume",
 		aliases: ["cubic inches", " ci3"],
+		ratio: 61023.7,
 	},
 	{
 		unit: "cubic foot",
 		type: "volume",
 		aliases: ["cf3", " cubic feet"],
+		ratio: 35.3147,
 	},
 	{
 		unit: "pint",
 		type: "volume",
 		aliases: ["pts", " pt", "pints"],
+		ratio: 2113.38,
 	},
 	{
 		unit: "quart",
 		type: "volume",
 		aliases: ["quarts", " qt", "qts"],
+		ratio: 1056.69,
 	},
 	{
 		unit: "gallon",
 		type: "volume",
 		aliases: ["gallons", " gal", "gals", "gl", "gls"],
+		ratio: 264.172,
 	},
 	{
 		unit: "fl oz",
@@ -402,5 +410,6 @@ const UNITS = [
 			"US fl oz",
 			"Fl Oz",
 		],
+		ratio: 33814,
 	},
 ];
