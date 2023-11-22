@@ -265,26 +265,31 @@ const UNITS = [
 		unit: "b/s",
 		type: "dataTransfer",
 		aliases: ["b/s", "bps"],
+		ratio: 1000000000000,
 	},
 	{
 		unit: "Kb/s",
 		type: "dataTransfer",
 		aliases: ["Kb/s", "Kbps"],
+		ratio: 1000000000,
 	},
 	{
 		unit: "Mb/s",
 		type: "dataTransfer",
 		aliases: ["Mb/s", "Mbps"],
+		ratio: 1000000,
 	},
 	{
 		unit: "Gb/s",
 		type: "dataTransfer",
 		aliases: ["Gb/s", "Gbps"],
+		ratio: 1000,
 	},
 	{
 		unit: "Tb/s",
 		type: "dataTransfer",
 		aliases: ["Tb/s", "Tbps"],
+		ratio: 1,
 	},
 	{
 		unit: "m/s",
