@@ -317,26 +317,31 @@ const UNITS = [
     unit: "B",
     type: "data",
     aliases: ["B", "Byte"],
+    ratio: 1099511627776
   },
   {
     unit: "KB",
     type: "data",
     aliases: ["KB", "KiloByte"],
+    ratio: 1073741824
   },
   {
     unit: "MB",
     type: "data",
     aliases: ["MB", "MegaByte"],
+    ratio: 1048576
   },
   {
     unit: "GB",
     type: "data",
     aliases: ["GB", "GigaByte"],
+    ratio: 1024
   },
   {
     unit: "TB",
     type: "data",
     aliases: ["TB", "TeraByte"],
+    ratio: 1
   },
   {
     unit: "litres",
