@@ -290,6 +290,7 @@ const UNITS = [
 		unit: "m/s",
 		type: "speed",
 		aliases: ["meters/s", "m/s", "meters per sec", "meters per second"],
+		ratio: 1,
 	},
 	{
 		unit: "Km/h",
@@ -300,6 +301,7 @@ const UNITS = [
 			"Kilometers per hour",
 			"Kilometers per hour",
 		],
+		ratio: 3.6,
 	},
 	{
 		unit: "mph",
@@ -312,6 +314,7 @@ const UNITS = [
 			"Miles per hour",
 			"miles per hour",
 		],
+		ratio: 2.23694,
 	},
 	{
 		unit: "B",
