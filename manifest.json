@@ -1,55 +1,44 @@
 {
-  "manifest_version": 3,
-  "name": "Unit Convert Selection",
-  "version": "1.0.0",
-  "description": "Do unit conversion conveniently at the current selected text",
-  "action": {
-    "default_icon": {
-      "16": "assets/logos/units_logo16.png",
-      "32": "assets/logos/units_logo32.png",
-      "48": "assets/logos/units_logo48.png",
-      "128": "assets/logos/units_logo128.png",
-      "256": "assets/logos/units_logo256.png"
-    },
-  "default_title": "Unit Convert Selection"
-  },
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "minimum_chrome_version": "14",
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "code/main_scripts/content_script.js",
-        "code/main_scripts/parser_script.js",
-        "code/main_scripts/units_objects.js",
-        "code/main_scripts/utility.js",
-        "code/main_scripts/popular_units.js",
-        "code/conversions/Temperature.js",
-        "code/conversions/Mass.js",
-        "code/conversions/Currency.js",
-        "code/conversions/Length.js",
-        "code/conversions/Time.js",
-        "code/conversions/DataTransfer.js",
-        "code/conversions/Area.js",
-        "code/conversions/Speed.js",
-        "code/conversions/Volume.js",
-        "code/conversions/Data.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": true,
-      "css": [
-        "code/styling/content_script.css"
-      ]
-    }
-  ],
-  "icons": {
-    "16": "assets/logos/units_logo16.png",
-    "48": "assets/logos/units_logo48.png",
-    "128": "assets/logos/units_logo128.png",
-    "256": "assets/logos/units_logo256.png"
-  }
+	"manifest_version": 3,
+	"name": "Unit Convert Selection",
+	"version": "1.0.0",
+	"description": "Do unit conversion conveniently at the current selected text",
+	"action": {
+		"default_icon": {
+			"16": "assets/logos/units_logo16.png",
+			"32": "assets/logos/units_logo32.png",
+			"48": "assets/logos/units_logo48.png",
+			"128": "assets/logos/units_logo128.png",
+			"256": "assets/logos/units_logo256.png"
+		},
+		"default_title": "Unit Convert Selection"
+	},
+	"host_permissions": ["<all_urls>"],
+	"permissions": ["storage"],
+	"minimum_chrome_version": "14",
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": [
+				"code/main_scripts/content_script.js",
+				"code/main_scripts/parser_script.js",
+				"code/main_scripts/units_objects.js",
+				"code/main_scripts/utility.js",
+				"code/main_scripts/popular_units.js",
+				"code/main_scripts/custom_units.js",
+				"code/conversions/conversion.js",
+				"code/conversions/Temperature.js",
+				"code/conversions/Currency.js"
+			],
+			"run_at": "document_end",
+			"all_frames": true,
+			"css": ["code/styling/content_script.css"]
+		}
+	],
+	"icons": {
+		"16": "assets/logos/units_logo16.png",
+		"48": "assets/logos/units_logo48.png",
+		"128": "assets/logos/units_logo128.png",
+		"256": "assets/logos/units_logo256.png"
+	}
 }

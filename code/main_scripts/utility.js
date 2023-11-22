@@ -48,22 +48,6 @@ function get_conversion_class(type, unit) {
     return new Temperature(unit, get_possible_conversions_list(type, unit));
   } else if (type == "currency") {
     return new Currency(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "length") {
-    return new Length(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "time") {
-    return new Time(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "mass") {
-    return new Mass(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "dataTransfer") {
-    return new DataTransfer(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "area") {
-    return new Area(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "speed") {
-    return new Speed(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "volume") {
-    return new Volume(unit, get_possible_conversions_list(type, unit));
-  } else if (type == "data") {
-    return new Data(unit, get_possible_conversions_list(type, unit));
   }
 }
 
