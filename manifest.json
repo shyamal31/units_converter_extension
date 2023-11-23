@@ -11,7 +11,8 @@
 			"128": "assets/logos/units_logo128.png",
 			"256": "assets/logos/units_logo256.png"
 		},
-		"default_title": "Unit Convert Selection"
+		"default_title": "Unit Convert Selection",
+		"default_popup":"code/popup/popup.html"
 	},
 	"host_permissions": ["<all_urls>"],
 	"permissions": ["storage"],
