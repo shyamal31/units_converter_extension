@@ -4,9 +4,9 @@ unit['eur'] = "€"
 unit['gbp'] = "£"
 unit['inr'] = "₹"
 unit['jpy'] = "¥"
-unit['cad'] = "Can$"
-unit['aud'] = "A$"
-unit['chf'] = "CHF"
+unit['cad'] = "C$"
+unit['aud'] = "AU$"
+unit['chf'] = "Fr"
 unit['cny'] = "¥"
 unit["celcius"] = "C"
 unit["fahrenheit"] = "F"
@@ -88,8 +88,9 @@ function updateUnitSelectorsRight(type) {
     let unitSelectorRight = $("#unit_selector_right");
 
     let selectedUnitLeft = unitSelectorLeft.val();
+    let selectedUnitRight = unitSelectorRight.val();
 
-    unitSelectorLeft.val(selectedUnitLeft);
+    
 
     // Clear and repopulate the right unit selector
     unitSelectorRight.empty();
@@ -100,6 +101,8 @@ function updateUnitSelectorsRight(type) {
             text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
         }));
     });
+    if(unitSelectorRight.val() != selectedUnitLeft) unitSelectorLeft.val(selectedUnitLeft);
+    if(unitSelectorLeft.val() != selectedUnitRight) unitSelectorRight.val(selectedUnitRight);
     getConversion("left")
 }
 
@@ -108,9 +111,8 @@ function updateUnitSelectorsLeft(type) {
     let unitSelectorRight = $("#unit_selector_right");
 
     let selectedUnitLeft = unitSelectorLeft.val();
+    let selectedUnitRight = unitSelectorRight.val();
     
-    unitSelectorLeft.val(selectedUnitLeft);
-
     // Clear and repopulate the right unit selector
     unitSelectorLeft.empty();
     POPULAR_UNITS[type].forEach(function (unit) {
@@ -119,7 +121,9 @@ function updateUnitSelectorsLeft(type) {
             text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
         }));
     });
-    getConversion("right")
+    if(unitSelectorRight.val() != selectedUnitLeft) unitSelectorLeft.val(selectedUnitLeft);
+    if(unitSelectorLeft.val() != selectedUnitRight) unitSelectorRight.val(selectedUnitRight);
+    getConversion("left")
 }
 
 const getConversion = async (change) => {
