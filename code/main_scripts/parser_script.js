@@ -10,7 +10,7 @@ async function get_conversions(selection) {
 		/((^[\-−]?(?:\d+|\d{1,3}(?:,\d{3})+)(?:(\.|,)\d+)?))\s*/
 	);
 	let result = "";
-  const listOfUnits = await getAllUnits();
+	const listOfUnits = await getAllUnits();
 	listOfUnits.forEach((unitObject) => {
 		let aliases = unitObject.aliases.sort(descending_length);
 		for (let i = 0; i < aliases.length; i++) {
@@ -44,14 +44,10 @@ async function get_conversions(selection) {
 					unitObject.type,
 					unitObject.unit
 				);
-				//console.log("Coversion Class :- ",conversion_class);
-				//object_type = unitObject.type;
 				if (unitObject.type == "currency") {
 					result = (async () => {
 						let std_converison = await conversion_class.getStandardConversion(
-							unitObject,
-							quantity,
-							precision
+							quantity
 						);
 						return await conversion_class.getAllConversions(
 							Number(std_converison),
@@ -60,9 +56,7 @@ async function get_conversions(selection) {
 					})();
 					// console.log(result)
 				} else if (unitObject.type == "temperature") {
-					let std_converison = conversion_class.getStandardConversion(
-						quantity,
-					);
+					let std_converison = conversion_class.getStandardConversion(quantity);
 					//console.log("Standard Conversion: - ",std_converison);
 					result = conversion_class.getAllConversions(
 						Number(std_converison),
@@ -75,7 +69,7 @@ async function get_conversions(selection) {
 						Number(std_converison),
 						precision,
 						unitObject,
-            listOfUnits
+						listOfUnits
 					);
 					//console.log("Result from Parser Script: ",result);
 				}
