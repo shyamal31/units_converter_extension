@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <head>
   <link href="./popup.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../main_scripts/units_objects.js"></script>
+  <script type="text/javascript" src="../main_scripts/utility.js"></script>
+	<script type="text/javascript" src="../main_scripts/custom_units.js"></script>
+	<script type="text/javascript" src="../conversions/conversion.js"></script>
+	<script type="text/javascript" src="../conversions/Temperature.js"></script>
+	<script type="text/javascript" src="../conversions/Currency.js"></script>
   <script type="text/javascript" src="../main_scripts/popular_units.js"></script>
   <script type="text/javascript" src="../main_scripts/parser_script.js"></script>
   <script type="text/javascript" src="./js/jquery/jquery-3.7.1.min.js"></script>
@@ -13,19 +19,18 @@
       <div class="input_container">
           <div class="type_container">
               <select id="type_selector" class="selector">
-                <option value="">Please Select Type</option>
               </select>
           </div>
           <div class="unit_container">
             <div class="unit">
-              <input type="text" name="right_input" value="0"/>
+              <input type="number" id="left_input" name="right_input" value="0"/>
               <select id="unit_selector_left" class="selector" name="left_unit">
                 <option>Please Select Type</option>
               </select>
             </div>
             <div style="font-size: 30px;">=</div>
             <div class="unit">
-              <input type="text" name="left_input" value="0"/>
+              <input type="number" id="right_input" name="left_input" value="0"/>
               <select id="unit_selector_right" class="selector" name="right_unit">
                 <option>Please Select Type</option>
               </select>

@@ -6,10 +6,11 @@ const getPrecisionV = (number) => {
   let parts = number.toString().split(".");
   let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
   return intlen + parts[1].length;
+
 }
 
 const getPreciseNumberV = (number, precision) => {
-  if (number < 10e-3) {
+  if (number < 0) {
     return number.toPrecision(
       Math.min(Math.max(getPrecisionV(number), precision), 10)
     );
