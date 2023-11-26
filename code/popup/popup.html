@@ -53,15 +53,31 @@
           </select>
         </div>
         <div>
-          <div>
-            <span>1</span>
-            <div id="custom_unit_base"></div>
-            <span>=</span>
-            <input type="text" id="custom_unit_value_right" placeholder="Unit Value"/>
-            <input type="text" id="custom_unit_name_left" placeholder="Unit Name"/>
+          <div class="unit_container">
+            <div style="font-size: 24px;
+            text-align: center;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 12px 0;">
+              <div><span>1</span>
+                <div id="custom_unit_base"></div>
+              </div>
+            </div>
+            
+            
+            <div style="font-size: 30px;margin-top: 10px;">=</div>
+            <div class="unit" >
+
+              <div><input style="font-size: 20px;" type="text" id="custom_unit_value_right" placeholder="Unit value"/></div>
+            </div>
+            
             
           </div>
-          <button id="custom_unit_add">Add</button>
+     
+          <div class="unit_container"> <div class="unit"> <input style="font-size: 20px;" type="text" id="custom_unit_name_left" placeholder="Unit Name"/></div>
+          </div>
+          <button id="custom_unit_add" class="viewAllButton">Add</button>
         </div>
       </div>
 
