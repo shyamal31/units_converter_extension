@@ -37,14 +37,14 @@ $(function() {
     });
     
     
-    let unitField = UNITS.filter(unit=>{
-        return unit.type == customTypeSelector.val() && unit.ratio == 1
-    }) 
-
-    console.log(unitField)
+    
 
     typeSelector.on('change', function (e) {
         populateUnit(e);
+    });
+
+    customTypeSelector.on('change', function (e) {
+        populateCustomUnit(e);
     });
 
     let unitSelectorLeftVal = $("#left_input")
@@ -59,6 +59,7 @@ $(function() {
     });
     populateUnit()
     populateFavUnit()
+    populateCustomUnit()
 
     $(".tablinks").on("click",function () {
         // let type = $(this).attr("id")
@@ -74,6 +75,18 @@ $(function() {
     })
 
 })
+
+const populateCustomUnit = () => {
+    let baseUnit = $("#custom_unit_base");
+    let customTypeSelector = $("#custom_type_selector");
+
+    let unitField = UNITS.filter(unit=>{
+        return unit.type == customTypeSelector.val() && unit.ratio == 1
+    }) 
+    console.log(unitField)
+    baseUnit.empty();
+    baseUnit.html(unitField[0].unit)
+}
 
 const populateUnit = () => {
     let unitSelector = $("#unit_selector_left");
