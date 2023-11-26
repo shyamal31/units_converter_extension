@@ -44,6 +44,7 @@ body{
 
 .main_container{
     padding:16px;
+    width: 680px;
 }
 
 .unit_container{
@@ -105,4 +106,16 @@ body{
 
 .tablinks.selected{
     background-color: #cac6c6;
+}
+
+#units_container{
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#units_container li{
+    list-style-type: none;
+    font-size: 16px;
 }

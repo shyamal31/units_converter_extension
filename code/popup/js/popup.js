@@ -3,27 +3,45 @@ unit['usd'] = "$"
 unit['eur'] = "€"
 unit['gbp'] = "£"
 unit['inr'] = "₹"
-unit['jpy'] = "¥"
+unit['yen'] = "¥"
 unit['cad'] = "C$"
 unit['aud'] = "AU$"
 unit['chf'] = "Fr"
 unit['cny'] = "¥"
-unit["celcius"] = "C"
-unit["fahrenheit"] = "F"
-unit["kelvin"] = "K"
+unit["celcius"] = "°C"
+unit["fahrenheit"] = "°F"
+unit["kelvin"] = "°K"
 
 
 $(function() {
     // type Selector Populate
     let typeSelector = $("#type_selector");
+    let favouriteTypeSelector = $("#favourite_type_selector");
+    let customTypeSelector = $("#custom_type_selector");
     let typeSelectorOptionsArray = Object.keys(POPULAR_UNITS)
     typeSelectorOptionsArray.forEach(function (type) {
         typeSelector.append($('<option>', {
             value: type,
             text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
         }));
+
+        favouriteTypeSelector.append($('<option>', {
+            value: type,
+            text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
+        }));
+
+        customTypeSelector.append($('<option>', {
+            value: type,
+            text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
+        }));
     });
     
+    
+    let unitField = UNITS.filter(unit=>{
+        return unit.type == customTypeSelector.val() && unit.ratio == 1
+    }) 
+
+    console.log(unitField)
 
     typeSelector.on('change', function (e) {
         populateUnit(e);
@@ -40,11 +58,27 @@ $(function() {
         getConversion("right");
     });
     populateUnit()
+    populateFavUnit()
+
+    $(".tablinks").on("click",function () {
+        // let type = $(this).attr("id")
+        $(".tablinks").removeClass("selected")
+        $(this).addClass("selected")
+        let tab = $(this).children().html()
+        $(".tab_container").hide()
+        $(`.${tab}`).show()
+    })
+
+    $("#favourite_type_selector").on("change",function(e){
+        populateFavUnit(e)
+    })
+
 })
 
 const populateUnit = () => {
     let unitSelector = $("#unit_selector_left");
     let type = $("#type_selector").val();
+
 
     unitSelector.off('change');
     
@@ -81,6 +115,52 @@ const populateUnit = () => {
 
     getConversion("left")
    
+}
+
+const populateFavUnit = () => {
+    let container = $("#units_container")
+    let type = $("#favourite_type_selector").val();
+    container.empty()
+    let favouriteArr = localStorage.getItem('favouriteArr')?JSON.parse(localStorage.getItem('favouriteArr')):[]
+
+    POPULAR_UNITS[type].forEach(function (ut) {
+        var checkbox = $('<input>', {
+            type: 'checkbox',
+            id: 'checkbox_' + ut,
+            value: type=="currency" || type=="temperature"?unit[ut]:ut,
+            checked:type=="currency" || type=="temperature"?favouriteArr.includes(unit[ut])?true:false:favouriteArr.includes(ut)?true:false
+        });
+        
+        var label = $('<label>', {
+            for: 'checkbox_' + ut,
+            text: ut.charAt(0).toUpperCase() + ut.slice(1) // Capitalize the first letter
+        });
+        
+        // Append the checkbox and label to the li element
+        container.append($('<li>').append(checkbox, label));
+        
+        // Attach the onchange event handler using jQuery's on method
+        checkbox.on('change', function() {
+            handleCheckboxChange(this);
+        });
+    });
+}
+
+const handleCheckboxChange = async (e) => {
+    let val = $(e).val()
+    let favouriteArr =  chrome.storage.sync.get(['favouriteArr']).then(async (result)=>{
+        favouriteArr =  result.favouriteArr? JSON.parse(result.favouriteArr):[]
+        if($(e).is(":checked")){
+            favouriteArr.push(val)
+        }
+        else{
+            favouriteArr = favouriteArr.filter(ele=>ele!=val)
+        }
+        console.log(favouriteArr)
+        localStorage.setItem('favouriteArr',JSON.stringify(favouriteArr))
+        await chrome.storage.sync.set({"favouriteArr":JSON.stringify(favouriteArr)});
+    })
+    
 }
 
 function updateUnitSelectorsRight(type) {
@@ -139,6 +219,13 @@ const getConversion = async (change) => {
     let leftVal = $("#left_input").val()
     let rightVal = $("#right_input").val()
 
+    if(unitSelectorRightVal == "jpy"){
+        unitSelectorRightVal = "yen"
+    }
+    if(unitSelectorLeftVal == "jpy"){
+        unitSelectorLeftVal = "yen"
+    }
+
     console.log(`${leftVal} ${unitSelectorLeftVal}`,`${rightVal} ${unitSelectorRightVal}`)
     let result;
     if(change=="left"){
@@ -148,12 +235,14 @@ const getConversion = async (change) => {
     }
 
     const elements = result.split(',').filter(element => element.trim() !== '');
-    console.log(elements)
+    console.log(elements,unitSelectorRightVal,unitSelectorLeftVal)
     
     if(typeSelector=="currency" || typeSelector == "temperature"){
         unitSelectorRightVal = unit[unitSelectorRightVal]
         unitSelectorLeftVal = unit[unitSelectorLeftVal]
     }
+    console.log(unitSelectorRightVal,unitSelectorLeftVal)
+    
     
     if(change=="left"){
         $("#right_input").val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorRightVal)>-1)].split(" ")[typeSelector=="currency"?1:0])

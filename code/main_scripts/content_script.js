@@ -23,18 +23,34 @@ document.addEventListener('mouseup', (e) => {
                 const elements = result.split(',').filter(element => element.trim() !== '');
                 let modalContent = "";
                 if (elements.length > 1) {
+                    // let favouriteArr = localStorage.getItem('favouriteArr')?JSON.parse(localStorage.getItem('favouriteArr')):[]
+                    let rr = chrome.storage.sync.get(["favouriteArr"]).then((result)=>{
+                        let r = result.favouriteArr? JSON.parse(result.favouriteArr):[]
+                        
+                        console.log(r)
+                        let conditionMet = elements.some(e => r.some(item => e.split(" ").includes(item)));
+
+                        console.log(conditionMet);
+
+                        modalContent = `<p class="modal_heading">${selection}</p>`;
+                        elements.forEach((element, index) => {
+                            
+                            console.log(element.split(" "),r)
+                            
+
+                            modalContent += `<p class="modal_content ${r.length>0 && conditionMet?r.some(item=>element.split(" ").includes(item))?'':'uc_mc_h':index === 0 ? '' : 'uc_mc_h'}">${element}</p>`;
+                        });
+                        modalContent += '<button id="viewAllButton">View All</button>';
+                        showModal(e.clientX, e.clientY, modalContent);
+                    })
                     // Multiple elements, initially hide all elements except the first one
-                    modalContent = `<p class="modal_heading">${selection}</p>`;
-                    elements.forEach((element, index) => {
-                        modalContent += `<p class="modal_content ${index === 0 ? '' : 'uc_mc_h'}">${element}</p>`;
-                    });
-                    modalContent += '<button id="viewAllButton">View All</button>';
+                    
                 } else {
                     // Only one element, show it without the "View All" button
                     modalContent = `<p class="modal_heading">${selection}</p><p class="modal_content">${elements[0]}</p>`;
-
+                    showModal(e.clientX, e.clientY, modalContent);
                 }
-                showModal(e.clientX, e.clientY, modalContent);
+                
             }
         })();
     }

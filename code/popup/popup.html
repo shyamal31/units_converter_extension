@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <link href="./popup.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
   <script type="text/javascript" src="../main_scripts/units_objects.js"></script>
   <script type="text/javascript" src="../main_scripts/utility.js"></script>
 	<script type="text/javascript" src="../main_scripts/custom_units.js"></script>
@@ -20,26 +21,62 @@
     <button class="tablinks" ><span>Favourite</span></button>
   </div>
   <div class="main_container">
+      <div class="Convertor tab_container">
       <h1 style="text-align: center;">Convertor</h1>
-      <div class="input_container">
-          <div class="type_container">
-              <select id="type_selector" class="selector">
-              </select>
+        <div class="input_container">
+            <div class="type_container">
+                <select id="type_selector" class="selector">
+                </select>
+            </div>
+            <div class="unit_container">
+              <div class="unit">
+                <input type="number" id="left_input" name="right_input" value="0"/>
+                <select id="unit_selector_left" class="selector" name="left_unit">
+                  <option>Please Select Type</option>
+                </select>
+              </div>
+              <div style="font-size: 30px;">=</div>
+              <div class="unit">
+                <input type="number" id="right_input" name="left_input" value="0"/>
+                <select id="unit_selector_right" class="selector" name="right_unit">
+                  <option>Please Select Type</option>
+                </select>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="Custom tab_container" style="display: none;">
+        <h1 style="text-align: center;">Custom</h1>
+        <div class="type_container">
+          <select id="custom_type_selector" class="selector">
+          </select>
+        </div>
+        <div>
+          <div>
+            <span>1</span>
+            <input type="text" id="custom_unit_name_right" placeholder="Unit Name"/>
+            <span>=</span>
+            <input type="text" id="custom_unit_value_right" placeholder="Unit Value"/>
+            <input type="text" id="custom_unit_name_left" placeholder="Unit Name"/>
+            
           </div>
-          <div class="unit_container">
-            <div class="unit">
-              <input type="number" id="left_input" name="right_input" value="0"/>
-              <select id="unit_selector_left" class="selector" name="left_unit">
-                <option>Please Select Type</option>
-              </select>
-            </div>
-            <div style="font-size: 30px;">=</div>
-            <div class="unit">
-              <input type="number" id="right_input" name="left_input" value="0"/>
-              <select id="unit_selector_right" class="selector" name="right_unit">
-                <option>Please Select Type</option>
-              </select>
-            </div>
+          <button id="custom_unit_add">Add</button>
+        </div>
+      </div>
+
+      <div class="Favourite tab_container" style="display: none;">
+        <h1 style="text-align: center;">Favourite</h1>
+          <div class="input_container">
+              <div class="type_container">
+                  <select id="favourite_type_selector" class="selector">
+                  </select>
+              </div>
+              <div class="units">
+                <ul id="units_container">
+                  
+                </ul>
+              </div>
           </div>
       </div>
   </div>
