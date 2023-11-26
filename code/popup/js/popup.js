@@ -3,30 +3,57 @@ unit['usd'] = "$"
 unit['eur'] = "€"
 unit['gbp'] = "£"
 unit['inr'] = "₹"
-unit['jpy'] = "¥"
+unit['yen'] = "¥"
 unit['cad'] = "C$"
 unit['aud'] = "AU$"
 unit['chf'] = "Fr"
 unit['cny'] = "¥"
-unit["celcius"] = "C"
-unit["fahrenheit"] = "F"
-unit["kelvin"] = "K"
+unit["celcius"] = "°C"
+unit["fahrenheit"] = "°F"
+unit["kelvin"] = "°K"
 
 
 $(function() {
     // type Selector Populate
     let typeSelector = $("#type_selector");
+    let favouriteTypeSelector = $("#favourite_type_selector");
+    let customTypeSelector = $("#custom_type_selector");
     let typeSelectorOptionsArray = Object.keys(POPULAR_UNITS)
+    
     typeSelectorOptionsArray.forEach(function (type) {
         typeSelector.append($('<option>', {
             value: type,
             text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
         }));
+
+        favouriteTypeSelector.append($('<option>', {
+            value: type,
+            text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
+        }));
+
+        console.log(type)
+        if(type != "temperature" && type != "currency"){
+            customTypeSelector.append($('<option>', {
+                value: type,
+                text: type.charAt(0).toUpperCase() + type.slice(1) // Capitalize the first letter
+            }));
+        }
+        
     });
+
+    $("#custom_unit_add").on("click",function(e){
+        addCustomUnitVal(e)
+    })
+    
+    
     
 
     typeSelector.on('change', function (e) {
         populateUnit(e);
+    });
+
+    customTypeSelector.on('change', function (e) {
+        populateCustomUnit(e);
     });
 
     let unitSelectorLeftVal = $("#left_input")
@@ -40,47 +67,172 @@ $(function() {
         getConversion("right");
     });
     populateUnit()
+    populateFavUnit()
+    populateCustomUnit()
+
+    $(".tablinks").on("click",function () {
+        // let type = $(this).attr("id")
+        $(".tablinks").removeClass("selected")
+        $(this).addClass("selected")
+        let tab = $(this).children().html()
+        $(".tab_container").hide()
+        $(`.${tab}`).show()
+    })
+
+    $("#favourite_type_selector").on("change",function(e){
+        populateFavUnit(e)
+    })
+
 })
+
+const addCustomUnitVal = () => {
+    let baseUnit = $("#custom_unit_base").val();
+    let customTypeSelector = $("#custom_type_selector").val();
+    let customUnitName = $("#custom_unit_name_left").val()
+    let customUnitRatio = $("#custom_unit_value_right").val()
+
+    addCustomUnit({
+        unit: customUnitName,
+		type: customTypeSelector,
+		aliases: [customUnitName],
+		ratio: customUnitRatio,
+    })
+
+    $("#custom_unit_name_left").val("")
+    $("#custom_unit_value_right").val("")
+}
+
+const populateCustomUnit = () => {
+    let baseUnit = $("#custom_unit_base");
+    let customTypeSelector = $("#custom_type_selector");
+
+    let unitField = UNITS.filter(unit=>{
+        return unit.type == customTypeSelector.val() && unit.ratio == 1
+    }) 
+    console.log(unitField)
+    baseUnit.empty();
+    baseUnit.html(unitField[0].unit)
+}
 
 const populateUnit = () => {
     let unitSelector = $("#unit_selector_left");
     let type = $("#type_selector").val();
+
 
     unitSelector.off('change');
     
     
 
     unitSelector.empty();
-    POPULAR_UNITS[type].forEach(function (unit) {
-        unitSelector.append($('<option>', {
-            value: unit,
-            text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
-        }));
-    });
-
-    // there is unit_selector_right, it should have all the value same as left just expect the value selected in left
-
-    let unitSelectorRight = $("#unit_selector_right");
-    unitSelectorRight.off('change');
-    console.log(unitSelectorRight)
-    unitSelectorRight.empty();
-    POPULAR_UNITS[type].filter(unit => unit !== unitSelector.val()).forEach(function (unit) {
-        unitSelectorRight.append($('<option>', {
-            value: unit,
-            text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
-        }));
-    });
-
-    unitSelector.on('change', function () {
-        updateUnitSelectorsRight(type);
-    });
+    getAllUnits().then(unitsData=>{
+        console.log(unitsData)
+        const POPULAR_UNITS = unitsData.reduce((accumulator, currentUnit) => {
+            if (currentUnit.type && currentUnit.aliases) {
+                if(accumulator[currentUnit.type]){
+                    accumulator[currentUnit.type].push(currentUnit.unit);
+                }else{
+                    accumulator[currentUnit.type] = [currentUnit.unit];
+                }
+                
+            }
+            return accumulator;
+          }, {});
+          
+          POPULAR_UNITS[type].forEach(function (unit) {
+            unitSelector.append($('<option>', {
+                value: unit,
+                text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
+            }));
+        });
     
-    unitSelectorRight.on('change', function () {
-        updateUnitSelectorsLeft(type);
-    });
-
-    getConversion("left")
+        // there is unit_selector_right, it should have all the value same as left just expect the value selected in left
+    
+        let unitSelectorRight = $("#unit_selector_right");
+        unitSelectorRight.off('change');
+        console.log(unitSelectorRight)
+        unitSelectorRight.empty();
+        POPULAR_UNITS[type].filter(unit => unit !== unitSelector.val()).forEach(function (unit) {
+            unitSelectorRight.append($('<option>', {
+                value: unit,
+                text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
+            }));
+        });
+    
+        unitSelector.on('change', function () {
+            updateUnitSelectorsRight(type);
+        });
+        
+        unitSelectorRight.on('change', function () {
+            updateUnitSelectorsLeft(type);
+        });
+    
+        getConversion("left")
+    })
+    
    
+}
+
+const populateFavUnit = () => {
+    let container = $("#units_container")
+    let type = $("#favourite_type_selector").val();
+    container.empty()
+    let favouriteArr = localStorage.getItem('favouriteArr')?JSON.parse(localStorage.getItem('favouriteArr')):[]
+
+    getAllUnits().then(unitsData=>{
+        console.log(unitsData)
+        const POPULAR_UNITS = unitsData.reduce((accumulator, currentUnit) => {
+            if (currentUnit.type && currentUnit.aliases) {
+                if(accumulator[currentUnit.type]){
+                    accumulator[currentUnit.type].push(currentUnit.unit);
+                }else{
+                    accumulator[currentUnit.type] = [currentUnit.unit];
+                }
+                
+            }
+            return accumulator;
+          }, {});
+          
+          POPULAR_UNITS[type].forEach(function (ut) {
+            var checkbox = $('<input>', {
+                type: 'checkbox',
+                id: 'checkbox_' + ut,
+                value: type=="currency" || type=="temperature"?unit[ut]:ut,
+                checked:type=="currency" || type=="temperature"?favouriteArr.includes(unit[ut])?true:false:favouriteArr.includes(ut)?true:false
+            });
+            
+            var label = $('<label>', {
+                for: 'checkbox_' + ut,
+                text: ut.charAt(0).toUpperCase() + ut.slice(1) // Capitalize the first letter
+            });
+            
+            // Append the checkbox and label to the li element
+            container.append($('<li>').append(checkbox, label));
+            
+            // Attach the onchange event handler using jQuery's on method
+            checkbox.on('change', function() {
+                handleCheckboxChange(this);
+            });
+        });
+    })
+
+    
+}
+
+const handleCheckboxChange = async (e) => {
+    let val = $(e).val()
+    let favouriteArr =  chrome.storage.sync.get(['favouriteArr']).then(async (result)=>{
+        favouriteArr =  result.favouriteArr? JSON.parse(result.favouriteArr):[]
+        if($(e).is(":checked")){
+            favouriteArr.push(val)
+        }
+        else{
+            favouriteArr = favouriteArr.filter(ele=>ele!=val)
+        }
+        console.log(favouriteArr)
+        localStorage.setItem('favouriteArr',JSON.stringify(favouriteArr))
+        await chrome.storage.sync.set({"favouriteArr":JSON.stringify(favouriteArr)});
+    })
+    
 }
 
 function updateUnitSelectorsRight(type) {
@@ -139,6 +291,13 @@ const getConversion = async (change) => {
     let leftVal = $("#left_input").val()
     let rightVal = $("#right_input").val()
 
+    if(unitSelectorRightVal == "jpy"){
+        unitSelectorRightVal = "yen"
+    }
+    if(unitSelectorLeftVal == "jpy"){
+        unitSelectorLeftVal = "yen"
+    }
+
     console.log(`${leftVal} ${unitSelectorLeftVal}`,`${rightVal} ${unitSelectorRightVal}`)
     let result;
     if(change=="left"){
@@ -148,12 +307,14 @@ const getConversion = async (change) => {
     }
 
     const elements = result.split(',').filter(element => element.trim() !== '');
-    console.log(elements)
+    console.log(elements,unitSelectorRightVal,unitSelectorLeftVal)
     
     if(typeSelector=="currency" || typeSelector == "temperature"){
         unitSelectorRightVal = unit[unitSelectorRightVal]
         unitSelectorLeftVal = unit[unitSelectorLeftVal]
     }
+    console.log(unitSelectorRightVal,unitSelectorLeftVal)
+    
     
     if(change=="left"){
         $("#right_input").val(elements[elements.findIndex(ele=>ele.indexOf(unitSelectorRightVal)>-1)].split(" ")[typeSelector=="currency"?1:0])

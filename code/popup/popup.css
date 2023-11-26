@@ -20,6 +20,7 @@ body {
     border-radius: 4px; /* Slightly rounded corners */
     width: 150px;
     transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+
 }
 
 .selector:hover {
@@ -42,6 +43,7 @@ body {
 .main_container {
     padding: 24px;
 }
+
 
 .unit_container {
     display: flex;
@@ -76,7 +78,7 @@ body {
 
 .type_container select {
     width: 100%;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     padding: 8px;
 }
@@ -106,3 +108,20 @@ body {
 .tablinks.selected {
     background-color: #e0e0e0; /* Selected tab background */
 }
+
+.viewAllButton {
+    margin-top: 15px; /* Increased top margin */
+    border-radius: 20px; /* Rounded button corners */
+    padding: 10px 20px; /* Increased padding */
+    background-color: #0e918c; /* New button color */
+    color: #fff; /* Button text color */
+    font-size: 16px; /* Font size */
+    border: none; /* Removed border */
+    cursor: pointer; /* Cursor on hover */
+    margin-left: 100px;
+  }
+
+  .viewAllButton:hover {
+    background-color: #0b6c66;
+  }
+

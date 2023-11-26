@@ -28,13 +28,16 @@
 // });
 
 const addCustomUnit = async (unitObject) => {
-  const storedUnits = await getStoredUnits();
+  const storedUnits = await getStoredUnits()?await getStoredUnits():[];
   storedUnits.push(unitObject);
+  console.log(storedUnits);
   await chrome.storage.sync.set({"customUnits": storedUnits});
 }
 
 const getStoredUnits = async () => {
-  return await chrome.storage.sync.get(["customUnits"]).customUnits;
+  return chrome.storage.sync.get(["customUnits"]).then(result=>{
+    return result.customUnits?result.customUnits:[];
+  });
 }
 
 const getAllUnits = async () => {
