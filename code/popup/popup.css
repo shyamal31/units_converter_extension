@@ -20,6 +20,7 @@ body {
     border-radius: 4px; /* Slightly rounded corners */
     width: 150px;
     transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+
 }
 
 .selector:hover {
@@ -42,6 +43,7 @@ body {
 .main_container {
     padding: 24px;
 }
+
 
 .unit_container {
     display: flex;
@@ -122,3 +124,4 @@ body {
   .viewAllButton:hover {
     background-color: #0b6c66;
   }
+
