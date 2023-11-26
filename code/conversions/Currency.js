@@ -61,6 +61,7 @@ class Currency {
    */
   async getStandardConversion(quantity) {
     let rate;
+    console.log(this.unit.toLowerCase())
     switch (this.unit.toLowerCase()) {
       case "usd":
         return quantity;
@@ -101,7 +102,7 @@ class Currency {
         return rate * quantity;
       case "cny":
         rate = await this.getData("CNY").then(function (d) {
-          return d["CNY"];
+          return d["USD"];
         });
         return rate * quantity;
       default:
