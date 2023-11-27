@@ -44,6 +44,10 @@ $(function() {
     $("#custom_unit_add").on("click",function(e){
         addCustomUnitVal(e)
     })
+
+    $("#custom_unit_delete").on("click",function(e){
+        deleteCustomUnitVal(e)
+    })
     
     
     
@@ -96,15 +100,38 @@ const addCustomUnitVal = () => {
 		type: customTypeSelector,
 		aliases: [customUnitName],
 		ratio: customUnitRatio,
+    }).then(()=>{
+        populateCustomUnit()
     })
 
     $("#custom_unit_name_left").val("")
     $("#custom_unit_value_right").val("")
+
+}
+
+const deleteCustomUnitVal = () => {
+    let baseUnit = $("#custom_unit_base").val();
+    let customTypeSelector = $("#custom_type_selector").val();
+    let customUnitName = $("#delete_type_selector").val()
+
+    deleteCustomUnit({
+        unit: customUnitName,
+        type: customTypeSelector,
+        aliases: [customUnitName],
+    }).then(()=>{
+        populateCustomUnit()
+    })
+
+    $("#custom_unit_name_left").val("")
+    $("#custom_unit_value_right").val("")
+
+
 }
 
 const populateCustomUnit = () => {
     let baseUnit = $("#custom_unit_base");
     let customTypeSelector = $("#custom_type_selector");
+    let deleteCustomTypeSelector = $("#delete_type_selector");
 
     let unitField = UNITS.filter(unit=>{
         return unit.type == customTypeSelector.val() && unit.ratio == 1
@@ -112,6 +139,48 @@ const populateCustomUnit = () => {
     console.log(unitField)
     baseUnit.empty();
     baseUnit.html(unitField[0].unit)
+
+
+    getAllUnits().then(unitsData=>{
+        console.log(unitsData)
+        let type = customTypeSelector.val() 
+        const POPULAR_UNIT = unitsData.reduce((accumulator, currentUnit) => {
+            if (currentUnit.type && currentUnit.aliases) {
+                if(accumulator[currentUnit.type]){
+                    accumulator[currentUnit.type].push(currentUnit.unit);
+                }else{
+                    accumulator[currentUnit.type] = [currentUnit.unit];
+                }
+                
+            }
+            return accumulator;
+          }, {});
+
+          let notFound = true
+          deleteCustomTypeSelector.empty()
+          POPULAR_UNIT[type].forEach(function (unit) {
+            if(!POPULAR_UNITS[type].includes(unit)){
+                notFound = false
+                deleteCustomTypeSelector.append($('<option>', {
+                    value: unit,
+                    text: unit.charAt(0).toUpperCase() + unit.slice(1) // Capitalize the first letter
+                }));
+            }
+        });
+
+        if(notFound){
+            deleteCustomTypeSelector.append($('<option>', {
+                value: "No Custom Unit Found",
+                text: "No Custom Unit Found"
+            }));
+
+            $("#custom_unit_delete").hide()
+        }else{
+            $("#custom_unit_delete").show()
+        }
+    
+        
+    })
 }
 
 const populateUnit = () => {

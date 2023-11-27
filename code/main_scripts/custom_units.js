@@ -31,7 +31,15 @@ const addCustomUnit = async (unitObject) => {
   const storedUnits = await getStoredUnits()?await getStoredUnits():[];
   storedUnits.push(unitObject);
   console.log(storedUnits);
-  await chrome.storage.sync.set({"customUnits": storedUnits});
+  return chrome.storage.sync.set({"customUnits": storedUnits});
+}
+
+const deleteCustomUnit = async (unitObject) => {
+  const storedUnits = await getStoredUnits();
+  const newStoredUnits = storedUnits.filter((u)=>{
+    return u.unit !== unitObject.unit;
+  });
+  return chrome.storage.sync.set({"customUnits": newStoredUnits});
 }
 
 const getStoredUnits = async () => {
