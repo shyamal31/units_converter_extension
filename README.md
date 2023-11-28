@@ -27,6 +27,7 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert square meter to square feet when you are calculating the measure of area
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
+- Convert Time from a given time zone to another (PST to EST)
   
 ## Installation
 
