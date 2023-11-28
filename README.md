@@ -31,14 +31,31 @@ An extension that converts your selected values into popular units. Saves time, 
   
 ## Installation
 
-- Clone the repository using ```git clone https://github.com/nihitmittal/units_converter_extension.git```
-- In the chrome browser open ```chrome://extensions/```
+- Clone the repository using
+  
+  ```
+  git clone https://github.com/shyamal31/units_converter_extension
+  ```
+  
+- In the chrome browser open
+  ```
+  chrome://extensions/
+  ```
 - Enable developer settings if it is not enabled
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1dc7c2ee-cbaa-4308-a3dd-937062d035e8)
+
 - Choose Load Unpacked
 - Select the repository folder that was cloned in the first step
-![image](https://github.com/bhavesh242/units_converter_extension/blob/master/assets/Images/load%20unpacked.PNG)
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/6b1264db-9a24-4846-8c19-e1e925582e1c)
+
+
 - The extension will now be added to the Chrome
-![image](https://github.com/bhavesh242/units_converter_extension/blob/master/assets/Images/Uploaded.PNG)
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/d8364664-7236-42ee-aa27-ada0c4ce3fcf)
+
+
 - Screenshot of working of the extension
 - Displays the most relevant converted unit first
 ![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_1.png)
