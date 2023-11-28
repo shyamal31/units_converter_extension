@@ -141,7 +141,7 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
 
 ## Run Test cases and coverage
 
- ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/test)
+ ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/tree/shail611-patch-3/docs/test_doc)
  ### Unit Test
   
   - Test cases have been tested using [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
@@ -172,12 +172,6 @@ The project is not currently funded
 ## 🌠 Future
 
 See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues/23)
-
-## Automated Analysis Tool
-
-- [DeepScan](https://deepscan.io/dashboard/#view=project&tid=22379&pid=25708&bid=807947&prid=&subview=overview&b=master)
-
-<img width="1427" alt="deepScan" src="https://github.com/shyamal31/units_converter_extension/blob/master/assets/Images/Deepscan.png">
 
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
@@ -219,7 +213,7 @@ Think about the case when you shopping on Amazon. When you want to purchase Dumb
 
 ## Troubleshooting
 
-If you encounter any issues during the installation process, feel free to reach out to our contact our support team at [unit.convertor.help@gmail.com](mailto:unit.convertor.help@gmail.com).
+If you encounter any issues during any stage of extension use or you encounter any development-related issues, feel free to reach out to our contact our support team at [unit.convertor.help@gmail.com](mailto:unit.convertor.help@gmail.com).
 
 
 # Contributors
