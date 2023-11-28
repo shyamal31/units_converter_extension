@@ -219,3 +219,18 @@ Think about the case when you shopping on Amazon. When you want to purchase Dumb
 ```
 
 ![feature_model](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Feature_model.png)
+
+## Troubleshooting
+
+If you encounter any issues during the installation process, feel free to reach out to our contact our support team at [86.no.more.help@gmail.com](mailto:unit.convertor.help@gmail.com).
+
+
+# Contributors
+  <table>
+  <tr>
+    <td align="center"><a href="https://github.com/drs1951"><img src="https://avatars.githubusercontent.com/u/54364517?v=4" width="100px;" alt=""/><br /><sub><b>Devansh Shah</b></sub></a></td>
+    <td align="center"><a href="https://github.com/shyamal31"><img src="https://avatars.githubusercontent.com/u/57554284?v=4" width="100px;" alt=""/><br /><sub><b>Shyamal Gandhi</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/jaypatel31"><img src="https://avatars.githubusercontent.com/u/59785863?v=4" width="100px;" alt=""/><br /><sub><b>Jay Patel</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/shail611"><img src="https://avatars.githubusercontent.com/u/85347670?v=4" width="100px;" alt=""/><br /><sub><b>Shail Shah</b></sub></a><br /></td>
+  </tr>
+</table>
