@@ -265,8 +265,8 @@ const populateFavUnit = () => {
             var checkbox = $('<input>', {
                 type: 'checkbox',
                 id: 'checkbox_' + ut,
-                value: type=="currency" || type=="temperature"?unit[ut]:ut,
-                checked:type=="currency" || type=="temperature"?favouriteArr.includes(unit[ut])?true:false:favouriteArr.includes(ut)?true:false
+                value: type=="currency" || type=="temperature"?unit[ut.toLocaleLowerCase()]:ut,
+                checked:type=="currency" || type=="temperature"?favouriteArr.includes(unit[ut.toLocaleLowerCase()])?true:false:favouriteArr.includes(ut)?true:false
             });
             
             var label = $('<label>', {
@@ -290,6 +290,7 @@ const populateFavUnit = () => {
 const handleCheckboxChange = async (e) => {
     let val = $(e).val()
     let favouriteArr =  chrome.storage.sync.get(['favouriteArr']).then(async (result)=>{
+        console.log(result,val)
         favouriteArr =  result.favouriteArr? JSON.parse(result.favouriteArr):[]
         if($(e).is(":checked")){
             favouriteArr.push(val)
