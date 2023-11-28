@@ -36,4 +36,4 @@ it("All Conversions should not be empty", function () {
 
 ```
 
-Similary we have tested all the other temperature units. You can refer to the [code here](https://github.com/shyamal31/units_converter_extension/blob/shyamal31-patch-1/test/Temperature_test.js)
+Similary we have tested all the other temperature units. You can refer to the [code here](https://github.com/shyamal31/units_converter_extension/blob/master/test/Temperature_test.js)
