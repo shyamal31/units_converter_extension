@@ -86,12 +86,20 @@ To access the popup feature the user has to click on the extension icon in the t
 
 ### 2. Customized Conversions
 
+- This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
+- This is the example taken where 1 meter is taken as 3 subs
+
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
 
+- Testing whether the customized conversion works or not
+  
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
 
+- Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added which allows user to delete his customized conversion.
+   
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
 
+### 3. Favorites 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
