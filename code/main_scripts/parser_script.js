@@ -10,7 +10,22 @@ async function get_conversions(selection) {
 		/((^[\-−]?(?:\d+|\d{1,3}(?:,\d{3})+)(?:(\.|,)\d+)?))\s*/
 	);
 	let result = "";
-	const listOfUnits = await getAllUnits();
+
+
+	// if (/^(0?[0-9]|1[0-9]|2[0-4]):([0-5][0-9])$/.test(selection)){
+	// 	console.log("Is it running?");
+	// 	result = getAllTimeConversions(selection);
+	// 	// console.log(result);
+	// }
+
+	if (/\b\d{1,2}:\d{2}\s*(?:am|pm)?\b/i.test(selection)){
+		result = getAllTimeConversions(selection);
+		
+	}
+ 
+
+	else{
+		const listOfUnits = await getAllUnits();
 	listOfUnits.forEach((unitObject) => {
 		let aliases = unitObject.aliases.sort(descending_length);
 		for (let i = 0; i < aliases.length; i++) {
@@ -76,6 +91,8 @@ async function get_conversions(selection) {
 			}
 		}
 	});
+	}
+	
 	// const result_final = {
 	//     result,object_type
 	// };

@@ -56,3 +56,5 @@ const getAllUnits = async () => {
   }
   return UNITS.concat(storedUnits);
 }
+
+module.exports = {addCustomUnit, getStoredUnits, getAllUnits};

@@ -44,3 +44,9 @@ const getAllConversions = async (quantity, precision, unitObject, listOfUnits) =
 
   return res;
 }
+
+// exports = {getStandardConversion,getAllConversions,getPrecisionV,getPreciseNumberV};
+module.exports = {
+  getStandardConversion,
+  getAllConversions
+};

@@ -29,7 +29,8 @@
 				"code/main_scripts/custom_units.js",
 				"code/conversions/conversion.js",
 				"code/conversions/Temperature.js",
-				"code/conversions/Currency.js"
+				"code/conversions/Currency.js",
+				"code/conversions/TimeZone.js"
 			],
 			"run_at": "document_end",
 			"all_frames": true,

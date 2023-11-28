@@ -1,68 +1,96 @@
 var assert = require("assert");
 
-const Time = require("../code/conversions/Time");
+const {getStandardConversion,getAllConversions} = require("../code/conversions/conversion");
 
 describe('Time', function() {
+    //seconds
+    let unit_object_second = {
+        unit: "seconds",
+        type: "time",
+        aliases: ["sec", "s", "secs", "second", "seconds"],
+        ratio: 604800,
+    };
+    let object_list_second = ["minutes", "hours", "days", "weeks"];
+
+
+    it("standard Conversions should not be empty for seconds", function() {
+        assert.notStrictEqual(getStandardConversion(unit_object_second,30), "");
+    });
+
+    it("All Conversions should not be empty for seconds", function () {
+        assert.notStrictEqual(getAllConversions(-1, 5,unit_object_second, object_list_second), "");
+        assert.notStrictEqual(getAllConversions(-1.5, 5, unit_object_second, object_list_second), "");
+
+    });
+
+    //Minutes
+    let unit_object_mn ={
+        unit: "minutes",
+        type: "time",
+        aliases: ["mins", "min", "minute", "minutes"],
+        ratio: 10080,
+    };
+    let object_list_mn = ["seconds", "hours", "days", "weeks"]
+    it("Standard Conversions should not be empty for minutes", function() {
+        assert.notStrictEqual(getStandardConversion(unit_object_mn,40), "");
+    });
+
+    it("All Conversions should not be empty for minutes", function () {
+
+        assert.notStrictEqual(getAllConversions(10, 3, unit_object_mn, object_list_mn), "");
+        assert.notStrictEqual(getAllConversions(-1, 3, unit_object_mn, object_list_mn), "");
+    });
+
+    //hours
+
+    let unit_object_hr ={
+        unit: "hours",
+        type: "time",
+        aliases: ["hrs", "h", "hour", "hours"],
+        ratio: 168,
+    } ;
+    let object_list_hr = ["seconds", "minutes", "days", "weeks"]
+
     it("Conversions should not be empty", function() {
-        let seconds = new Time("seconds", ["minutes", "hours", "days", "weeks"]);
-        assert.notStrictEqual(seconds.getStandardConversion(30), "");
+        assert.notStrictEqual(getStandardConversion(unit_object_hr,20), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let seconds = new Time("seconds", ["minutes", "hours", "days", "weeks"]);
-        assert.notStrictEqual(seconds.getAllConversions(-1, 5), "");
-        assert.notStrictEqual(seconds.getAllConversions(-1.5, 5), "");
 
+        assert.notStrictEqual(getAllConversions(10, 2, unit_object_hr, object_list_hr), "");
     });
 
+    //days
+    let unit_object_dy ={
+        unit: "days",
+        type: "time",
+        aliases: ["day", "days"],
+        ratio: 7,
+    } ;
+    let object_list_dy = ["seconds", "minutes", "hours", "weeks"];
     it("Conversions should not be empty", function() {
-        let minutes = new Time("minutes", ["seconds", "hours", "days", "weeks"]);
-        assert.notStrictEqual(minutes.getStandardConversion(40), "");
+        assert.notStrictEqual(getStandardConversion(unit_object_dy,50), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let minutes = new Time("minutes", ["seconds", "hours", "days", "weeks"]);
-        assert.notStrictEqual(minutes.getAllConversions(10, 3), "");
-        assert.notStrictEqual(minutes.getAllConversions(-1, 3), "");
+
+        assert.notStrictEqual(getAllConversions(15, 3, unit_object_dy, object_list_dy), "");
     });
 
+    //weeks 
+    let unit_object_wk ={
+        unit: "weeks",
+        type: "time",
+        aliases: ["week", "wks", "weeks"],
+        ratio: 1,
+    };
+    let object_list_wk = ["seconds", "minutes", "hours", "days"];
     it("Conversions should not be empty", function() {
-        let hours = new Time("hours", ["seconds", "minutes", "days", "weeks"]);
-        assert.notStrictEqual(hours.getStandardConversion(20), "");
+        assert.notStrictEqual(getStandardConversion(unit_object_wk,20), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let hours = new Time("hours", ["seconds", "minutes", "days", "weeks"]);
-        assert.notStrictEqual(hours.getAllConversions(10, 2), "");
-    });
 
-    it("Conversions should not be empty", function() {
-        let days = new Time("days", ["seconds", "minutes", "hours", "weeks"]);
-        assert.notStrictEqual(days.getStandardConversion(50), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let days = new Time("days", ["seconds", "minutes", "hours", "weeks"]);
-        assert.notStrictEqual(days.getAllConversions(15, 3), "");
-    });
-
-    it("Conversions should not be empty", function() {
-        let weeks = new Time("weeks", ["seconds", "minutes", "hours", "days"]);
-        assert.notStrictEqual(weeks.getStandardConversion(20), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let weeks = new Time("weeks", ["seconds", "minutes", "hours", "days"]);
-        assert.notStrictEqual(weeks.getAllConversions(25, 3), "");
-    });
-
-    it("Conversions should not be empty", function() {
-        let time = new Time("", ["seconds", "minutes", "hours", "days", "weeks"]);
-        assert.notStrictEqual(time.getStandardConversion(20), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let time = new Time("", ["seconds", "minutes", "hours", "days", "weeks"]);
-        assert.notStrictEqual(time.getAllConversions(25, 3), "");
+        assert.notStrictEqual(getAllConversions(25, 3, unit_object_wk, object_list_wk), "");
     });
 });
