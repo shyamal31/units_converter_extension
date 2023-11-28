@@ -28,7 +28,12 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
 - Convert Time from a given time zone to another (PST to EST)
-  
+
+  ## Technologies we used:
+ - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
+ - ![HTML](https://img.shields.io/badge/just%20the%20message-8A2BE2)
+ - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+ - ![CSS](https://img.shields.io/badge/CSS-7B2EQ2)
 ## Installation
 
 - Clone the repository using
@@ -58,21 +63,29 @@ An extension that converts your selected values into popular units. Saves time, 
 
 - Screenshot of working of the extension
 - Displays the most relevant converted unit first
-![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_1.png)
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
+
 
 - Click on view all button to view all of the converted units for that metric
-![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_2.png)
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
 
-## Languages
 
-- JavaScript
-- HTML
-- CSS
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
 
-## Software Requirements
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/9467dbde-40d7-4bdd-be10-b19a9dc251b6)
 
-- Node.js
-- NPM
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/06027ad2-fb79-4cbd-9cff-1dfaa61f5b13)
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
+
 
 ## Style Checker and Analyzer
 
