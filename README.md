@@ -3,13 +3,13 @@
 An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub issues](https://img.shields.io/github/issues/nihitmittal/units_converter_extension)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/nihitmittal/units_converter_extension)
-![GitHub contributors](https://img.shields.io/github/contributors/nihitmittal/units_converter_extension)
+![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
+![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
 [![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
 ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/nihitmittal/units_converter_extension/maintainability)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10023391.svg)](https://doi.org/10.5281/zenodo.10023391)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
 
 **Click on the image below to view the video**
 
@@ -148,28 +148,25 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
     
   #### Setup
   
-    From the repository root, run:
-    ```
+  From the repository root, run:
+  
+  ```
     npm install --save-dev mocha chai
-    ```
-    
-    Then run:
-    ```
+  ```
+
+Then run:
+  ```
     npm test [filename]
-    ```
     
-    npm will then attempt to run all test files that end with
-    ```
-    *.test.js
-    ```
-    if you do not specify the filename.
+  ```
+npm will then attempt to run all test files that end with `*.test.js` if you do not specify the filename.
 
 ### Code Coverage
   
   - [Istanbul](https://istanbul.js.org/) and [Coveralls](https://coveralls.io/)
 
 
-## Funding:
+## Funding
 The project is not currently funded
 
 ## 🌠 Future
@@ -180,7 +177,7 @@ See RoadMap [here]()
 
 - [DeepScan](https://deepscan.io/dashboard/#view=project&tid=22379&pid=25708&bid=807947&prid=&subview=overview&b=master)
 
-<img width="1427" alt="deepScan" src="https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Deepscan.png">
+<img width="1427" alt="deepScan" src="https://github.com/shyamal31/units_converter_extension/blob/master/assets/Images/Deepscan.png">
 
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
@@ -219,3 +216,18 @@ Think about the case when you shopping on Amazon. When you want to purchase Dumb
 ```
 
 ![feature_model](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Feature_model.png)
+
+## Troubleshooting
+
+If you encounter any issues during the installation process, feel free to reach out to our contact our support team at [unit.convertor.help@gmail.com](mailto:unit.convertor.help@gmail.com).
+
+
+# Contributors
+  <table>
+  <tr>
+    <td align="center"><a href="https://github.com/drs1951"><img src="https://avatars.githubusercontent.com/u/54364517?v=4" width="100px;" alt=""/><br /><sub><b>Devansh Shah</b></sub></a></td>
+    <td align="center"><a href="https://github.com/shyamal31"><img src="https://avatars.githubusercontent.com/u/57554284?v=4" width="100px;" alt=""/><br /><sub><b>Shyamal Gandhi</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/jaypatel31"><img src="https://avatars.githubusercontent.com/u/59785863?v=4" width="100px;" alt=""/><br /><sub><b>Jay Patel</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/shail611"><img src="https://avatars.githubusercontent.com/u/85347670?v=4" width="100px;" alt=""/><br /><sub><b>Shail Shah</b></sub></a><br /></td>
+  </tr>
+</table>
