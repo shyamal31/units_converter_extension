@@ -34,4 +34,4 @@ it("All Conversions should not be empty", function () {
 
 ```
 
-Similarly, test cases for all the other currencies are written here. Refer to the [code here](https://github.com/shyamal31/units_converter_extension/blob/shyamal31-patch-1/test/Currency_test.js).
+Similarly, test cases for all the other currencies are written here. Refer to the [code here](https://github.com/shyamal31/units_converter_extension/blob/master/test/Currency_test.js).
