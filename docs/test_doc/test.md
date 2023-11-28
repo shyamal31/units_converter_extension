@@ -10,15 +10,15 @@ This document provides an overview of the unit testing framework and test covera
 
 The project is organized into the following test suites:
 
-1. **Conversion Tests ([`conversion_test.md`]()):**
+1. **Conversion Tests ([`conversion_test.md`](https://github.com/shyamal31/units_converter_extension/blob/master/docs/test_doc/conversion_test.md)):**
    - It test conversion of Area, Volume, Data, DataTransfer, Length, Mass, Speed and Time.
 
-2. **Currency Tests ([`currency_test.md`]()):**
+2. **Currency Tests ([`currency_test.md`](https://github.com/shyamal31/units_converter_extension/blob/master/docs/test_doc/currency_test.md)):**
    - Unit tests for currency conversion functionality.
 
-3. **Temperature Tests ([`temperature_test.md`]()):**
+3. **Temperature Tests ([`temperature_test.md`](https://github.com/shyamal31/units_converter_extension/blob/master/docs/test_doc/temperature_test.md)):**
    - Unit tests for temperature conversion functionality.
-4. **TimeZone Tests ([`TimeZone_test.md`]()):**
+4. **TimeZone Tests ([`TimeZone_test.md`](https://github.com/shyamal31/units_converter_extension/blob/master/docs/test_doc/timezone_test.md)):**
    - Unit tests for timezone conversion functionality.
 
 ## Test coverage image
