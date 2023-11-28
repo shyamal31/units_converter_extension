@@ -141,7 +141,9 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
 
 ## Run Test cases and coverage
 
- ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/tree/shail611-patch-3/docs/test_doc)
+
+ ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/tree/master/docs/test_doc)
+
  ### Unit Test
   
   - Test cases have been tested using [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
