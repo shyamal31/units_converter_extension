@@ -138,23 +138,43 @@ Instead of installing it using npm, you can also use the extension available on 
 
 VS Code uses js-beautify internally, but it lacks the ability to modify the style you wish to use. This extension enables running js-beautify in VS Code, AND honouring any .jsbeautifyrc file in the open file's path tree to load your code styling. Run with F1 Beautify (to beautify a selection) or F1 Beautify file.
 
-## Test and Coverage
 
-### Unit Test
+## Run Test cases and coverage
+
+ ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/test)
+ ### Unit Test
   
-  - [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
+  - Test cases have been tested using [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
     
-  - Setup
+  #### Setup
   
-    From the repository root, run: ```npm install --save-dev mocha chai```
+    From the repository root, run:
+    ```
+    npm install --save-dev mocha chai
+    ```
     
-    Then run: ```npm test [filename]```
+    Then run:
+    ```
+    npm test [filename]
+    ```
     
-    npm will then attempt to run all test files that end with ```*.test.js ```, if you do not specify filename.
+    npm will then attempt to run all test files that end with
+    ```
+    *.test.js
+    ```
+    if you do not specify the filename.
 
 ### Code Coverage
   
   - [Istanbul](https://istanbul.js.org/) and [Coveralls](https://coveralls.io/)
+
+
+## Funding:
+The project is not currently funded
+
+## 🌠 Future
+
+See RoadMap [here]()
 
 ## Automated Analysis Tool
 
