@@ -95,12 +95,17 @@ To access the popup feature the user has to click on the extension icon in the t
   
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
 
-- Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added which allows user to delete his customized conversion.
+- Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added that allows user to delete his customized conversion.
    
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
 
 ### 3. Favorites 
+- This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
+- Here we select pint and gallon as favorites in volume converions. 
+   
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+
+- So now all the volume conversions will have pint and gallon at the top of the display
 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
 
