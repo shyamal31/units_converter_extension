@@ -148,28 +148,25 @@ VS Code uses js-beautify internally, but it lacks the ability to modify the styl
     
   #### Setup
   
-    From the repository root, run:
-    ```
+  From the repository root, run:
+  
+  ```
     npm install --save-dev mocha chai
-    ```
-    
-    Then run:
-    ```
+  ```
+
+Then run:
+  ```
     npm test [filename]
-    ```
     
-    npm will then attempt to run all test files that end with
-    ```
-    *.test.js
-    ```
-    if you do not specify the filename.
+  ```
+npm will then attempt to run all test files that end with `*.test.js` if you do not specify the filename.
 
 ### Code Coverage
   
   - [Istanbul](https://istanbul.js.org/) and [Coveralls](https://coveralls.io/)
 
 
-## Funding:
+## Funding
 The project is not currently funded
 
 ## 🌠 Future
@@ -180,7 +177,7 @@ See RoadMap [here]()
 
 - [DeepScan](https://deepscan.io/dashboard/#view=project&tid=22379&pid=25708&bid=807947&prid=&subview=overview&b=master)
 
-<img width="1427" alt="deepScan" src="https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Deepscan.png">
+<img width="1427" alt="deepScan" src="https://github.com/shyamal31/units_converter_extension/blob/master/assets/Images/Deepscan.png">
 
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
