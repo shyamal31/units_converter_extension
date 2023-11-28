@@ -63,18 +63,28 @@ An extension that converts your selected values into popular units. Saves time, 
 
 - Screenshot of working of the extension
 - Displays the most relevant converted unit first
+  
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
 
 
 - Click on view all button to view all of the converted units for that metric
+  
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
 
+## Popup Features for the user
+To access the popup feature the user has to click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection"
+
+### 1. Direct conversions
+- This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
+- The user selects the conversion he requires from the given standard conversions
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
+
+- The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/9467dbde-40d7-4bdd-be10-b19a9dc251b6)
-
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/06027ad2-fb79-4cbd-9cff-1dfaa61f5b13)
+### 2. Customized Conversions
 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
 
