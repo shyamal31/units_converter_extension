@@ -173,12 +173,6 @@ The project is not currently funded
 
 See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues/23)
 
-## Automated Analysis Tool
-
-- [DeepScan](https://deepscan.io/dashboard/#view=project&tid=22379&pid=25708&bid=807947&prid=&subview=overview&b=master)
-
-<img width="1427" alt="deepScan" src="https://github.com/shyamal31/units_converter_extension/blob/master/assets/Images/Deepscan.png">
-
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
 
