@@ -27,34 +27,93 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert square meter to square feet when you are calculating the measure of area
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
-  
-## Installation
+- Convert Time from a given time zone to another (PST to EST)
 
-- Clone the repository using ```git clone https://github.com/nihitmittal/units_converter_extension.git```
-- In the chrome browser open ```chrome://extensions/```
+  ## Technologies we used:
+ - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
+ - ![HTML](https://img.shields.io/badge/just%20the%20message-8A2BE2)
+ - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+ - ![CSS](https://img.shields.io/badge/CSS-7B2EQ2)
+
+## Installation Guide
+
+### Step 1: Clone [this](https://github.com/shyamal31/units_converter_extension) Repository
+
+```
+git clone [repository_url]
+
+```
+### Step 2: Go to chrome extensions
+  
+- In the chrome browser open
+  
+  ```
+  chrome://extensions/
+  ```
+### Step 3: Enable developer settings
 - Enable developer settings if it is not enabled
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1dc7c2ee-cbaa-4308-a3dd-937062d035e8)
+
+### Step 4: Unpack the cloned repository
 - Choose Load Unpacked
 - Select the repository folder that was cloned in the first step
-![image](https://github.com/bhavesh242/units_converter_extension/blob/master/assets/Images/load%20unpacked.PNG)
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/6b1264db-9a24-4846-8c19-e1e925582e1c)
+
+### Step 5: Check the extension added
 - The extension will now be added to the Chrome
-![image](https://github.com/bhavesh242/units_converter_extension/blob/master/assets/Images/Uploaded.PNG)
-- Screenshot of working of the extension
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/d8364664-7236-42ee-aa27-ada0c4ce3fcf)
+
+### Step 6: Test the extension
 - Displays the most relevant converted unit first
-![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_1.png)
+  
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
+
 
 - Click on view all button to view all of the converted units for that metric
-![image](https://github.com/nihitmittal/units_converter_extension/blob/master/assets/Images/Monitor_2.png)
+  
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
 
-## Languages
+## Popup Features for the user
+To access the popup feature the user has to click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection"
 
-- JavaScript
-- HTML
-- CSS
+### 1. Direct conversions
+- This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
+- The user selects the conversion he requires from the given standard conversions
 
-## Software Requirements
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
 
-- Node.js
-- NPM
+- The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
+
+### 2. Customized Conversions
+
+- This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
+- This is the example taken where 1 meter is taken as 3 subs
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
+
+- Testing whether the customized conversion works or not
+  
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
+
+- Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added that allows user to delete his customized conversion.
+   
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
+
+### 3. Favorites 
+- This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
+- Here we select pint and gallon as favorites in volume converions. 
+   
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+
+- So now all the volume conversions will have pint and gallon at the top of the display
+
+![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
+
 
 ## Style Checker and Analyzer
 
@@ -79,23 +138,43 @@ Instead of installing it using npm, you can also use the extension available on 
 
 VS Code uses js-beautify internally, but it lacks the ability to modify the style you wish to use. This extension enables running js-beautify in VS Code, AND honouring any .jsbeautifyrc file in the open file's path tree to load your code styling. Run with F1 Beautify (to beautify a selection) or F1 Beautify file.
 
-## Test and Coverage
 
-### Unit Test
+## Run Test cases and coverage
+
+ ### [Test Cases Guide](https://github.com/shyamal31/units_converter_extension/test)
+ ### Unit Test
   
-  - [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
+  - Test cases have been tested using [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
     
-  - Setup
+  #### Setup
   
-    From the repository root, run: ```npm install --save-dev mocha chai```
+    From the repository root, run:
+    ```
+    npm install --save-dev mocha chai
+    ```
     
-    Then run: ```npm test [filename]```
+    Then run:
+    ```
+    npm test [filename]
+    ```
     
-    npm will then attempt to run all test files that end with ```*.test.js ```, if you do not specify filename.
+    npm will then attempt to run all test files that end with
+    ```
+    *.test.js
+    ```
+    if you do not specify the filename.
 
 ### Code Coverage
   
   - [Istanbul](https://istanbul.js.org/) and [Coveralls](https://coveralls.io/)
+
+
+## Funding:
+The project is not currently funded
+
+## 🌠 Future
+
+See RoadMap [here]()
 
 ## Automated Analysis Tool
 
