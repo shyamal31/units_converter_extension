@@ -20,6 +20,7 @@ async function get_conversions(selection) {
 
 	if (/\b\d{1,2}:\d{2}\s*(?:am|pm)?\b/i.test(selection)){
 		result = getAllTimeConversions(selection);
+		
 	}
  
 
