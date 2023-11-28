@@ -222,7 +222,7 @@ Think about the case when you shopping on Amazon. When you want to purchase Dumb
 
 ## Troubleshooting
 
-If you encounter any issues during the installation process, feel free to reach out to our contact our support team at [86.no.more.help@gmail.com](mailto:unit.convertor.help@gmail.com).
+If you encounter any issues during the installation process, feel free to reach out to our contact our support team at [unit.convertor.help@gmail.com](mailto:unit.convertor.help@gmail.com).
 
 
 # Contributors
