@@ -13,11 +13,13 @@ unitModal.addEventListener("mousedown", (e) => e.stopPropagation());
 // This function checks selected text (if any) when the mouse button is released and checks if  we can convert it into units
 document.addEventListener('mouseup', (e) => {
     let selection = window.getSelection().toString().trim();
-    const MAX_LENGTH = 30;
+    console.log(selection)
+    const MAX_LENGTH = 170;
     //selected text is should be between lengths 0 - max_length
     if (selection.length > 0 && selection.length < MAX_LENGTH) {
         // Get all possible unit conversions for given selections
         (async () => {
+            console.log(selection);
             let result = await get_conversions(selection);
             if (result.length > 0) {
                 const elements = result.split(',').filter(element => element.trim() !== '');

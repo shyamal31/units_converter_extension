@@ -1,97 +1,87 @@
 var assert = require("assert");
 
-const Speed = require("../code/conversions/Speed");
+const {getStandardConversion,getAllConversions} = require("../code/conversions/conversion");
+
 
 describe('Speed', function() {
-    it("Conversions should not be empty", function() {
-        let ms = new Speed("m/s", ["km/h", "mph"]);
-        assert.notStrictEqual(ms.getStandardConversion(30), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let ms = new Speed("m/s", ["km/h", "mph"]);
-        assert.notStrictEqual(ms.getAllConversions(1, 5), "");
-        assert.notStrictEqual(ms.getAllConversions(1.5, 8), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let ms = new Speed("m/s", ["km/h", "mph"]);
-        assert.notStrictEqual(ms.getAllConversions(100, 500), "");
-        assert.notStrictEqual(ms.getAllConversions(1000, 800), "");
-    });
+    let unit_object_ms = {
+        unit: "m/s",
+        type: "speed",
+        aliases: ["meters/s", "m/s", "meters per sec", "meters per second"],
+        ratio: 1,
+    };
+    let object_list_ms = ["km/h", "mph"];
 
     it("Conversions should not be empty", function() {
-        let kmh = new Speed("km/h", ["m/s", "mph"]);
-        assert.notStrictEqual(kmh.getStandardConversion(40), "");
+        assert.notStrictEqual(getStandardConversion(unit_object_ms,30), "");
+    });
+
+
+    it("Standard Conversions should not be empty", function () {
+        assert.notStrictEqual(getAllConversions(100, 500,unit_object_ms,object_list_ms), "");
+        assert.notStrictEqual(getAllConversions(1000, 800, unit_object_ms, object_list_ms), "");
+    });
+
+    let unit_object_kmh = {
+        unit: "Km/h",
+        type: "speed",
+        aliases: [
+            "kilometers/h",
+            "Km/h",
+            "Kilometers per hour",
+            "Kilometers per hour",
+        ],
+        ratio: 3.6,
+    };
+    let object_list_kmh = ["m/s", "mph"];
+
+    it("Standard Conversions should not be empty", function() {
+        assert.notStrictEqual(getStandardConversion(unit_object_kmh, 40), "");
+    });
+
+    it("All Conversions should not be empty", function () {
+        assert.notStrictEqual(getAllConversions(10, 3, unit_object_kmh, object_list_kmh), "");
+        assert.notStrictEqual(getAllConversions(-1, 3, unit_object_kmh, object_list_kmh), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let kmh = new Speed("km/h", ["m/s", "mph"]);
-        assert.notStrictEqual(kmh.getAllConversions(10, 3), "");
-        assert.notStrictEqual(kmh.getAllConversions(-1, 3), "");
+        assert.notStrictEqual(getAllConversions(100, 30, unit_object_kmh, object_list_kmh), "");
+        assert.notStrictEqual(getAllConversions(-10, 30, unit_object_kmh, object_list_kmh), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let kmh = new Speed("km/h", ["m/s", "mph"]);
-        assert.notStrictEqual(kmh.getAllConversions(100, 30), "");
-        assert.notStrictEqual(kmh.getAllConversions(-10, 30), "");
+        assert.notStrictEqual(getAllConversions(1000, 300, unit_object_kmh, object_list_kmh), "");
+        assert.notStrictEqual(getAllConversions(-100, 300, unit_object_kmh, object_list_kmh), "");
     });
 
-    it("Standard Conversions should not be empty", function () {
-        let kmh = new Speed("km/h", ["m/s", "mph"]);
-        assert.notStrictEqual(kmh.getAllConversions(1000, 300), "");
-        assert.notStrictEqual(kmh.getAllConversions(-100, 300), "");
-    });
-
+    let unit_object_mph = {
+        unit: "mph",
+        type: "speed",
+        aliases: [
+            "mph",
+            "Mph",
+            "mile/h",
+            "Mile/h",
+            "Miles per hour",
+            "miles per hour",
+        ],
+        ratio: 2.23694,
+    };
+    let object_list_mph = ["m/s", "km/h"];
     it("Conversions should not be empty", function() {
-        let mph = new Speed("mph", ["m/s", "km/h"]);
-        assert.notStrictEqual(mph.getStandardConversion(20), "");
+        assert.notStrictEqual(getStandardConversion(unit_object_mph,20), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("mph", ["m/s", "km/h"]);
-        assert.notStrictEqual(mph.getAllConversions(10, 2), "");
+        assert.notStrictEqual(getAllConversions(10, 2, unit_object_mph, object_list_mph), "");
     });
 
     
     it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("mph", ["m/s", "km/h"]);
-        assert.notStrictEqual(mph.getAllConversions(100, 20), "");
+        assert.notStrictEqual(getAllConversions(100, 20, unit_object_mph, object_list_mph), "");
     });
 
     it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("mph", ["m/s", "km/h"]);
-        assert.notStrictEqual(mph.getAllConversions(100, 20), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("mph", ["m/s", "km/h"]);
-        assert.notStrictEqual(mph.getAllConversions(1000, 200), "");
-    });
-
-    it("Conversions should not be empty", function() {
-        let mph = new Speed("", ["m/s", "km/h","mph"]);
-        assert.notStrictEqual(mph.getStandardConversion(20), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("", ["m/s", "km/h","mph"]);
-        assert.notStrictEqual(mph.getAllConversions(10, 2), "");
-    });
-
-    
-    it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("", ["m/s", "km/h","mph"]);
-        assert.notStrictEqual(mph.getAllConversions(100, 20), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("", ["m/s", "km/h","mph"]);
-        assert.notStrictEqual(mph.getAllConversions(100, 20), "");
-    });
-
-    it("Standard Conversions should not be empty", function () {
-        let mph = new Speed("", ["m/s", "km/h","mph"]);
-        assert.notStrictEqual(mph.getAllConversions(1000, 200), "");
-    });
+        assert.notStrictEqual(getAllConversions(100, 20, unit_object_mph,object_list_mph), "");
+    })
 });
