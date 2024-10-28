@@ -1,5 +1,5 @@
 # Smart Units Converter - Browser Extension
-update
+
 An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
@@ -219,11 +219,9 @@ If you encounter any issues during any stage of extension use or you encounter a
 
 
 # Contributors
-  <table>
-  <tr>
-    <td align="center"><a href="https://github.com/drs1951"><img src="https://avatars.githubusercontent.com/u/54364517?v=4" width="100px;" alt=""/><br /><sub><b>Devansh Shah</b></sub></a></td>
-    <td align="center"><a href="https://github.com/shyamal31"><img src="https://avatars.githubusercontent.com/u/57554284?v=4" width="100px;" alt=""/><br /><sub><b>Shyamal Gandhi</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/jaypatel31"><img src="https://avatars.githubusercontent.com/u/59785863?v=4" width="100px;" alt=""/><br /><sub><b>Jay Patel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/shail611"><img src="https://avatars.githubusercontent.com/u/85347670?v=4" width="100px;" alt=""/><br /><sub><b>Shail Shah</b></sub></a><br /></td>
-  </tr>
-</table>
+
+Tingxiang Ji
+
+Hui Sun
+
+Zhichao Hou
