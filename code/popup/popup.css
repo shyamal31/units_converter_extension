@@ -198,6 +198,82 @@ body.red-green-mode .viewAllButton {
     color: white;
 }
 
+
+/* Statistics css style */
+.input_container {
+    padding: 0 20px; /* Add left and right padding */
+    max-width: 360px; /* Limit maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+.data-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%; /* Ensure width doesn't exceed parent container */
+}
+
+/* .stats-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+} */
+
+.stats-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: calc(100% - 24px); /* Subtract padding width */
+    box-sizing: border-box; /* Ensure padding doesn't add to total width */
+}
+
+.stats-results {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.stats-label {
+  min-width: 140px;
+  font-weight: 500;
+  color: #333;
+}
+
+.stats-output {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+#calculate_statistics_btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  align-self: center;
+}
+
+.stats-input:focus,
+.stats-output:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+
 body.red-green-mode .viewAllButton:hover {
     background-color: #004d6e;
 }
@@ -221,3 +297,4 @@ body.total-colorblind-mode .viewAllButton {
 body.total-colorblind-mode .viewAllButton:hover {
     background-color: #666666;
 }
+

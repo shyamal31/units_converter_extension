@@ -91,6 +91,31 @@ $(function() {
         populateFavUnit(e)
     })
 
+    $("#calculate_statistics_btn").on("click", function() {
+        const dataInput = $("#data_input").val();
+        const numbers = dataInput.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+        
+        if (numbers.length === 0) {
+            alert('Please input valid numbers separated by commas');
+            return;
+        }
+
+        // calculate mean
+        const mean = numbers.reduce((a, b) => a + b) / numbers.length;
+        
+        // calculate standard deviation
+        const variance = numbers.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (numbers.length-1);
+        const std = Math.sqrt(variance);
+        
+        // calculate entropy
+        const entropy = calculateEntropy(numbers);
+        
+        // show result
+        $("#mean_output").val(mean.toFixed(4));
+        $("#std_output").val(std.toFixed(4));
+        $("#entropy_output").val(entropy.toFixed(4));
+    })
+
 })
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -422,6 +447,20 @@ const getConversion = async (change) => {
 
     console.log(result);
 }
+
+
+function calculateEntropy(numbers) {
+    const frequencies = {};
+    numbers.forEach(num => {
+        frequencies[num] = (frequencies[num] || 0) + 1;
+    });
+    
+    return -Object.values(frequencies).reduce((entropy, freq) => {
+        const p = freq / numbers.length;
+        return entropy + p * Math.log2(p);
+    }, 0);
+}
+
 
 
 
