@@ -20,6 +20,7 @@
     <button class="tablinks" ><span>Custom</span></button>
     <button class="tablinks" ><span>Favourite</span></button>
     <button class="tablinks"><span>Statistics</span></button>
+    <button class="tablinks" ><span>Health </span></button>
   </div>
 
   <div class="main_container">
@@ -56,7 +57,7 @@
         </div>
         <div>
           <div class="unit_container">
-            <div style="font-size: 24px;
+            <div style="font-size: 16px;
             text-align: center;
             border: none;
             outline: none;
@@ -66,19 +67,20 @@
                 <div id="custom_unit_base"></div>
               </div>
             </div>
-            
-            
+
+
             <div style="font-size: 30px;margin-top: 10px;">=</div>
             <div class="unit" >
 
-              <div><input style="font-size: 20px;" type="text" id="custom_unit_value_right" placeholder="Unit value"/></div>
+              <div><input style="font-size: 16px;" type="text" id="custom_unit_value_right" placeholder="Unit value"/></div>
             </div>
-            
-            
+
+
           </div>
+
      
           <div class="unit_container" style="justify-content: center;"> 
-            <div class="unit"> <input style="font-size: 20px;" type="text" id="custom_unit_name_left" placeholder="Unit Name"/></div>
+            <div class="unit"> <input style="font-size: 16px;" type="text" id="custom_unit_name_left" placeholder="Unit Name"/></div>
           </div>
           <div style="text-align: center;">
             <button id="custom_unit_add" class="viewAllButton">Add</button>
@@ -107,11 +109,12 @@
               </div>
               <div class="units">
                 <ul id="units_container">
-                  
+
                 </ul>
               </div>
           </div>
       </div>
+
 
       <div class="Statistics tab_container" style="display: none;">
         <h1 style="text-align: center;">Statistics</h1>
@@ -145,5 +148,65 @@
           </div>
         </div>
       </div>
+
+      <div class="Health tab_container" style="display: none;">
+        <h1 style="text-align: center; margin-bottom: 20px; font-weight: bold;">Input</h1>
+        
+        <div class="input_subcontainer" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+          <div class="input_field" style="flex: 1; margin: 0 5px; text-align: center;">
+              <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 15px;">Weight (kg)</label>
+              <input type="number" id="weight" class="quantity" step="0.1" style="width: 80px; display: block; margin: 0 auto;">
+          </div>
+          <div class="input_field" style="flex: 1; margin: 0 5px; text-align: center;">
+              <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 15px;">Height (cm)</label>
+              <input type="number" id="height" class="quantity" step="0.1" style="width: 80px; display: block; margin: 0 auto;">
+          </div>
+          <div class="input_field" style="flex: 1; margin: 0 5px; text-align: center;">
+              <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 15px;">Age</label>
+              <input type="number" id="age" class="quantity" style="width: 80px; display: block; margin: 0 auto;">
+          </div>
+          <div class="input_field" style="flex: 1; margin: 0 5px; text-align: center;">
+              <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 15px;">Gender</label>
+              <select id="gender" class="quantity" style="width: 80px; display: block; margin: 0 auto;">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+              </select>
+          </div>
+        </div>
+    
+        <h1 style="text-align: center; margin: 20px 0; font-weight: bold;">Health Index</h1>
+
+  
+        <div class="result_container" style="display: flex; justify-content: center;">
+          <div class="result_subcontainer">
+              <div class="result_field" style="text-align: center; margin-bottom: 10px;">
+                  <label style="font-weight: bold; font-size: 16px;"> BMI:</label>
+                  <span id="bmi-result" class="result" style="font-size: 16px; margin-left: 10px;">-</span>
+                  <span style="color: #666; font-size: 16px; margin-left: 15px;">(Normal: 18.5 - 24.9)</span>
+              </div>
+              <div class="result_field" style="text-align: center; margin-bottom: 10px;">
+                  <label style="font-weight: bold; font-size: 16px;"> BMR:</label>
+                  <span id="bmr-result" class="result" style="font-size: 16px; margin-left: 10px;">-</span>
+                  <span class="male-range" style="color: #666; font-size: 16px; margin-left: 15px;">(Normal: 1500-2000 kcal/day)</span>
+                  <span class="female-range" style="color: #666; font-size: 16px; margin-left: 15px; display: none;">(Normal: 1200-1600 kcal/day)</span>
+              </div>
+              <div class="result_field" style="text-align: center; margin-bottom: 10px;">
+                  <label style="font-weight: bold; font-size: 16px;"> TDEE:</label>
+                  <span id="tdee-result" class="result" style="font-size: 16px; margin-left: 10px;">-</span>
+                  <span class="male-range" style="color: #666; font-size: 16px; margin-left: 15px;">(Normal: 2000-2750 kcal/day)</span>
+                  <span class="female-range" style="color: #666; font-size: 16px; margin-left: 15px; display: none;">(Normal: 1600-2200 kcal/day)</span>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+  <div class="colorblind-settings">
+      <label for="colorblind-mode">Select Colorblind Mode:</label>
+      <select id="colorblind-mode">
+          <option value="default">Default</option>
+          <option value="red-green">Red-Green Colorblind</option>
+          <option value="blue-yellow">Blue-Yellow Colorblind</option>
+          <option value="total-colorblind">Total Colorblind</option>
+      </select>
   </div>
 </body>
