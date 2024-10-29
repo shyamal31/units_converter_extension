@@ -9,6 +9,7 @@
     "picomatch": "^2.3.1"
   },
   "devDependencies": {
+    "jsdom": "^21.1.0",
     "chai": "^4.2.0",
     "coveralls": "^3.1.0",
     "mocha": "^8.4.0",
