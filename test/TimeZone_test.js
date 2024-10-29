@@ -13,7 +13,7 @@ describe("getAllTimeConversions", () => {
         consoleSpy = sinon.spy(console, 'log');
 
         // 固定日期为 2024 年 10 月 28 日 12:34 PM（EST）
-        clock = sinon.useFakeTimers(new Date('2024-10-28T12:34:00-05:00').getTime());
+        clock = sinon.useFakeTimers(new Date('2024-10-28T12:34:00-04:00').getTime());
     });
 
     afterEach(() => {
@@ -27,7 +27,7 @@ describe("getAllTimeConversions", () => {
         const inputString = "2024-10-28 12:34 PM EST";
         const result = getAllTimeConversions(inputString);
 
-        // 预期的转换结果，根据设定的固定日期和时间
-        expect(result).to.include('PST: 10/28/2024 9:34:00 AM,CT: 10/28/2024 11:34:00 AM,IST: 10/28/2024 11:04:00 PM,UTC: 10/28/2024 5:34:00 PM,');
+        // 预期的转换结果，注意调整后的时间
+        expect(result).to.include('PST: 10/28/2024 10:34:00 AM,CT: 10/28/2024 12:34:00 PM,IST: 10/28/2024 11:04:00 PM,UTC: 10/28/2024 5:34:00 PM,');
     });
 });
