@@ -23,7 +23,8 @@ describe("getAllTimeConversions", () => {
     });
 
     it('should convert valid time to different timezones', () => {
-        const inputString = "12:34 PM EST";
+        // 使用完整的日期、时间和时区字符串
+        const inputString = "2024-10-28 12:34 PM EST";
         const result = getAllTimeConversions(inputString);
 
         // 预期的转换结果，根据设定的固定日期和时间
