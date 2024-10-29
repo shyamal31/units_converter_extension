@@ -21,12 +21,12 @@
     "standard": "^14.3.4"
   },
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha",
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nihitmittal/units_converter_extension.git"
+    "url": "git+https://github.com/510-s-Mickey/units_converter_extension.git"
   },
   "keywords": [
     "units_convert",
@@ -35,7 +35,7 @@
   "author": "nihitmittal",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nihitmittal/units_converter_extension/issues"
+    "url": "https://github.com/510-s-Mickey/units_converter_extension/issues"
   },
-  "homepage": "https://github.com/nihitmittal/units_converter_extension#readme"
+  "homepage": "https://github.com/510-s-Mickey/units_converter_extension#readme"
 }

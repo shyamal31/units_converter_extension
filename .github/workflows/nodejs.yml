@@ -31,12 +31,12 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          npm test
-          npx nyc --reporter=text-lcov > coverage.lcov  # Generate coverage report in lcov format
+          npx nyc --reporter=lcov --reporter=text mocha  # 运行测试并生成 lcov 报告
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: coverage.lcov  # Upload the coverage report
+          files: coverage/lcov.info
           flags: unittests
-          token: ${{ secrets.CODECOV_TOKEN }}  # Set CODECOV_TOKEN in your GitHub repo secrets
+          token: ${{ secrets.CODECOV_TOKEN }}
+
