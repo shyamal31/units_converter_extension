@@ -450,6 +450,9 @@ const getConversion = async (change) => {
 
 
 function calculateEntropy(numbers) {
+    if (numbers.length === 0) {
+        return 0;
+    }
     const frequencies = {};
     numbers.forEach(num => {
         frequencies[num] = (frequencies[num] || 0) + 1;
