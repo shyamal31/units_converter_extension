@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16]  # 如果只需要一个版本，可以这样指定
+        node-version: [21]
 
     steps:
       - name: Check out repository code
