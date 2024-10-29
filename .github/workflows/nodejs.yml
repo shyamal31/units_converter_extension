@@ -27,7 +27,7 @@ jobs:
         run: npm install --no-audit
 
       - name: Run npm audit
-        run: npm audit || true  # 记录 audit，但不影响 CI 成功
+        run: npm audit || true  # record audit but not affecr CI
 
       - name: Run tests
         run: npm test
