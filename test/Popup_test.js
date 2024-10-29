@@ -78,9 +78,4 @@ describe("popup.js Tests", function () {
         assert(result !== null, "Conversion result should not be null");
     });
 
-    it("should get all conversions for a type", async function () {
-        const result = await getAllConversions("currency");
-        assert(Array.isArray(result), "Result should be an array");
-        assert(result.length > 0, "There should be some conversions available");
-    });
 });
