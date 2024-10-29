@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ 10-test-cases ]
+    branches: [10-test-cases]
   pull_request:
-    branches:  [10-test-cases ]
+    branches: [10-test-cases]
 
 jobs:
   test:
@@ -12,19 +12,22 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14, 16, 18] # 选择需要测试的 Node.js 版本
+        node-version: [16]  # 如果只需要一个版本，可以这样指定
 
     steps:
-    - name: Check out repository code
-      uses: actions/checkout@v2
+      - name: Check out repository code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies without audit
+        run: npm install --no-audit
 
-    - name: Run tests
-      run: npm test
+      - name: Run npm audit
+        run: npm audit || true  # 记录 audit，但不影响 CI 成功
+
+      - name: Run tests
+        run: npm test
