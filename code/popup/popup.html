@@ -1,114 +1,124 @@
 <!DOCTYPE html>
 <head>
-  <link href="./popup.css" rel="stylesheet" type="text/css" />
-  <meta charset="UTF-8">
-  <script type="text/javascript" src="../main_scripts/units_objects.js"></script>
-  <script type="text/javascript" src="../main_scripts/utility.js"></script>
-	<script type="text/javascript" src="../main_scripts/custom_units.js"></script>
-	<script type="text/javascript" src="../conversions/conversion.js"></script>
-	<script type="text/javascript" src="../conversions/Temperature.js"></script>
-	<script type="text/javascript" src="../conversions/Currency.js"></script>
-  <script type="text/javascript" src="../main_scripts/popular_units.js"></script>
-  <script type="text/javascript" src="../main_scripts/parser_script.js"></script>
-  <script type="text/javascript" src="./js/jquery/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="./js/popup.js"></script>
-  <title>Convertor - popup</title>
+    <link href="./popup.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../main_scripts/units_objects.js"></script>
+    <script type="text/javascript" src="../main_scripts/utility.js"></script>
+    <script type="text/javascript" src="../main_scripts/custom_units.js"></script>
+    <script type="text/javascript" src="../conversions/conversion.js"></script>
+    <script type="text/javascript" src="../conversions/Temperature.js"></script>
+    <script type="text/javascript" src="../conversions/Currency.js"></script>
+    <script type="text/javascript" src="../main_scripts/popular_units.js"></script>
+    <script type="text/javascript" src="../main_scripts/parser_script.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/popup.js"></script>
+
+    <title>Convertor - popup</title>
 </head>
 <body>
-  <div class="Tab">
+<div class="Tab">
     <button class="tablinks selected"><span>Convertor</span></button>
-    <button class="tablinks" ><span>Custom</span></button>
-    <button class="tablinks" ><span>Favourite</span></button>
-  </div>
-  <div class="main_container">
-      <div class="Convertor tab_container">
-      <h1 style="text-align: center;">Convertor</h1>
+    <button class="tablinks"><span>Custom</span></button>
+    <button class="tablinks"><span>Favourite</span></button>
+</div>
+<div class="main_container">
+    <div class="Convertor tab_container">
+        <h1 style="text-align: center;">Convertor</h1>
         <div class="input_container">
             <div class="type_container">
                 <select id="type_selector" class="selector">
                 </select>
             </div>
             <div class="unit_container">
-              <div class="unit">
-                <input type="number" id="left_input" name="right_input" value="0"/>
-                <select id="unit_selector_left" class="selector" name="left_unit">
-                  <option>Please Select Type</option>
-                </select>
-              </div>
-              <div style="font-size: 30px;">=</div>
-              <div class="unit">
-                <input type="number" id="right_input" name="left_input" value="0"/>
-                <select id="unit_selector_right" class="selector" name="right_unit">
-                  <option>Please Select Type</option>
-                </select>
-              </div>
+                <div class="unit">
+                    <input type="number" id="left_input" name="right_input" value="0"/>
+                    <select id="unit_selector_left" class="selector" name="left_unit">
+                        <option>Please Select Type</option>
+                    </select>
+                </div>
+                <div style="font-size: 30px;">=</div>
+                <div class="unit">
+                    <input type="number" id="right_input" name="left_input" value="0"/>
+                    <select id="unit_selector_right" class="selector" name="right_unit">
+                        <option>Please Select Type</option>
+                    </select>
+                </div>
             </div>
         </div>
-      </div>
+    </div>
 
-      <div class="Custom tab_container" style="display: none;">
+    <div class="Custom tab_container" style="display: none;">
         <h1 style="text-align: center;">Custom</h1>
         <div class="type_container">
-          <select id="custom_type_selector" class="selector">
-          </select>
+            <select id="custom_type_selector" class="selector">
+            </select>
         </div>
         <div>
-          <div class="unit_container">
-            <div style="font-size: 24px;
+            <div class="unit_container">
+                <div style="font-size: 24px;
             text-align: center;
             border: none;
             outline: none;
             width: 100%;
             padding: 12px 0;">
-              <div><span>1</span>
-                <div id="custom_unit_base"></div>
-              </div>
-            </div>
-            
-            
-            <div style="font-size: 30px;margin-top: 10px;">=</div>
-            <div class="unit" >
+                    <div><span>1</span>
+                        <div id="custom_unit_base"></div>
+                    </div>
+                </div>
 
-              <div><input style="font-size: 20px;" type="text" id="custom_unit_value_right" placeholder="Unit value"/></div>
+
+                <div style="font-size: 30px;margin-top: 10px;">=</div>
+                <div class="unit" >
+
+                    <div><input style="font-size: 20px;" type="text" id="custom_unit_value_right" placeholder="Unit value"/></div>
+                </div>
+
+
             </div>
-            
-            
-          </div>
-     
-          <div class="unit_container" style="justify-content: center;"> 
-            <div class="unit"> <input style="font-size: 20px;" type="text" id="custom_unit_name_left" placeholder="Unit Name"/></div>
-          </div>
-          <div style="text-align: center;">
-            <button id="custom_unit_add" class="viewAllButton">Add</button>
-          </div>
+
+            <div class="unit_container" style="justify-content: center;">
+                <div class="unit"> <input style="font-size: 20px;" type="text" id="custom_unit_name_left" placeholder="Unit Name"/></div>
+            </div>
+            <div style="text-align: center;">
+                <button id="custom_unit_add" class="viewAllButton">Add</button>
+            </div>
         </div>
         <br/>
         <hr/>
         <br/>
         <div>
-          <div class="type_container">
-            <select id="delete_type_selector" class="selector">
-            </select>
-          </div>
-          <div style="text-align: center;">
-            <button id="custom_unit_delete" class="viewAllButton">Delete</button>
-          </div>
+            <div class="type_container">
+                <select id="delete_type_selector" class="selector">
+                </select>
+            </div>
+            <div style="text-align: center;">
+                <button id="custom_unit_delete" class="viewAllButton">Delete</button>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="Favourite tab_container" style="display: none;">
+    <div class="Favourite tab_container" style="display: none;">
         <h1 style="text-align: center;">Favourite</h1>
-          <div class="input_container">
-              <div class="type_container">
-                  <select id="favourite_type_selector" class="selector">
-                  </select>
-              </div>
-              <div class="units">
+        <div class="input_container">
+            <div class="type_container">
+                <select id="favourite_type_selector" class="selector">
+                </select>
+            </div>
+            <div class="units">
                 <ul id="units_container">
-                  
+
                 </ul>
-              </div>
-          </div>
-      </div>
-  </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="colorblind-settings">
+    <label for="colorblind-mode">Select Colorblind Mode:</label>
+    <select id="colorblind-mode">
+        <option value="default">Default</option>
+        <option value="red-green">Red-Green Colorblind</option>
+        <option value="blue-yellow">Blue-Yellow Colorblind</option>
+        <option value="total-colorblind">Total Colorblind</option>
+    </select>
+</div>
 </body>
