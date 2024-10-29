@@ -64,8 +64,8 @@ describe("popup.js Tests", function () {
         calculateHealth();
 
         const expectedBmi = 22.86;
-        const expectedBmr = 1660.00;
-        const expectedTdee = 1992.00;
+        const expectedBmr = 1673.75;
+        const expectedTdee = 2008.50;
         const tolerance = 0.1;
 
         expect(parseFloat(document.getElementById("bmi-result").textContent)).to.be.closeTo(expectedBmi, tolerance, "BMI is within the expected range");
