@@ -48,6 +48,10 @@ $(function() {
     $("#custom_unit_delete").on("click",function(e){
         deleteCustomUnitVal(e)
     })
+
+    $("#weight, #height, #age, #gender").on('input change', function() {
+        calculateHealth()
+    })
     
     
     
@@ -87,7 +91,56 @@ $(function() {
         populateFavUnit(e)
     })
 
+    $("#calculate_statistics_btn").on("click", function() {
+        const dataInput = $("#data_input").val();
+        const numbers = dataInput.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+        
+        if (numbers.length === 0) {
+            alert('Please input valid numbers separated by commas');
+            return;
+        }
+
+        // calculate mean
+        const mean = numbers.reduce((a, b) => a + b) / numbers.length;
+        
+        // calculate standard deviation
+        const variance = numbers.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (numbers.length-1);
+        const std = Math.sqrt(variance);
+        
+        // calculate entropy
+        const entropy = calculateEntropy(numbers);
+        
+        // show result
+        $("#mean_output").val(mean.toFixed(4));
+        $("#std_output").val(std.toFixed(4));
+        $("#entropy_output").val(entropy.toFixed(4));
+    })
+
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+    const colorblindModeSelector = document.getElementById("colorblind-mode");
+    const buttons = document.querySelectorAll(".viewAllButton");
+    colorblindModeSelector.addEventListener("change", function () {
+        const mode = colorblindModeSelector.value;
+
+        // clear the previous css style
+        document.body.classList.remove("red-green-mode", "blue-yellow-mode", "total-colorblind-mode");
+        buttons.forEach(button => {
+            button.classList.remove("red-green", "blue-yellow", "total-colorblind");
+        });
+        if (mode === "red-green") {
+            document.body.classList.add("red-green-mode");
+            buttons.forEach(button => button.classList.add("red-green"));
+        } else if (mode === "blue-yellow") {
+            document.body.classList.add("blue-yellow-mode");
+            buttons.forEach(button => button.classList.add("blue-yellow"));
+        } else if (mode === "total-colorblind") {
+            document.body.classList.add("total-colorblind-mode");
+            buttons.forEach(button => button.classList.add("total-colorblind"));
+        }
+    });
+});
 
 const addCustomUnitVal = () => {
     let baseUnit = $("#custom_unit_base").val();
@@ -393,4 +446,112 @@ const getConversion = async (change) => {
     }
 
     console.log(result);
+}
+
+
+function calculateEntropy(numbers) {
+    if (numbers.length === 0) {
+        return 0;
+    }
+    const frequencies = {};
+    numbers.forEach(num => {
+        frequencies[num] = (frequencies[num] || 0) + 1;
+    });
+    
+    return -Object.values(frequencies).reduce((entropy, freq) => {
+        const p = freq / numbers.length;
+        return entropy + p * Math.log2(p);
+    }, 0);
+}
+
+
+
+function calculateHealthValues(weight, height, age, gender) {
+    try {
+        // Calculate BMI
+        const bmi = weight / ((height / 100) * (height / 100));
+        
+        // Calculate BMR using Mifflin-St Jeor Equation
+        let bmr;
+        if (gender === 'male') {
+            bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+        } else {
+            bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+        }
+        
+        // Calculate TDEE (using sedentary multiplier 1.2)
+        const tdee = bmr * 1.2;
+        
+        return {
+            bmi: bmi || 0,
+            bmr: bmr || 0,
+            tdee: tdee || 0
+        };
+    } catch (error) {
+        return {
+            bmi: 0,
+            bmr: 0,
+            tdee: 0
+        };
+    }
+}
+
+
+function calculateHealth() {
+    const weight = parseFloat($("#weight").val()) || 0;
+    const height = parseFloat($("#height").val()) || 0;
+    const age = parseFloat($("#age").val()) || 0;
+    const gender = $("#gender").val();
+
+    const results = calculateHealthValues(weight, height, age, gender);
+
+    // Update results with values
+    $("#bmi-result").text(results.bmi === 0 ? "-" : results.bmi.toFixed(2));
+    $("#bmr-result").text(results.bmr === 0 ? "-" : results.bmr.toFixed(2));
+    $("#tdee-result").text(results.tdee === 0 ? "-" : results.tdee.toFixed(2));
+
+    // Update ranges based on gender
+    $(".male-range").css("display", gender === 'male' ? "inline" : "none");
+    $(".female-range").css("display", gender === 'male' ? "none" : "inline");
+
+    // Optional: Add color coding for values
+    if (!isNaN(results.bmi)) {
+        const bmiResult = $("#bmi-result");
+        if (results.bmi < 18.5) {
+            bmiResult.css("color", "#e74c3c"); // Red for underweight
+        } else if (results.bmi <= 24.9) {
+            bmiResult.css("color", "#27ae60"); // Green for normal
+        } else {
+            bmiResult.css("color", "#e74c3c"); // Red for overweight
+        }
+    }
+
+    if (!isNaN(results.bmr)) {
+        const bmrResult = $("#bmr-result");
+        const normalBmrMin = gender === 'male' ? 1500 : 1200;
+        const normalBmrMax = gender === 'male' ? 2000 : 1600;
+        
+        if (results.bmr < normalBmrMin || results.bmr > normalBmrMax) {
+            bmrResult.css("color", "#e74c3c"); // Red for out of range
+        } else {
+            bmrResult.css("color", "#27ae60"); // Green for normal range
+        }
+    }
+
+    if (!isNaN(results.tdee)) {
+        const tdeeResult = $("#tdee-result");
+        const normalTdeeMin = gender === 'male' ? 2000 : 1600;
+        const normalTdeeMax = gender === 'male' ? 2750 : 2200;
+        
+        if (results.tdee < normalTdeeMin || results.tdee > normalTdeeMax) {
+            tdeeResult.css("color", "#e74c3c"); // Red for out of range
+        } else {
+            tdeeResult.css("color", "#27ae60"); // Green for normal range
+        }
+    }
+}
+
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { calculateHealthValues };
 }
