@@ -1,3 +1,7 @@
+var assert = require("assert");
+const {getStandardConversion,getAllConversions} = require("../code/popup/js/popup.js");
+
+
 describe('Health Calculator Tests', () => {
     let $;
     let document;
