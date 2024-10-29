@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
     colorblindModeSelector.addEventListener("change", function () {
         const mode = colorblindModeSelector.value;
 
-        // 清除之前的样式
+        // clear the previous css style
         document.body.classList.remove("red-green-mode", "blue-yellow-mode", "total-colorblind-mode");
         buttons.forEach(button => {
             button.classList.remove("red-green", "blue-yellow", "total-colorblind");
