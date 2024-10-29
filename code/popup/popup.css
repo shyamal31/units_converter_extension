@@ -192,3 +192,32 @@ body.total-colorblind-mode .Tab button.selected {
 .viewAllButton:hover {
     background-color: #0b6c66;
 }
+/* Red-Green Colorblind Mode */
+body.red-green-mode .viewAllButton {
+    background-color: #005f87;
+    color: white;
+}
+
+body.red-green-mode .viewAllButton:hover {
+    background-color: #004d6e;
+}
+
+/* Blue-Yellow Colorblind Mode */
+body.blue-yellow-mode .viewAllButton {
+    background-color: #a569bd;
+    color: black;
+}
+
+body.blue-yellow-mode .viewAllButton:hover {
+    background-color: #8e4d9e;
+}
+
+/* Total Colorblind Mode */
+body.total-colorblind-mode .viewAllButton {
+    background-color: #808080;
+    color: white;
+}
+
+body.total-colorblind-mode .viewAllButton:hover {
+    background-color: #666666;
+}

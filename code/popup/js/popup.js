@@ -91,20 +91,24 @@ $(function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const colorblindModeSelector = document.getElementById("colorblind-mode");
-
+    const buttons = document.querySelectorAll(".viewAllButton");
     colorblindModeSelector.addEventListener("change", function () {
         const mode = colorblindModeSelector.value;
 
         // 清除之前的样式
         document.body.classList.remove("red-green-mode", "blue-yellow-mode", "total-colorblind-mode");
-
-        // 根据用户选择的模式应用样式
+        buttons.forEach(button => {
+            button.classList.remove("red-green", "blue-yellow", "total-colorblind");
+        });
         if (mode === "red-green") {
             document.body.classList.add("red-green-mode");
+            buttons.forEach(button => button.classList.add("red-green"));
         } else if (mode === "blue-yellow") {
             document.body.classList.add("blue-yellow-mode");
+            buttons.forEach(button => button.classList.add("blue-yellow"));
         } else if (mode === "total-colorblind") {
             document.body.classList.add("total-colorblind-mode");
+            buttons.forEach(button => button.classList.add("total-colorblind"));
         }
     });
 });
