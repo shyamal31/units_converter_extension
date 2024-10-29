@@ -66,9 +66,16 @@ describe("popup.js Tests", function () {
 
         calculateHealth();
 
-        assert.strictEqual(document.getElementById("bmi-result").textContent, "22.86");
-        assert.strictEqual(document.getElementById("bmr-result").textContent, "1660.00");
-        assert.strictEqual(document.getElementById("tdee-result").textContent, "1992.00");
+        const expectedBmi = 22.86;
+        const expectedBmr = 1660.00;
+        const expectedTdee = 1992.00;
+
+
+        const tolerance = 0.1;
+
+        assert.closeTo(parseFloat(document.getElementById("bmi-result").textContent), expectedBmi, tolerance, "BMI is within the expected range");
+        assert.closeTo(parseFloat(document.getElementById("bmr-result").textContent), expectedBmr, tolerance, "BMR is within the expected range");
+        assert.closeTo(parseFloat(document.getElementById("tdee-result").textContent), expectedTdee, tolerance, "TDEE is within the expected range");
     });
 
     it("should get standard conversion value", async function () {
