@@ -125,3 +125,77 @@ body {
     background-color: #0b6c66;
   }
 
+/* Statistics css style */
+.input_container {
+    padding: 0 20px; /* 添加左右内边距 */
+    max-width: 360px; /* 限制最大宽度 */
+    margin: 0 auto; /* 居中显示 */
+}
+
+.data-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* .stats-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+} */
+
+.stats-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: calc(100% - 24px); /* 减去padding的宽度 */
+    box-sizing: border-box; /* 确保padding不会增加总宽度 */
+}
+
+.stats-results {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.stats-label {
+  min-width: 140px;
+  font-weight: 500;
+  color: #333;
+}
+
+.stats-output {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+#calculate_statistics_btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  align-self: center;
+}
+
+.stats-input:focus,
+.stats-output:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+

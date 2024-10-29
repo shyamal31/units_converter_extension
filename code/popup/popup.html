@@ -115,23 +115,35 @@
 
       <div class="Statistics tab_container" style="display: none;">
         <h1 style="text-align: center;">Statistics</h1>
-        <div style="margin: 20px;">
-            <label>Data:</label>
-            <input type="text" id="data_input" placeholder="输入逗号分隔的数据">
+        <div class="input_container">
+          <div class="data-input-section">
+            <label for="data_input">Input Data:</label>
+            <input 
+              type="text" 
+              id="data_input" 
+              class="stats-input"
+              placeholder="e.g., 1.2, 3.4, 5.6, 7.8"
+            />
+            <button id="calculate_statistics_btn" class="viewAllButton">Calculate</button>
+          </div>
+          
+          <div class="stats-results">
+            <div class="stats-item">
+              <div class="stats-label">Mean:</div>
+              <input type="text" id="mean_output" class="stats-output" readonly>
+            </div>
+            
+            <div class="stats-item">
+              <div class="stats-label">Standard Deviation:</div>
+              <input type="text" id="std_output" class="stats-output" readonly>
+            </div>
+            
+            <div class="stats-item">
+              <div class="stats-label">Entropy:</div>
+              <input type="text" id="entropy_output" class="stats-output" readonly>
+            </div>
+          </div>
         </div>
-        <div style="margin: 20px;">
-            <label>Mean:</label>
-            <input type="text" id="mean_output" readonly>
-        </div>
-        <div style="margin: 20px;">
-            <label>STD:</label>
-            <input type="text" id="std_output" readonly>
-        </div>
-        <div style="margin: 20px;">
-            <label>Entropy:</label>
-            <input type="text" id="entropy_output" readonly>
-        </div>
-        <button onclick="calculateStatistics()">计算</button>
       </div>
   </div>
 </body>
