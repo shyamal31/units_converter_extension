@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [10-test-cases]
+    branches: [master]
   pull_request:
-    branches: [10-test-cases]
+    branches: [master]
 
 jobs:
   test:
@@ -27,7 +27,16 @@ jobs:
         run: npm install --no-audit
 
       - name: Run npm audit
-        run: npm audit || true  # record audit but not affecr CI
+        run: npm audit || true  # record audit but not affect CI
 
-      - name: Run tests
-        run: npm test
+      - name: Run tests with coverage
+        run: |
+          npm test
+          npx nyc --reporter=text-lcov > coverage.lcov  # Generate coverage report in lcov format
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage.lcov  # Upload the coverage report
+          flags: unittests
+          token: ${{ secrets.CODECOV_TOKEN }}  # Set CODECOV_TOKEN in your GitHub repo secrets
