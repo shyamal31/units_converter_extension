@@ -466,68 +466,92 @@ function calculateEntropy(numbers) {
 
 
 
+function calculateHealthValues(weight, height, age, gender) {
+    try {
+        // Calculate BMI
+        const bmi = weight / ((height / 100) * (height / 100));
+        
+        // Calculate BMR using Mifflin-St Jeor Equation
+        let bmr;
+        if (gender === 'male') {
+            bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+        } else {
+            bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+        }
+        
+        // Calculate TDEE (using sedentary multiplier 1.2)
+        const tdee = bmr * 1.2;
+        
+        return {
+            bmi: bmi || 0,
+            bmr: bmr || 0,
+            tdee: tdee || 0
+        };
+    } catch (error) {
+        return {
+            bmi: 0,
+            bmr: 0,
+            tdee: 0
+        };
+    }
+}
+
 
 function calculateHealth() {
     const weight = parseFloat($("#weight").val()) || 0;
     const height = parseFloat($("#height").val()) || 0;
     const age = parseFloat($("#age").val()) || 0;
     const gender = $("#gender").val();
-    const LIGHT_ACTIVITY = 1.2; 
 
-    const heightInMeters = height / 100;
-    const bmi = weight / (heightInMeters * heightInMeters);
-
-    let bmr;
-    if (gender === 'male') {
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-    } else {
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-    }
-
-    const tdee = bmr * LIGHT_ACTIVITY;
+    const results = calculateHealthValues(weight, height, age, gender);
 
     // Update results with values
-    $("#bmi-result").text(isNaN(bmi) ? "-" : bmi.toFixed(2));
-    $("#bmr-result").text(isNaN(bmr) ? "-" : bmr.toFixed(2));
-    $("#tdee-result").text(isNaN(tdee) ? "-" : tdee.toFixed(2));
+    $("#bmi-result").text(results.bmi === 0 ? "-" : results.bmi.toFixed(2));
+    $("#bmr-result").text(results.bmr === 0 ? "-" : results.bmr.toFixed(2));
+    $("#tdee-result").text(results.tdee === 0 ? "-" : results.tdee.toFixed(2));
 
     // Update ranges based on gender
     $(".male-range").css("display", gender === 'male' ? "inline" : "none");
     $(".female-range").css("display", gender === 'male' ? "none" : "inline");
 
     // Optional: Add color coding for values
-    if (!isNaN(bmi)) {
+    if (!isNaN(results.bmi)) {
         const bmiResult = $("#bmi-result");
-        if (bmi < 18.5) {
+        if (results.bmi < 18.5) {
             bmiResult.css("color", "#e74c3c"); // Red for underweight
-        } else if (bmi <= 24.9) {
+        } else if (results.bmi <= 24.9) {
             bmiResult.css("color", "#27ae60"); // Green for normal
         } else {
             bmiResult.css("color", "#e74c3c"); // Red for overweight
         }
     }
 
-    if (!isNaN(bmr)) {
+    if (!isNaN(results.bmr)) {
         const bmrResult = $("#bmr-result");
         const normalBmrMin = gender === 'male' ? 1500 : 1200;
         const normalBmrMax = gender === 'male' ? 2000 : 1600;
         
-        if (bmr < normalBmrMin || bmr > normalBmrMax) {
+        if (results.bmr < normalBmrMin || results.bmr > normalBmrMax) {
             bmrResult.css("color", "#e74c3c"); // Red for out of range
         } else {
             bmrResult.css("color", "#27ae60"); // Green for normal range
         }
     }
 
-    if (!isNaN(tdee)) {
+    if (!isNaN(results.tdee)) {
         const tdeeResult = $("#tdee-result");
         const normalTdeeMin = gender === 'male' ? 2000 : 1600;
         const normalTdeeMax = gender === 'male' ? 2750 : 2200;
         
-        if (tdee < normalTdeeMin || tdee > normalTdeeMax) {
+        if (results.tdee < normalTdeeMin || results.tdee > normalTdeeMax) {
             tdeeResult.css("color", "#e74c3c"); // Red for out of range
         } else {
             tdeeResult.css("color", "#27ae60"); // Green for normal range
         }
     }
+}
+
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { calculateHealthValues };
 }
