@@ -19,7 +19,9 @@
     <button class="tablinks selected"><span>Convertor</span></button>
     <button class="tablinks" ><span>Custom</span></button>
     <button class="tablinks" ><span>Favourite</span></button>
+    <button class="tablinks"><span>Statistics</span></button>
   </div>
+
   <div class="main_container">
       <div class="Convertor tab_container">
       <h1 style="text-align: center;">Convertor</h1>
@@ -109,6 +111,27 @@
                 </ul>
               </div>
           </div>
+      </div>
+
+      <div class="Statistics tab_container" style="display: none;">
+        <h1 style="text-align: center;">Statistics</h1>
+        <div style="margin: 20px;">
+            <label>Data:</label>
+            <input type="text" id="data_input" placeholder="输入逗号分隔的数据">
+        </div>
+        <div style="margin: 20px;">
+            <label>Mean:</label>
+            <input type="text" id="mean_output" readonly>
+        </div>
+        <div style="margin: 20px;">
+            <label>STD:</label>
+            <input type="text" id="std_output" readonly>
+        </div>
+        <div style="margin: 20px;">
+            <label>Entropy:</label>
+            <input type="text" id="entropy_output" readonly>
+        </div>
+        <button onclick="calculateStatistics()">计算</button>
       </div>
   </div>
 </body>
