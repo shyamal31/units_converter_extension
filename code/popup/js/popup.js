@@ -96,17 +96,17 @@ $(function() {
             return;
         }
 
-        // 计算平均值
+        // calculate mean
         const mean = numbers.reduce((a, b) => a + b) / numbers.length;
         
-        // 计算标准差
+        // calculate standard deviation
         const variance = numbers.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (numbers.length-1);
         const std = Math.sqrt(variance);
         
-        // 计算熵
+        // calculate entropy
         const entropy = calculateEntropy(numbers);
         
-        // 显示结果
+        // show result
         $("#mean_output").val(mean.toFixed(4));
         $("#std_output").val(std.toFixed(4));
         $("#entropy_output").val(entropy.toFixed(4));
