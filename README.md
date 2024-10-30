@@ -6,7 +6,7 @@ An extension that converts your selected values into popular units. Saves time, 
 ![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
 ![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
-[![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
+![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)
 ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14010246.svg)](https://doi.org/10.5281/zenodo.14010246)
@@ -28,6 +28,9 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
 - Convert Time from a given time zone to another (PST to EST)
+- Automatically calculate mean, standard deviation, and entropy after entering a data set
+- Calculate BMI, BMR, and TDEE based on height, weight, age, and gender
+- Enable colorblind mode for accessibility
 
   ## Technologies we used:
  - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
@@ -85,9 +88,12 @@ To access the popup feature the user has to click on the extension icon in the t
 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
 
+
 - The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
 
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
+![image](https://github.com/user-attachments/assets/d5bf4715-46b9-4d7d-afeb-511365b96190)
+
 
 ### 2. Customized Conversions
 
