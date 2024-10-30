@@ -86,13 +86,12 @@ To access the popup feature the user has to click on the extension icon in the t
 - This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
 - The user selects the conversion he requires from the given standard conversions
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
+![image](https://github.com/user-attachments/assets/d5bf4715-46b9-4d7d-afeb-511365b96190)
 
 
 - The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
-![image](https://github.com/user-attachments/assets/d5bf4715-46b9-4d7d-afeb-511365b96190)
+![image](https://github.com/user-attachments/assets/b9576171-e2f2-47c5-adde-359951068e4c)
 
 
 ### 2. Customized Conversions
@@ -100,7 +99,7 @@ To access the popup feature the user has to click on the extension icon in the t
 - This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
 - This is the example taken where 1 meter is taken as 3 subs
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
+![image](https://github.com/user-attachments/assets/b4cdf44b-0236-4860-aede-cf512f95e8e6)
 
 - Testing whether the customized conversion works or not
   
@@ -113,8 +112,8 @@ To access the popup feature the user has to click on the extension icon in the t
 ### 3. Favorites 
 - This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
 - Here we select pint and gallon as favorites in volume converions. 
-   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+
+![image](https://github.com/user-attachments/assets/8035d45f-58e5-4267-b981-4eaf0398a83e)
 
 - So now all the volume conversions will have pint and gallon at the top of the display
 
