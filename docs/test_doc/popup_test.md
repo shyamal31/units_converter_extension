@@ -71,3 +71,81 @@ describe("popupStatistics.js Tests", function () {
 });
 ```
 These tests ensure that the functions for entropy, mean, and standard deviation calculations handle various data inputs correctly and update the DOM elements reliably, thereby enhancing user experience and functionality accuracy.
+
+
+### 5. Colorblind Mode Tests
+These tests verify that selecting different colorblind modes applies the correct CSS classes to the body and buttons in the DOM, adjusting styles for accessibility.
+
+#### Red-Green Colorblind Mode 
+This test confirms if selecting the red-green colorblind mode applies the appropriate classes to the body and viewAllButton elements.
+
+```javascript
+describe("popup.js Tests", function () {
+    it("should apply red-green colorblind mode classes", function () {
+        document.getElementById("colorblind-mode").value = "red-green";
+        document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+
+        expect(document.body.classList.contains("red-green-mode")).to.be.true;
+        document.querySelectorAll(".viewAllButton").forEach(button => {
+            expect(button.classList.contains("red-green")).to.be.true;
+        });
+    });
+});
+```
+#### Blue-Yellow Colorblind Mode
+This test verifies if selecting the blue-yellow colorblind mode applies the correct classes.
+
+```javascript
+describe("popup.js Tests", function () {
+    it("should apply blue-yellow colorblind mode classes", function () {
+        document.getElementById("colorblind-mode").value = "blue-yellow";
+        document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+
+        expect(document.body.classList.contains("blue-yellow-mode")).to.be.true;
+        document.querySelectorAll(".viewAllButton").forEach(button => {
+            expect(button.classList.contains("blue-yellow")).to.be.true;
+        });
+    });
+});
+```
+
+#### Total Colorblind Mode
+This test confirms if the total colorblind mode classes are correctly applied to the DOM elements.
+
+```javascript
+describe("popup.js Tests", function () {
+    it("should apply total-colorblind mode classes", function () {
+        document.getElementById("colorblind-mode").value = "total-colorblind";
+        document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+
+        expect(document.body.classList.contains("total-colorblind-mode")).to.be.true;
+        document.querySelectorAll(".viewAllButton").forEach(button => {
+            expect(button.classList.contains("total-colorblind")).to.be.true;
+        });
+    });
+});
+```
+
+#### Normal Mode Reset
+This test checks if switching to normal mode removes all colorblind-related classes from the DOM elements.
+
+```javascript
+describe("popup.js Tests", function () {
+    it("should reset classes when set to normal mode", function () {
+        document.getElementById("colorblind-mode").value = "normal";
+        document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+
+        expect(document.body.classList.contains("red-green-mode")).to.be.false;
+        expect(document.body.classList.contains("blue-yellow-mode")).to.be.false;
+        expect(document.body.classList.contains("total-colorblind-mode")).to.be.false;
+        document.querySelectorAll(".viewAllButton").forEach(button => {
+            expect(button.classList.contains("red-green")).to.be.false;
+            expect(button.classList.contains("blue-yellow")).to.be.false;
+            expect(button.classList.contains("total-colorblind")).to.be.false;
+        });
+    });
+});
+```
+These tests ensure that popup.js correctly handles calculations, conversions, and colorblind mode styling, providing a reliable and accessible user experience.
+
+
