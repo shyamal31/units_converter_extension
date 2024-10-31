@@ -71,12 +71,10 @@ git clone [repository_url]
 
 ### Step 6: Test the extension
 - Displays the most relevant converted unit first
-  
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
 
 
 - Click on view all button to view all of the converted units for that metric
-  
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
 
 ## Popup Features for the user
@@ -85,12 +83,10 @@ To access the popup feature the user has to click on the extension icon in the t
 ### 1. Direct conversions
 - This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
 - The user selects the conversion he requires from the given standard conversions
-
 ![image](https://github.com/user-attachments/assets/d5bf4715-46b9-4d7d-afeb-511365b96190)
 
 
 - The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
-
 ![image](https://github.com/user-attachments/assets/b9576171-e2f2-47c5-adde-359951068e4c)
 
 
@@ -98,26 +94,30 @@ To access the popup feature the user has to click on the extension icon in the t
 
 - This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
 - This is the example taken where 1 meter is taken as 3 subs
-
 ![image](https://github.com/user-attachments/assets/b4cdf44b-0236-4860-aede-cf512f95e8e6)
 
 - Testing whether the customized conversion works or not
-  
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
 
 - Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added that allows user to delete his customized conversion.
-   
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
 
 ### 3. Favorites 
 - This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
 - Here we select pint and gallon as favorites in volume converions. 
-
 ![image](https://github.com/user-attachments/assets/8035d45f-58e5-4267-b981-4eaf0398a83e)
 
 - So now all the volume conversions will have pint and gallon at the top of the display
-
 ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
+
+### 4. Statistics
+- This feature allows the user to calculate mean, standard deviation, and entropy after entering a data set.
+![image](https://github.com/user-attachments/assets/0fc774ab-ff80-4b2d-830c-2ca6899bb93f)
+
+
+### 5. Health Reports
+
+### 6. Colorblind Mode
 
 
 ## Style Checker and Analyzer
