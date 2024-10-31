@@ -1,19 +1,19 @@
 # Smart Units Converter - Browser Extension
 
-An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
+An extension that effortlessly converts your selected values into popular units, saving you time and making life easier. Plus, it includes powerful statistical analysis tools and personalized health reports to support your daily tasks and wellness goals! 💃
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
 ![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
 ![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)
+![ESLint](https://img.shields.io/badge/eslint-passing-brightgreen)
+![Beautify](https://img.shields.io/badge/beautify-applied-brightgreen)
 ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14010246.svg)](https://doi.org/10.5281/zenodo.14010246)
 
 **Click on the image below to view the video**
 
-[![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1nCN8phch_celSRCWX2G5RxKqbnxRehx-/view?usp=drive_link)
+[![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://youtu.be/RT2PIYw7BCk)
 
 ## Use Cases
 
@@ -178,7 +178,7 @@ The project is not currently funded
 
 ## 🌠 Future
 
-See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues/23)
+See RoadMap [here](https://github.com/510-s-Mickey/units_converter_extension/issues/25)
 
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
