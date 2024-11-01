@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          npx nyc --reporter=lcov --reporter=text mocha  # 运行测试并生成 lcov 报告
+          npx nyc --reporter=lcov --reporter=text mocha  
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -39,4 +39,8 @@ jobs:
           files: coverage/lcov.info
           flags: unittests
           token: ${{ secrets.CODECOV_TOKEN }}
+
+#       - name: Run tests
+#         run: npm test
+      
 

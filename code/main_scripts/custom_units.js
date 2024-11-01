@@ -28,33 +28,33 @@
 // });
 
 const addCustomUnit = async (unitObject) => {
-  const storedUnits = await getStoredUnits()?await getStoredUnits():[];
-  storedUnits.push(unitObject);
-  console.log(storedUnits);
-  return chrome.storage.sync.set({"customUnits": storedUnits});
+  const storedUnits = await getStoredUnits() ? await getStoredUnits() : []
+  storedUnits.push(unitObject)
+  console.log(storedUnits)
+  return chrome.storage.sync.set({ customUnits: storedUnits })
 }
 
 const deleteCustomUnit = async (unitObject) => {
-  const storedUnits = await getStoredUnits();
-  const newStoredUnits = storedUnits.filter((u)=>{
-    return u.unit !== unitObject.unit;
-  });
-  return chrome.storage.sync.set({"customUnits": newStoredUnits});
+  const storedUnits = await getStoredUnits()
+  const newStoredUnits = storedUnits.filter((u) => {
+    return u.unit !== unitObject.unit
+  })
+  return chrome.storage.sync.set({ customUnits: newStoredUnits })
 }
 
 const getStoredUnits = async () => {
-  return chrome.storage.sync.get(["customUnits"]).then(result=>{
-    return result.customUnits?result.customUnits:[];
-  });
+  return chrome.storage.sync.get(['customUnits']).then(result => {
+    return result.customUnits ? result.customUnits : []
+  })
 }
 
 const getAllUnits = async () => {
-  const storedUnits = await getStoredUnits();
-  console.log(storedUnits);
-  if (!storedUnits || storedUnits.length === 0){
-    return UNITS;
+  const storedUnits = await getStoredUnits()
+  console.log(storedUnits)
+  if (!storedUnits || storedUnits.length === 0) {
+    return UNITS
   }
-  return UNITS.concat(storedUnits);
+  return UNITS.concat(storedUnits)
 }
 
-module.exports = {addCustomUnit, getStoredUnits, getAllUnits};
+module.exports = { addCustomUnit, getStoredUnits, getAllUnits }
