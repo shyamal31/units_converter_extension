@@ -3,10 +3,9 @@
 An extension that effortlessly converts your selected values into popular units, saving you time and making life easier. Plus, it includes powerful statistical analysis tools and personalized health reports to support your daily tasks and wellness goals! 💃
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
-![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)
-![ESLint](https://img.shields.io/badge/eslint-passing-brightgreen)
-![Beautify](https://img.shields.io/badge/beautify-applied-brightgreen)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/510-s-Mickey/units_converter_extension/actions)
+[![ESLint](https://img.shields.io/badge/eslint-passing-brightgreen)](https://github.com/510-s-Mickey/units_converter_extension/actions)
+[![Beautify](https://img.shields.io/badge/beautify-applied-brightgreen)](https://github.com/510-s-Mickey/units_converter_extension/actions)
 ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14010246.svg)](https://doi.org/10.5281/zenodo.14010246)
@@ -28,9 +27,9 @@ An extension that effortlessly converts your selected values into popular units,
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
 - Convert Time from a given time zone to another (PST to EST)
-- Automatically calculate mean, standard deviation, and entropy after entering a data set
-- Calculate BMI, BMR, and TDEE based on height, weight, age, and gender
-- Enable colorblind mode for accessibility
+- Automatically calculate mean, standard deviation, and entropy after entering a data set (New Feature)
+- Calculate BMI, BMR, and TDEE based on height, weight, age, and gender (New Feature)
+- Enable colorblind mode for accessibility (New Feature)
 
   ## Technologies we used:
  - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
