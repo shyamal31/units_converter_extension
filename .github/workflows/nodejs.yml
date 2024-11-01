@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [updateReadme]
+    branches: [master]
   pull_request:
-    branches: [updateReadme]
+    branches: [master]
 
 jobs:
   test:
@@ -27,9 +27,20 @@ jobs:
         run: npm install --no-audit
 
       - name: Run npm audit
-        run: npm audit || true  # record audit but not affecr CI
+        run: npm audit || true  # record audit but not affect CI
 
-      - name: Run tests
-        run: npm test
+      - name: Run tests with coverage
+        run: |
+          npx nyc --reporter=lcov --reporter=text mocha  
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage/lcov.info
+          flags: unittests
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+#       - name: Run tests
+#         run: npm test
       
-      
+

@@ -73,8 +73,79 @@ describe('popup.js Tests', function () {
     expect(parseFloat(document.getElementById('tdee-result').textContent)).to.be.closeTo(expectedTdee, tolerance, 'TDEE is within the expected range')
   })
 
-  it('should get a standard conversion value', async function () {
-    const result = await getStandardConversion('10 usd', 'eur')
-    assert(result !== null, 'Conversion result should not be null')
-  })
-})
+   it("should get a standard conversion value", async function () {
+        const result = await getStandardConversion("10 usd", "eur");
+        assert(result !== null, "Conversion result should not be null");
+    });
+    // describe("Colorblind Mode Tests", function () {
+    //     before(function () {
+    //         // Setup listener for colorblind mode change
+    //         document.getElementById("colorblind-mode").addEventListener("change", function () {
+    //             const mode = document.getElementById("colorblind-mode").value;
+    //
+    //             // Clear the previous css style
+    //             document.body.classList.remove("red-green-mode", "blue-yellow-mode", "total-colorblind-mode");
+    //             document.querySelectorAll(".viewAllButton").forEach(button => {
+    //                 button.classList.remove("red-green", "blue-yellow", "total-colorblind");
+    //             });
+    //
+    //             if (mode === "red-green") {
+    //                 document.body.classList.add("red-green-mode");
+    //                 document.querySelectorAll(".viewAllButton").forEach(button => button.classList.add("red-green"));
+    //             } else if (mode === "blue-yellow") {
+    //                 document.body.classList.add("blue-yellow-mode");
+    //                 document.querySelectorAll(".viewAllButton").forEach(button => button.classList.add("blue-yellow"));
+    //             } else if (mode === "total-colorblind") {
+    //                 document.body.classList.add("total-colorblind-mode");
+    //                 document.querySelectorAll(".viewAllButton").forEach(button => button.classList.add("total-colorblind"));
+    //             }
+    //         });
+    //     });
+    //
+    //     it("should apply red-green colorblind mode classes", function () {
+    //         document.getElementById("colorblind-mode").value = "red-green";
+    //         document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+    //
+    //         expect(document.body.classList.contains("red-green-mode")).to.be.true;
+    //         document.querySelectorAll(".viewAllButton").forEach(button => {
+    //             expect(button.classList.contains("red-green")).to.be.true;
+    //         });
+    //     });
+    //
+    //     it("should apply blue-yellow colorblind mode classes", function () {
+    //         document.getElementById("colorblind-mode").value = "blue-yellow";
+    //         document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+    //
+    //         expect(document.body.classList.contains("blue-yellow-mode")).to.be.true;
+    //         document.querySelectorAll(".viewAllButton").forEach(button => {
+    //             expect(button.classList.contains("blue-yellow")).to.be.true;
+    //         });
+    //     });
+    //
+    //     it("should apply total-colorblind mode classes", function () {
+    //         document.getElementById("colorblind-mode").value = "total-colorblind";
+    //         document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+    //
+    //         expect(document.body.classList.contains("total-colorblind-mode")).to.be.true;
+    //         document.querySelectorAll(".viewAllButton").forEach(button => {
+    //             expect(button.classList.contains("total-colorblind")).to.be.true;
+    //         });
+    //     });
+    //
+    //     it("should reset classes when set to normal mode", function () {
+    //         document.getElementById("colorblind-mode").value = "normal";
+    //         document.getElementById("colorblind-mode").dispatchEvent(new window.Event("change"));
+    //
+    //         expect(document.body.classList.contains("red-green-mode")).to.be.false;
+    //         expect(document.body.classList.contains("blue-yellow-mode")).to.be.false;
+    //         expect(document.body.classList.contains("total-colorblind-mode")).to.be.false;
+    //         document.querySelectorAll(".viewAllButton").forEach(button => {
+    //             expect(button.classList.contains("red-green")).to.be.false;
+    //             expect(button.classList.contains("blue-yellow")).to.be.false;
+    //             expect(button.classList.contains("total-colorblind")).to.be.false;
+    //         });
+    //     });
+    // });
+
+});
+
