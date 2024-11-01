@@ -6,7 +6,7 @@ An extension that effortlessly converts your selected values into popular units,
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/510-s-Mickey/units_converter_extension/actions)
 [![ESLint](https://img.shields.io/badge/eslint-passing-brightgreen)](https://github.com/510-s-Mickey/units_converter_extension/actions)
 [![Beautify](https://img.shields.io/badge/beautify-applied-brightgreen)](https://github.com/510-s-Mickey/units_converter_extension/actions)
-![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
+<!-- ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master) -->
 <!-- ![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
 ![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension) -->
