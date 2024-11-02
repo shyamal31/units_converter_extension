@@ -1,4 +1,4 @@
-//Our temperature class handles all temperature related conversions
+// Our temperature class handles all temperature related conversions
 /**
  * Temperature class handles all mass related conversions
  */
@@ -8,22 +8,23 @@ class Temperature {
    * @param {Object} unit data unit
    * @param {Array} arr conversion rates array
    */
-  constructor(unit, arr) {
-    this.unit = unit;
-    this.arr = arr;
+  constructor (unit, arr) {
+    this.unit = unit
+    this.arr = arr
   }
+
   /**
    * Our standard conversion is celcius, so we try to convert all selection to celcius
    * @param {Number} quantity input number
    * @returns returns value with accuracy of 10 decimal points
    */
-  getPreciseNumber(number, precision) {
+  getPreciseNumber (number, precision) {
     if (number < 10e-3) {
       return number.toPrecision(
         Math.min(Math.max(this.getPrecision(number), precision), 10)
-      );
+      )
     }
-    return Math.round(number * 1000) / 1000;
+    return Math.round(number * 1000) / 1000
   }
 
   /**
@@ -31,25 +32,26 @@ class Temperature {
    * @returns returns value with accuracy of input number decimal points
    */
 
-  getPrecision(number) {
-    let parts = number.toString().split(".");
+  getPrecision (number) {
+    const parts = number.toString().split('.')
     if (parts.length <= 1) {
-      return number < 0 ? parts[0].length - 1 : parts[0].length;
+      return number < 0 ? parts[0].length - 1 : parts[0].length
+    }
+    const intlen = number < 0 ? parts[0].length - 1 : parts[0].length
+    return intlen + parts[1].length
   }
-    let intlen = number < 0 ? parts[0].length - 1 : parts[0].length;
-    return intlen + parts[1].length;
-  }
-  getStandardConversion(quantity) {
-    //We use a switch case to make appropriate conversion
+
+  getStandardConversion (quantity) {
+    // We use a switch case to make appropriate conversion
     switch (this.unit.toLowerCase()) {
-      case "celcius":
-        return quantity;
-      case "kelvin":
-        return quantity - 273.15;
-      case "fahrenheit":
-        return ((quantity - 32) / 9) * 5;
+      case 'celcius':
+        return quantity
+      case 'kelvin':
+        return quantity - 273.15
+      case 'fahrenheit':
+        return ((quantity - 32) / 9) * 5
       default:
-        return null;
+        return null
     }
   }
 
@@ -60,31 +62,30 @@ class Temperature {
    * @returns all values with accuracy of 10 decimal points
    */
   /**/
-  getAllConversions(quantity, precision) {
-    let res = "";
+  getAllConversions (quantity, precision) {
+    let res = ''
     this.arr.forEach((u) => {
       switch (u.toLowerCase()) {
-        case "celcius":
-          res += "," + this.getPreciseNumber(quantity, precision) + " °C";
-          break;
-        case "kelvin": {
-          let conv = quantity + 273.15;
-          res += "," + this.getPreciseNumber(conv, precision) + " °K";
-          break;
+        case 'celcius':
+          res += ',' + this.getPreciseNumber(quantity, precision) + ' °C'
+          break
+        case 'kelvin': {
+          const conv = quantity + 273.15
+          res += ',' + this.getPreciseNumber(conv, precision) + ' °K'
+          break
         }
-        case "fahrenheit": {
-          let conv = (quantity / 5) * 9 + 32;
-          res += "," + this.getPreciseNumber(conv, precision) + " °F";
-          break;
+        case 'fahrenheit': {
+          const conv = (quantity / 5) * 9 + 32
+          res += ',' + this.getPreciseNumber(conv, precision) + ' °F'
+          break
         }
       }
-    });
+    })
 
-    return res;
+    return res
   }
-
 }
 
-if (typeof module == "object") {
-  module.exports = Temperature;
+if (typeof module === 'object') {
+  module.exports = Temperature
 }

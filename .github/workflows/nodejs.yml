@@ -1,0 +1,46 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [21]
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies without audit
+        run: npm install --no-audit
+
+      - name: Run npm audit
+        run: npm audit || true  # record audit but not affect CI
+
+      - name: Run tests with coverage
+        run: |
+          npx nyc --reporter=lcov --reporter=text mocha  
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage/lcov.info
+          flags: unittests
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+#       - name: Run tests
+#         run: npm test
+      
+

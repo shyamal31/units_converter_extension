@@ -1,19 +1,23 @@
 # Smart Units Converter - Browser Extension
 
-An extension that converts your selected values into popular units. Saves time, Makes life easier:dancer:
+An extension that effortlessly converts your selected values into popular units, saving you time and making life easier. Plus, it includes powerful statistical analysis tools and personalized health reports to support your daily tasks and wellness goals! 💃
 
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
-![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension)
-[![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/510-s-Mickey/units_converter_extension/actions)
+[![ESLint](https://img.shields.io/badge/eslint-passing-brightgreen)](https://github.com/510-s-Mickey/units_converter_extension/actions)
+[![Beautify](https://img.shields.io/badge/beautify-applied-brightgreen)](https://github.com/510-s-Mickey/units_converter_extension/actions)
 ![Coveralls github](https://coveralls.io/repos/github/nihitmittal/units_converter_extension/badge.svg?branch=master)
+<!-- ![GitHub issues](https://img.shields.io/github/issues/shyamal31/units_converter_extension)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/shyamal31/units_converter_extension)
+![GitHub contributors](https://img.shields.io/github/contributors/shyamal31/units_converter_extension) -->
+[![Build Status](https://travis-ci.com/NCSU-S/units_converter_extension.svg?branch=master)](https://travis-ci.com/NCSU-S/units_converter_extension)
+![Codecov](https://codecov.io/gh/510-s-Mickey/units_converter_extension/branch/master/graph/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/shyamal31/units_converter_extension/maintainability)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10211931.svg)](https://doi.org/10.5281/zenodo.10211931)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14010246.svg)](https://doi.org/10.5281/zenodo.14010246)
 
 **Click on the image below to view the video**
 
-[![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://drive.google.com/file/d/1nCN8phch_celSRCWX2G5RxKqbnxRehx-/view?usp=drive_link)
+[![Alt text](https://i.ytimg.com/vi/W4USPH2sBJw/hqdefault.jpg)](https://youtu.be/RT2PIYw7BCk)
 
 ## Use Cases
 
@@ -28,6 +32,9 @@ An extension that converts your selected values into popular units. Saves time, 
 - Convert litres to gallons when you are calculating the volume for liquid items online
 - Convert TB to GB when you are buying data storage devices
 - Convert Time from a given time zone to another (PST to EST)
+- Automatically calculate mean, standard deviation, and entropy after entering a data set (New Feature)
+- Calculate BMI, BMR, and TDEE based on height, weight, age, and gender (New Feature)
+- Enable colorblind mode for accessibility (New Feature)
 
   ## Technologies we used:
  - ![Javascript](https://img.shields.io/badge/logo-javascript-blue?logo=javascript)
@@ -64,17 +71,17 @@ git clone [repository_url]
 ### Step 5: Check the extension added
 - The extension will now be added to the Chrome
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/d8364664-7236-42ee-aa27-ada0c4ce3fcf)
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/d8364664-7236-42ee-aa27-ada0c4ce3fcf)
 
 ### Step 6: Test the extension
 - Displays the most relevant converted unit first
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a3593a02-0882-4af6-92ba-89192e824de2)
 
 
 - Click on view all button to view all of the converted units for that metric
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/bb08278c-de80-4d0a-9293-203b12e5bd48)
 
 ## Popup Features for the user
 To access the popup feature the user has to click on the extension icon in the top right corner where the user further finds and selects the extension "Unit Convert Selection"
@@ -83,36 +90,55 @@ To access the popup feature the user has to click on the extension icon in the t
 - This feature allows the user to directly convert units without the need to select any particular text on the browser. This helps save trouble and effort for the user
 - The user selects the conversion he requires from the given standard conversions
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/a7085ef1-c7b0-412a-ac68-9be2a1c479a6)
+  ![image](https://github.com/user-attachments/assets/d5bf4715-46b9-4d7d-afeb-511365b96190)
+
 
 - The user can select and convert any unit to the required unit without any restrictions. This direct method allows the user to be quick
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/5975dd5f-73e0-4dd6-ad1c-f63c34a79bd9)
+  ![image](https://github.com/user-attachments/assets/b9576171-e2f2-47c5-adde-359951068e4c)
+
 
 ### 2. Customized Conversions
 
 - This feature allows the user to create his own customized unit conversion for his personal use and purposes. This includes all the conversion that are not standard but used as a jargon by people.
 - This is the example taken where 1 meter is taken as 3 subs
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/1be09981-8e21-4dde-9a39-2571fbb5468e)
+  ![image](https://github.com/user-attachments/assets/b4cdf44b-0236-4860-aede-cf512f95e8e6)
 
 - Testing whether the customized conversion works or not
-  
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
+
+  ![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/681416b3-a41d-4dcf-b864-7eca0303b7e8)
 
 - Since the customized version of conversion keeps changing it is important to allow the user to alter the units. So a feature is added that allows user to delete his customized conversion.
-   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/7e074d75-a02d-4f58-98a3-acd3fa4fceae)
+
+  ![image](https://github.com/user-attachments/assets/8035d45f-58e5-4267-b981-4eaf0398a83e)
 
 ### 3. Favorites 
 - This feature allows users to select a particular conversion unit and place it in favorites as the units in favorites are shown at the top. This feature is useful when the user wastes time in finding his desired converted unit from a pool of large units.
 - Here we select pint and gallon as favorites in volume converions. 
-   
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/e5b4c8e1-bdfc-466a-9675-4a6e077bc225)
+
+  ![image](https://github.com/user-attachments/assets/8035d45f-58e5-4267-b981-4eaf0398a83e)
 
 - So now all the volume conversions will have pint and gallon at the top of the display
 
-![image](https://github.com/shyamal31/units_converter_extension/assets/85347670/4e54e867-9889-41ec-b0ea-e0783e74467c)
+  ![image](https://github.com/user-attachments/assets/4e54e867-9889-41ec-b0ea-e0783e74467c)
+
+### 4. Statistics
+- This feature allows the user to calculate mean, standard deviation, and entropy after entering a data set.
+
+  ![image](https://github.com/user-attachments/assets/0fc774ab-ff80-4b2d-830c-2ca6899bb93f)
+
+
+### 5. Health Reports
+- This feature allows the user to calculate BMI, BMR, and TDEE based on height, weight, age, and gender.
+
+  ![image](https://github.com/user-attachments/assets/ad71e74c-382e-488b-bb19-d2a6f27d1213)
+
+### 6. Colorblind Mode
+- This feature allows the user to enable colorblind mode for accessibility.
+
+  ![image](https://github.com/user-attachments/assets/fb30a6c6-1cbf-41c3-a24e-c07826303e4e)
+
 
 
 ## Style Checker and Analyzer
@@ -173,7 +199,7 @@ The project is not currently funded
 
 ## 🌠 Future
 
-See RoadMap [here](https://github.com/shyamal31/units_converter_extension/issues/23)
+See RoadMap [here](https://github.com/510-s-Mickey/units_converter_extension/issues/25)
 
 ## Documentation ([Wiki](https://github.com/NCSU-S/units_converter_extension/wiki))
 #### "What" and "How" Docs
@@ -219,11 +245,9 @@ If you encounter any issues during any stage of extension use or you encounter a
 
 
 # Contributors
-  <table>
-  <tr>
-    <td align="center"><a href="https://github.com/drs1951"><img src="https://avatars.githubusercontent.com/u/54364517?v=4" width="100px;" alt=""/><br /><sub><b>Devansh Shah</b></sub></a></td>
-    <td align="center"><a href="https://github.com/shyamal31"><img src="https://avatars.githubusercontent.com/u/57554284?v=4" width="100px;" alt=""/><br /><sub><b>Shyamal Gandhi</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/jaypatel31"><img src="https://avatars.githubusercontent.com/u/59785863?v=4" width="100px;" alt=""/><br /><sub><b>Jay Patel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/shail611"><img src="https://avatars.githubusercontent.com/u/85347670?v=4" width="100px;" alt=""/><br /><sub><b>Shail Shah</b></sub></a><br /></td>
-  </tr>
-</table>
+
+Tingxiang Ji
+
+Hui Sun
+
+Zhichao Hou
